@@ -1,0 +1,1 @@
+const e={key:"v-744497ce",path:"/api/",title:"API Reference",lang:"en-US",frontmatter:{sidebarDepth:2},excerpt:"",headers:[],git:{updatedTime:1657649736e3},filePathRelative:"api/index.md"};export{e as data};
