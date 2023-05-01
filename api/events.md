@@ -1,7 +1,3 @@
----
-sidebarDepth: 2
----
-
 # Events
 
 ## 通用会话事件

@@ -1,7 +1,3 @@
----
-sidebarDepth: 2
----
-
 # API Reference
 
 - [Bot](./bot.md)
