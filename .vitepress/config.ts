@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { DefaultTheme, defineConfig } from 'vitepress'
 
 const sidebar: DefaultTheme.SidebarItem[] = [{
@@ -19,7 +20,7 @@ const sidebar: DefaultTheme.SidebarItem[] = [{
 }]
 
 export default defineConfig({
-  title: 'Satori Protocol',
+  title: 'Satori',
   description: 'The Universal Messenger Protocol',
 
   themeConfig: {
@@ -38,5 +39,15 @@ export default defineConfig({
       icon: 'github',
       link: 'https://github.com/satorijs',
     }],
+  },
+
+  vite: {
+    resolve: {
+      dedupe: ['vue'],
+      alias: {
+        '@theme-default': 'vitepress/dist/client/theme-default',
+        './VPHome.vue': resolve(__dirname, 'theme/VPHome.vue'),
+      },
+    },
   },
 })
