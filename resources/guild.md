@@ -1,29 +1,37 @@
-# 群组 (Guild)
+# Guild
 
-## 类型定义
+## Definition
 
-```ts
-export interface Guild {
-  id: string
-  name: string
-}
-```
+### Guild
+
+| FIELD | TYPE | DESCRIPTION |
+| ----- | ---- | ----------- |
+| id | string | guild ID |
+| name | string | guild name |
 
 ## API
 
 ### bot.getGuild(guildId)
 
-- **guildId:** `string` 群组 ID
-- 返回值: `Promise<Guild>` 群组信息
+- <badge>POST</badge> `/basic/guild.get`
+- <badge>GET</badge> `/rest/guild/{guild_id}`
 
-获取群组信息。
+| FIELD | TYPE | DESCRIPTION |
+| ----- | ---- | ----------- |
+| guild_id | string | guild ID |
+
+Get a guild by ID. Returns a [guild](#guild-1) object.
 
 ### bot.getGuildList(next?)
 
-- **next:** `string` 分页令牌
-- 返回值: `Promise<List<Guild>>` 群组列表
+- <badge>POST</badge> `/basic/guild.list`
+- <badge>GET</badge> `/rest/guilds`
 
-获取机器人加入的群组列表。
+| FIELD | TYPE | DESCRIPTION |
+| ----- | ---- | ----------- |
+| next | string | pagination token |
+
+Get guilds where the current user is a member. Returns a [list](../protocol/pagination.md) of partial [guild](#guild-1) objects.
 
 ### bot.handleGuildRequest(messageId, approve, comment?)
 

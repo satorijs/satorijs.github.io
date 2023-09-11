@@ -1,27 +1,35 @@
-# 频道 (Channel)
+# Channel
 
-## 类型定义
+## Definition
 
-```ts
-export interface Channel {
-  id: string
-  name: string
-}
-```
+### Channel
+
+| FIELD | TYPE | DESCRIPTION |
+| ----- | ---- | ----------- |
+| id | string | channel ID |
+| name | string | channel name |
 
 ## API
 
-### bot.getChannel(channelId)
+### Get Channel
 
-- **channelId:** `string` 频道 ID
-- 返回值: `Promise<Channel>` 频道信息
+- <badge>POST</badge> `/basic/channel.get`
+- <badge>GET</badge> `/rest/channel/{channel_id}`
 
-获取频道信息。
+| FIELD | TYPE | DESCRIPTION |
+| ----- | ---- | ----------- |
+| channel_id | string | channel ID |
+
+Get a channel by ID. Returns a [channel](#channel-1) object.
 
 ### bot.getChannelList(guildId, next?)
 
-- **guildId:** `string` 群组 ID
-- **next:** `string` 分页令牌
-- 返回值: `Promise<List<Channel>>` 频道列表
+- <badge>POST</badge> `/basic/channel.list`
+- <badge>GET</badge> `/rest/guilds/{guild_id}/channels`
 
-获取某个群组的频道列表。
+| FIELD | TYPE | DESCRIPTION |
+| ----- | ---- | ----------- |
+| guild_id | string | guild ID |
+| next | string | pagination token |
+
+Get channels in a guild. Returns a [list](../protocol/pagination.md) of [channel](#channel-1) objects.
