@@ -1,4 +1,22 @@
-import { defineConfig } from 'vitepress'
+import { DefaultTheme, defineConfig } from 'vitepress'
+
+const sidebar: DefaultTheme.SidebarItem[] = [{
+  text: 'Protocol',
+  items: [
+    { text: 'Overview', link: '/protocol/index.md' },
+  ],
+}, {
+  text: 'Resources',
+  items: [
+    { text: 'Channel', link: '/resources/channel.md' },
+    { text: 'Guild', link: '/resources/guild.md' },
+    { text: 'Guild Member', link: '/resources/member.md' },
+    { text: 'Guild Role', link: '/resources/role.md' },
+    { text: 'Message', link: '/resources/message.md' },
+    { text: 'Reaction', link: '/resources/reaction.md' },
+    { text: 'User', link: '/resources/user.md' },
+  ],
+}]
 
 export default defineConfig({
   title: 'Satori Protocol',
@@ -10,19 +28,11 @@ export default defineConfig({
       pattern: 'https://github.com/satorijs/satorijs.github.io/edit/main/docs/:path',
     },
     nav: [
-      { text: 'API', link: '/api/' }
+      { text: 'Protocol', link: '/protocol/', activeMatch: '^/(protocol|resources)/' },
     ],
     sidebar: {
-      '/api/': [{
-        text: 'API',
-        items: [
-          { text: 'Overview', link: '/api/' },
-          { text: 'Adapter', link: '/api/adapter.md' },
-          { text: 'Bot', link: '/api/bot.md' },
-          { text: 'Events', link: '/api/events.md' },
-          { text: 'Session', link: '/api/session.md' },
-        ]
-      }]
+      '/protocol/': sidebar,
+      '/resources/': sidebar,
     },
     socialLinks: [{
       icon: 'github',
