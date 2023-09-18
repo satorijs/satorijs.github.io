@@ -8,7 +8,7 @@
         "text": "介绍",
         "link": "/introduction.md"
       }, {
-        "text": "Protocol",
+        "text": "协议",
         "items": [
           { "text": "总览", "link": "/protocol/index.md" },
           { "text": "HTTP API", "link": "/protocol/api.md" },
@@ -17,7 +17,7 @@
           { "text": "消息编码", "link": "/protocol/message.md" }
         ]
       }, {
-        "text": "Resources",
+        "text": "资源",
         "items": [
           { "text": "频道 (Channel)", "link": "/resources/channel.md" },
           { "text": "群组 (Guild)", "link": "/resources/guild.md" },

@@ -1,7 +1,6 @@
-# Overview
+# 总览
 
-The Satori protocol is designed to be simple and easy to use. It is based around three layers of communication:
+Satori 协议的通信方式分为两块：
 
-- an HTTP API for bots to communicate with the server
-- a WebSocket API for bots to receive events from the server
-- a WebHook API for the server to send events to bots
+- 一套基于 HTTP 的 API，用于发送消息和调用其他功能
+- 一套基于 WebSocket 或者 WebHook 的事件机制，用于接收消息和其他事件
