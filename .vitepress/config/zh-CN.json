@@ -5,6 +5,9 @@
     ],
     "sidebar": {
       "/": [{
+        "text": "介绍",
+        "link": "/introduction.md"
+      }, {
         "text": "Protocol",
         "items": [
           { "text": "总览", "link": "/protocol/index.md" },

@@ -5,6 +5,9 @@
     ],
     "sidebar": {
       "/": [{
+        "text": "Introduction",
+        "link": "/introduction.md"
+      }, {
         "text": "Protocol",
         "items": [
           { "text": "Overview", "link": "/protocol/index.md" },
