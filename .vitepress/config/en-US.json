@@ -1,0 +1,30 @@
+{
+  "themeConfig": {
+    "nav": [
+      { "text": "Protocol", "link": "/protocol/", "activeMatch": "^/(protocol|resources)/" }
+    ],
+    "sidebar": {
+      "/": [{
+        "text": "Protocol",
+        "items": [
+          { "text": "Overview", "link": "/protocol/index.md" },
+          { "text": "HTTP API", "link": "/protocol/api.md" },
+          { "text": "WebSocket", "link": "/protocol/websocket.md" },
+          { "text": "WebHook", "link": "/protocol/webhook.md" },
+          { "text": "Message", "link": "/protocol/message.md" }
+        ]
+      }, {
+        "text": "Resources",
+        "items": [
+          { "text": "Channel", "link": "/resources/channel.md" },
+          { "text": "Guild", "link": "/resources/guild.md" },
+          { "text": "Guild Member", "link": "/resources/member.md" },
+          { "text": "Guild Role", "link": "/resources/role.md" },
+          { "text": "Message", "link": "/resources/message.md" },
+          { "text": "Reaction", "link": "/resources/reaction.md" },
+          { "text": "User", "link": "/resources/user.md" }
+        ]
+      }]
+    }
+  }
+}

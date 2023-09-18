@@ -1,3 +1,8 @@
-import DefaultTheme from 'vitepress/theme'
+import { defineTheme } from '@koishijs/vitepress/client'
+import { defineAsyncComponent } from 'vue'
 
-export default DefaultTheme
+export default defineTheme({
+  layouts: {
+    home: defineAsyncComponent(() => import('./VPHome.vue')),
+  },
+})

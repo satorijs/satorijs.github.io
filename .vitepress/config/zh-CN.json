@@ -1,0 +1,30 @@
+{
+  "themeConfig": {
+    "nav": [
+      { "text": "Protocol", "link": "/protocol/", "activeMatch": "^/(protocol|resources)/" }
+    ],
+    "sidebar": {
+      "/": [{
+        "text": "Protocol",
+        "items": [
+          { "text": "总览", "link": "/protocol/index.md" },
+          { "text": "HTTP API", "link": "/protocol/api.md" },
+          { "text": "WebSocket", "link": "/protocol/websocket.md" },
+          { "text": "WebHook", "link": "/protocol/webhook.md" },
+          { "text": "消息编码", "link": "/protocol/message.md" }
+        ]
+      }, {
+        "text": "Resources",
+        "items": [
+          { "text": "频道 (Channel)", "link": "/resources/channel.md" },
+          { "text": "群组 (Guild)", "link": "/resources/guild.md" },
+          { "text": "群组成员 (Guild Member)", "link": "/resources/member.md" },
+          { "text": "群组角色 (Guild Role)", "link": "/resources/role.md" },
+          { "text": "消息 (Message)", "link": "/resources/message.md" },
+          { "text": "表态 (Reaction)", "link": "/resources/reaction.md" },
+          { "text": "用户 (User)", "link": "/resources/user.md" }
+        ]
+      }]
+    }
+  }
+}
