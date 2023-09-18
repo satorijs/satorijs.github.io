@@ -13,8 +13,7 @@
 
 ### bot.getGuild(guildId)
 
-- <badge>POST</badge> `/basic/guild.get`
-- <badge>GET</badge> `/rest/guild/{guild_id}`
+- <badge>POST</badge> `/v1/guild.get`
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
@@ -24,14 +23,13 @@ Get a guild by ID. Returns a [guild](#guild-1) object.
 
 ### bot.getGuildList(next?)
 
-- <badge>POST</badge> `/basic/guild.list`
-- <badge>GET</badge> `/rest/guilds`
+- <badge>POST</badge> `/v1/guild.list`
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
 | next | string | pagination token |
 
-Get guilds where the current user is a member. Returns a [list](../protocol/pagination.md) of partial [guild](#guild-1) objects.
+Get guilds where the current user is a member. Returns a [list](../protocol/api.md#pagination) of partial [guild](#guild-1) objects.
 
 ### bot.handleGuildRequest(messageId, approve, comment?)
 

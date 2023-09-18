@@ -13,8 +13,7 @@
 
 ### Get Channel
 
-- <badge>POST</badge> `/basic/channel.get`
-- <badge>GET</badge> `/rest/channel/{channel_id}`
+- <badge>POST</badge> `/v1/channel.get`
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
@@ -24,12 +23,11 @@ Get a channel by ID. Returns a [channel](#channel-1) object.
 
 ### bot.getChannelList(guildId, next?)
 
-- <badge>POST</badge> `/basic/channel.list`
-- <badge>GET</badge> `/rest/guilds/{guild_id}/channels`
+- <badge>POST</badge> `/v1/channel.list`
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
 | guild_id | string | guild ID |
 | next | string | pagination token |
 
-Get channels in a guild. Returns a [list](../protocol/pagination.md) of [channel](#channel-1) objects.
+Get channels in a guild. Returns a [list](../protocol/api.md#pagination) of [channel](#channel-1) objects.

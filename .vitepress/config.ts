@@ -5,6 +5,9 @@ const sidebar: DefaultTheme.SidebarItem[] = [{
   text: 'Protocol',
   items: [
     { text: 'Overview', link: '/protocol/index.md' },
+    { text: 'API', link: '/protocol/api.md' },
+    { text: 'WebSocket', link: '/protocol/websocket.md' },
+    { text: 'WebHook', link: '/protocol/webhook.md' },
   ],
 }, {
   text: 'Resources',
