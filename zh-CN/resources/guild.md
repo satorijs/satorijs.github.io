@@ -29,7 +29,7 @@ Get a guild by ID. Returns a [guild](#guild-1) object.
 | ----- | ---- | ----------- |
 | next | string | pagination token |
 
-Get guilds where the current user is a member. Returns a [list](../protocol/api.md#pagination) of partial [guild](#guild-1) objects.
+Get guilds where the current user is a member. Returns a [list](../protocol/api.md#分页) of partial [guild](#guild-1) objects.
 
 ### bot.handleGuildRequest(messageId, approve, comment?)
 

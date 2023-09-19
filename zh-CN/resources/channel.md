@@ -30,4 +30,4 @@ Get a channel by ID. Returns a [channel](#channel-1) object.
 | guild_id | string | guild ID |
 | next | string | pagination token |
 
-Get channels in a guild. Returns a [list](../protocol/api.md#pagination) of [channel](#channel-1) objects.
+Get channels in a guild. Returns a [list](../protocol/api.md#分页) of [channel](#channel-1) objects.
