@@ -17,16 +17,15 @@ Satori 协议规定了一套基于 HTTP 的 API 服务，用于发送消息和�
 ```text
 POST /v1/channel.get
 Content-Type: application/json
+Authorization: Bearer 1234567890
 X-Platform: discord
 X-Self-ID: 1234567890
 {"channel_id": "1234567890"}
 ```
 
-### 可选字段
+### 鉴权
 
-由于不同平台实现的差异，Satori 协议中的大部分字段都是可选的。可选字段的类型会以一个 `?` 标记开头 (你可以参考下方的 [分页](#分页) 对象)。
-
-对于任意可选字段，相关 API 调用的结果中可能不含该字段，也可能该字段的值为 `null`。其中，前者表示该 API 并未提供这一字段，但可能由其他 API 提供；后者表示该 API 提供了这一字段，但其值为 `null`。
+请查看 [鉴权](./auth.md) 章节。
 
 ### 分页
 

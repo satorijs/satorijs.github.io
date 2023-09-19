@@ -11,9 +11,9 @@
         "text": "协议",
         "items": [
           { "text": "总览", "link": "/protocol/index.md" },
-          { "text": "HTTP API", "link": "/protocol/api.md" },
-          { "text": "WebSocket", "link": "/protocol/websocket.md" },
-          { "text": "WebHook", "link": "/protocol/webhook.md" },
+          { "text": "API", "link": "/protocol/api.md" },
+          { "text": "事件", "link": "/protocol/events.md" },
+          { "text": "鉴权", "link": "/protocol/auth.md" },
           { "text": "消息编码", "link": "/protocol/message.md" }
         ]
       }, {
