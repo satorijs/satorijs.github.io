@@ -8,6 +8,17 @@
 | --- | --- | --- |
 | id | string | 频道 ID |
 | name | string | 频道名称 |
+| type | number | [频道类型](#channel-type) |
+| parent_id | string | 父频道 ID |
+
+### Channel.Type
+
+| 常量 | 值 | 描述 |
+| --- | --- | --- |
+| TEXT | 0 | 文本频道 |
+| VOICE | 1 | 语音频道 |
+| CATEGORY | 2 | 分类频道 |
+| DIRECT | 3 | 私聊频道 |
 
 ## API
 

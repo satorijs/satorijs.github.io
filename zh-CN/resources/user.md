@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | id | string | 用户 ID |
 | name | string | 用户名称 |
-| avatar | ?string | 用户头像 |
+| avatar | string? | 用户头像 |
 
 ## API
 

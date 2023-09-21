@@ -1,4 +1,4 @@
-# Events
+# 事件
 
 Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。你可以根据自己的需要进行选择。
 
@@ -6,7 +6,7 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 WebSocket 服务用于在 Satori 客户端与服务器之间维护一个持久的、有状态的链接。通过这个链接，Satori 客户端可以实时接收服务器推送的事件。
 
-WebSocket 服务的地址为 `/{version}`。其中，`version` 为 API 的版本号。
+WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API 的版本号。
 
 目前 Satori 仅有 v1 一个版本。
 
@@ -23,7 +23,7 @@ WebSocket 服务的地址为 `/{version}`。其中，`version` 为 API 的版本
 | 字段 | 类型 | 描述 |
 | ---- | ---- | ---- |
 | `op` | string | 信令类型 |
-| `data` | object | 信令数据 |
+| `body` | object | 信令数据 |
 
 ## WebHook
 

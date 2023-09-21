@@ -1,8 +1,8 @@
-# 群组角色 (GuildRole)
+# 角色 (Role)
 
 ## 类型定义
 
-### GuildRole
+### Role
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -42,7 +42,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | guild_id | string | 群组 ID |
-| next | ?string | 分页令牌 |
+| next | string? | 分页令牌 |
 
 获取群组角色列表。
 
@@ -53,7 +53,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | guild_id | string | 群组 ID |
-| role | [GuildRole](#guildrole) | 角色数据 |
+| role | [Role](#role) | 角色数据 |
 
 创建群组角色。
 
@@ -65,7 +65,7 @@
 | --- | --- | --- |
 | guild_id | string | 群组 ID |
 | role_id | string | 角色 ID |
-| role | [GuildRole](#guildrole) | 角色数据 |
+| role | [Role](#role) | 角色数据 |
 
 修改群组角色。
 
@@ -84,12 +84,12 @@
 
 ### guild-role-created
 
-群组角色被创建时触发。包含一个 [GuildRole](#guildrole) 对象。
+群组角色被创建时触发。包含一个 [Role](#role) 对象。
 
 ### guild-role-updated
 
-群组角色被修改时触发。包含一个 [GuildRole](#guildrole) 对象。
+群组角色被修改时触发。包含一个 [Role](#role) 对象。
 
 ### guild-role-deleted
 
-群组角色被删除时触发。包含一个 [GuildRole](#guildrole) 对象，部分属性可能缺失。
+群组角色被删除时触发。包含一个 [Role](#role) 对象，部分属性可能缺失。

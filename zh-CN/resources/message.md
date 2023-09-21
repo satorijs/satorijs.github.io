@@ -11,9 +11,9 @@
 | guild | ?[Guild](./guild.md#guild) | 群组对象 |
 | member | ?[Member](./member.md#guildmember) | 群组成员对象 |
 | user | ?[User](./user.md#user) | 用户对象 |
-| content | content | 消息元素数组 |
-| createdAt | number | 消息发送的时间戳 |
-| updatedAt | number | 消息修改的时间戳 |
+| content | string | 消息内容 |
+| createdAt | number? | 消息发送的时间戳 |
+| updatedAt | number? | 消息修改的时间戳 |
 
 ## API
 
