@@ -42,3 +42,17 @@
 | content | content | 备注信息 |
 
 处理来自群组的邀请。
+
+## 事件
+
+### guild-added
+
+加入群组时触发。包含一个 [Guild](#guild) 对象。
+
+### guild-updated
+
+群组被修改时触发。包含一个 [Guild](#guild) 对象。
+
+### guild-removed
+
+退出群组时触发。包含一个 [Guild](#guild) 对象，部分属性可能缺失。

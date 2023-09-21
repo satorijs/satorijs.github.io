@@ -31,3 +31,7 @@
 | next | string | 分页令牌 |
 
 获取群组中的全部频道。返回一个 [Channel](#channel) 的 [分页列表](../protocol/api.md#分页)。
+
+## 事件
+
+### 频道可见
