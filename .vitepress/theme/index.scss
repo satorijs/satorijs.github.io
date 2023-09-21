@@ -1,0 +1,15 @@
+blockquote.route {
+  .badge {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  code {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    height: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

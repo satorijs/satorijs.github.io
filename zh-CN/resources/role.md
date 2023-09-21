@@ -2,6 +2,8 @@
 
 ## 类型定义
 
+### GuildRole
+
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 角色 ID |
@@ -59,3 +61,17 @@
 - 返回值: `Promise<void>`
 
 删除群组角色。
+
+## 事件
+
+### guild-role-created
+
+群组角色被创建时触发。包含一个 [GuildRole](#guildrole) 对象。
+
+### guild-role-updated
+
+群组角色被修改时触发。包含一个 [GuildRole](#guildrole) 对象。
+
+### guild-role-deleted
+
+群组角色被删除时触发。包含一个 [GuildRole](#guildrole) 对象，部分属性可能缺失。

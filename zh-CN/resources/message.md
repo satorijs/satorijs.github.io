@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | id | string | 消息 ID |
 | channel | ?[Channel](./channel.md#channel) | 频道对象 |
+| guild | ?[Guild](./guild.md#guild) | 群组对象 |
 | member | ?[Member](./member.md#guildmember) | 群组成员对象 |
 | user | ?[User](./user.md#user) | 用户对象 |
 | elements | array | 消息元素数组 |
@@ -73,3 +74,17 @@
 - 返回值: `Promise<List<Message>>` 消息列表
 
 获取频道消息列表。
+
+## 事件
+
+### message-created
+
+当消息被创建时触发。包含一个 [Message](#message) 对象。
+
+### message-updated
+
+当消息被编辑时触发。包含一个 [Message](#message) 对象。
+
+### message-deleted
+
+当消息被删除时触发。包含一个 [Message](#message) 对象，部分属性可能缺失。

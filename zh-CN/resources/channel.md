@@ -11,23 +11,23 @@
 
 ## API
 
-### Get Channel
+### 获取频道
 
-- <badge>POST</badge> `/v1/channel.get`
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| channel_id | string | channel ID |
-
-Get a channel by ID. Returns a [channel](#channel-1) object.
-
-### bot.getChannelList(guildId, next?)
-
-- <badge>POST</badge> `/v1/channel.list`
+> <badge>POST</badge>`/channel.get` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | guild ID |
-| next | string | pagination token |
+| channel_id | string | 频道 ID |
 
-Get channels in a guild. Returns a [list](../protocol/api.md#分页) of [channel](#channel-1) objects.
+根据 ID 获取频道。返回一个 [Channel](#channel) 对象。
+
+### 获取频道列表
+
+> <badge>POST</badge>`/channel.list` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| guild_id | string | 群组 ID |
+| next | string | 分页令牌 |
+
+获取群组中的全部频道。返回一个 [Channel](#channel) 的 [分页列表](../protocol/api.md#分页)。

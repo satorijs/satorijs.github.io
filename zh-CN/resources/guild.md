@@ -11,31 +11,34 @@
 
 ## API
 
-### bot.getGuild(guildId)
+### 获取群组
 
-- <badge>POST</badge> `/v1/guild.get`
-
-| 字段 | 类型 | 描述 |
-| --- | --- | --- |
-| guild_id | string | guild ID |
-
-Get a guild by ID. Returns a [群组](#guild-1) object.
-
-### bot.getGuildList(next?)
-
-- <badge>POST</badge> `/v1/guild.list`
+> <badge>POST</badge>`/guild.get` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| next | string | pagination token |
+| guild_id | string | 群组 ID |
 
-Get guilds where the current user is a member. Returns a [list](../protocol/api.md#分页) of partial [guild](#guild-1) objects.
+根据 ID 获取。返回一个 [Guild](#guild) 对象。
 
-### bot.handleGuildRequest(messageId, approve, comment?)
+### 获取群组列表
 
-- **messageId:** `string` 请求 ID
-- **approve:** `boolean` 是否通过请求
-- **comment:** `string` 备注信息
-- 返回值: `Promise<void>`
+> <badge>POST</badge>`/guild.list` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| next | string | 分页令牌 |
+
+获取当前用户加入的全部群组。返回一个 [Guild](#guild) 的 [分页列表](../protocol/api.md#分页)。
+
+### 处理群组邀请
+
+> <badge>POST</badge>`/guild.request.handle` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 请求 ID |
+| approve | boolean | 是否通过请求 |
+| content | content | 备注信息 |
 
 处理来自群组的邀请。

@@ -39,3 +39,21 @@
 - 返回值: `Promise<List<User>>`
 
 获取添加特定消息的特定表态的用户列表。
+
+## 事件
+
+### reaction-added
+
+当表态被添加时触发。
+
+### reaction-removed
+
+当表态被移除时触发。
+
+<!-- ### reaction-removed-all
+
+当表态被移除时触发。
+
+### reaction-removed-emoji
+
+当表态被移除时触发。 -->
