@@ -1,15 +1,11 @@
-# 群组角色 (GuildRole) <badge type="warning">实验性</badge>
+# 群组角色 (GuildRole)
 
 ## 类型定义
 
-```ts
-export interface GuildRole {
-  id: string
-  name: string
-  color: number
-  position: number
-}
-```
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 角色 ID |
+| name | string | 角色名称 |
 
 ## API
 

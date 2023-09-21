@@ -1,13 +1,13 @@
-# Guild
+# 群组 (Guild)
 
-## Definition
+## 类型定义
 
 ### Guild
 
-| FIELD | TYPE | DESCRIPTION |
-| ----- | ---- | ----------- |
-| id | string | guild ID |
-| name | string | guild name |
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 群组 ID |
+| name | string | 群组名称 |
 
 ## API
 
@@ -15,18 +15,18 @@
 
 - <badge>POST</badge> `/v1/guild.get`
 
-| FIELD | TYPE | DESCRIPTION |
-| ----- | ---- | ----------- |
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
 | guild_id | string | guild ID |
 
-Get a guild by ID. Returns a [guild](#guild-1) object.
+Get a guild by ID. Returns a [群组](#guild-1) object.
 
 ### bot.getGuildList(next?)
 
 - <badge>POST</badge> `/v1/guild.list`
 
-| FIELD | TYPE | DESCRIPTION |
-| ----- | ---- | ----------- |
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
 | next | string | pagination token |
 
 Get guilds where the current user is a member. Returns a [list](../protocol/api.md#分页) of partial [guild](#guild-1) objects.

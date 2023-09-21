@@ -2,16 +2,17 @@
 
 ## 类型定义
 
-```ts
-interface Message {
-  isDirect: boolean
-  channelId: string
-  messageId: string
-  userId: string
-  content: string
-  timestamp?: number
-}
-```
+### Message
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 消息 ID |
+| channel | ?[Channel](./channel.md#channel) | 频道对象 |
+| member | ?[Member](./member.md#guildmember) | 群组成员对象 |
+| user | ?[User](./user.md#user) | 用户对象 |
+| elements | array | 消息元素数组 |
+| createdAt | number | 消息发送的时间戳 |
+| updatedAt | number | 消息修改的时间戳 |
 
 ## API
 

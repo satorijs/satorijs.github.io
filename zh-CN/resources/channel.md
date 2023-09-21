@@ -1,13 +1,13 @@
-# Channel
+# 频道 (Channel)
 
-## Definition
+## 类型定义
 
 ### Channel
 
-| FIELD | TYPE | DESCRIPTION |
-| ----- | ---- | ----------- |
-| id | string | channel ID |
-| name | string | channel name |
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 频道 ID |
+| name | string | 频道名称 |
 
 ## API
 
@@ -15,8 +15,8 @@
 
 - <badge>POST</badge> `/v1/channel.get`
 
-| FIELD | TYPE | DESCRIPTION |
-| ----- | ---- | ----------- |
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
 | channel_id | string | channel ID |
 
 Get a channel by ID. Returns a [channel](#channel-1) object.
@@ -25,8 +25,8 @@ Get a channel by ID. Returns a [channel](#channel-1) object.
 
 - <badge>POST</badge> `/v1/channel.list`
 
-| FIELD | TYPE | DESCRIPTION |
-| ----- | ---- | ----------- |
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
 | guild_id | string | guild ID |
 | next | string | pagination token |
 

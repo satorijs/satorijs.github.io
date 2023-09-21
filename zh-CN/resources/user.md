@@ -2,13 +2,13 @@
 
 ## 类型定义
 
-```ts
-export interface User {
-  id: string
-  name: string
-  avatar?: string
-}
-```
+### User
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 用户 ID |
+| name | string | 用户名称 |
+| avatar | ?string | 用户头像 |
 
 ## API
 

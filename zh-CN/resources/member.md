@@ -2,13 +2,13 @@
 
 ## 类型定义
 
-```ts
-interface GuildMember {
-  user: User
-  nick?: string
-  avatar?: string
-}
-```
+### GuildMember
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| user | ?[User](./user.md#user) | 用户对象 |
+| name | ?string | 用户在群组中的名称 |
+| avatar | ?string | 用户在群组中的头像 |
 
 ## API
 
