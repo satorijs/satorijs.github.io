@@ -6,7 +6,7 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| user | ?[User](./user.md#user) | 用户对象 |
+| user | [User](./user.md#user)? | 用户对象 |
 | name | string? | 用户在群组中的名称 |
 | avatar | string? | 用户在群组中的头像 |
 

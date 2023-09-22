@@ -40,7 +40,7 @@
 
 获取添加特定消息的特定表态的用户列表。
 
-<!-- ## 事件
+## 事件
 
 ### reaction-added
 
@@ -48,7 +48,7 @@
 
 ### reaction-removed
 
-当表态被移除时触发。 -->
+当表态被移除时触发。
 
 <!-- ### reaction-removed-all
 

@@ -10,9 +10,9 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | --- | --- | --- |
 | `id` | number | 事件 ID |
 | `type` | string | 事件类型 |
-| `platform` | string | 事件触发者的平台名称 |
-| `self_id` | string | 事件触发者的平台账号 |
-| `timestamp` | number | 事件触发的时间戳 |
+| `platform` | string | 接收者的平台名称 |
+| `self_id` | string | 接收者的平台账号 |
+| `timestamp` | number | 事件的时间戳 |
 | `channel` | [Channel](../resources/channel.md)? | 事件所属的频道 |
 | `guild` | [Guild](../resources/guild.md)? | 事件所属的群组 |
 | `member` | [Member](../resources/member.md)? | 事件的目标成员 |
