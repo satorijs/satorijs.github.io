@@ -75,12 +75,12 @@
 
 ### guild-member-added
 
-群组成员增加时触发。包含一个 [Member](#member) 对象。
+群组成员增加时触发。
 
 ### guild-member-updated
 
-群组成员增加时触发。包含一个 [Member](#member) 对象。
+群组成员增加时触发。
 
 ### guild-member-removed
 
-群组成员增加时触发。包含一个 [Member](#member) 对象，部分属性可能缺失。
+群组成员增加时触发。

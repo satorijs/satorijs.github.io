@@ -47,12 +47,12 @@
 
 ### guild-added
 
-加入群组时触发。包含一个 [Guild](#guild) 对象。
+加入群组时触发。
 
 ### guild-updated
 
-群组被修改时触发。包含一个 [Guild](#guild) 对象。
+群组被修改时触发。
 
 ### guild-removed
 
-退出群组时触发。包含一个 [Guild](#guild) 对象，部分属性可能缺失。
+退出群组时触发。

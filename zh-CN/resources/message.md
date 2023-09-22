@@ -71,12 +71,12 @@
 
 ### message-created
 
-当消息被创建时触发。包含一个 [Message](#message) 对象。
+当消息被创建时触发。
 
 ### message-updated
 
-当消息被编辑时触发。包含一个 [Message](#message) 对象。
+当消息被编辑时触发。
 
 ### message-deleted
 
-当消息被删除时触发。包含一个 [Message](#message) 对象，部分属性可能缺失。
+当消息被删除时触发。

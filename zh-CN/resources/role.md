@@ -84,12 +84,12 @@
 
 ### guild-role-created
 
-群组角色被创建时触发。包含一个 [Role](#role) 对象。
+群组角色被创建时触发。
 
 ### guild-role-updated
 
-群组角色被修改时触发。包含一个 [Role](#role) 对象。
+群组角色被修改时触发。
 
 ### guild-role-deleted
 
-群组角色被删除时触发。包含一个 [Role](#role) 对象，部分属性可能缺失。
+群组角色被删除时触发。
