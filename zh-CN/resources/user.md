@@ -12,31 +12,40 @@
 
 ## API
 
-### bot.getSelf()
+### 获取自身信息
 
-- 返回值: `Promise<User>` 用户信息
+> <badge>POST</badge>`/self.get` {.route}
 
 获取机器人自己的信息。
 
-### bot.getUser(userId)
+### 获取用户信息
 
-- **userId:** `string` 用户 ID
-- 返回值: `Promise<User>` 用户信息
+> <badge>POST</badge>`/user.get` {.route}
 
-获取用户信息。
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| user_id | string | 用户 ID |
 
-### bot.getFriendList(next?)
+获取用户信息。返回一个 [`User`](#user) 对象。
 
-- **next:** `string` 分页令牌
-- 返回值: `Promise<List<User>>` 好友列表
+### 获取好友列表
 
-获取机器人的好友列表。
+> <badge>POST</badge>`/friend.list` {.route}
 
-### bot.handleFriendRequest(messageId, approve, comment?)
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| next | string? | 分页令牌 |
 
-- **messageId:** `string` 请求 ID
-- **approve:** `boolean` 是否通过请求
-- **comment:** `string` 备注信息
-- 返回值: `Promise<void>`
+获取好友列表。返回一个 [`User`](#user) 的 [分页列表](../protocol/api.md#分页)。
 
-处理好友请求。
+### 处理好友申请
+
+> <badge>POST</badge>`/friend.request.handle` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 请求 ID |
+| approve | boolean | 是否通过请求 |
+| comment | string? | 备注信息 |
+
+处理好友申请。
