@@ -20,6 +20,7 @@ Content-Type: application/json
 Authorization: Bearer 1234567890
 X-Platform: discord
 X-Self-ID: 1234567890
+
 {"channel_id": "1234567890"}
 ```
 

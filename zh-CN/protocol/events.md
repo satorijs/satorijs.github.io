@@ -31,7 +31,7 @@ WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API �
 
 目前 Satori 仅有 v1 一个版本。
 
-### 生命周期
+### 连接流程
 
 总的来说，Satori 的客户端需要在连接后遵循以下步骤：
 
@@ -44,7 +44,7 @@ WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API �
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | `op` | number | 信令类型 |
-| `body` | object | 信令数据 |
+| `body` | object? | 信令数据 |
 
 信令类型如下：
 
@@ -55,6 +55,19 @@ WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API �
 | PONG | 2 | 心跳回复 |
 | IDENTIFY | 3 | 鉴权 |
 | READY | 4 | 鉴权回复 |
+
+`IDENTIFY` 信令的数据结构如下：
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| `token` | string? | 鉴权令牌 |
+| `sequence` | number? | 序列号 |
+
+`EVENT` 信令的数据结构参见 [Event](#event)。
+
+### 会话恢复
+
+当连接短暂中断时，Satori 客户端可以通过 `IDENTIFY` 信令的 `sequence` 字段来恢复会话。`sequence` 字段的值为上一次连接中最后一个接收到的 `EVENT` 信令的 `id` 字段。会话恢复后，服务端会向客户端推送所有在断开连接期间发生的事件。
 
 ## WebHook
 

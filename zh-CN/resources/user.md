@@ -12,12 +12,6 @@
 
 ## API
 
-### 获取自身信息
-
-> <badge>POST</badge>`/self.get` {.route}
-
-获取机器人自己的信息。
-
 ### 获取用户信息
 
 > <badge>POST</badge>`/user.get` {.route}
