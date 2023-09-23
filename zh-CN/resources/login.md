@@ -2,11 +2,11 @@
 
 ## 类型定义
 
-### Self
+### Login
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| user | [User](./user.md) | 用户对象 |
+| user | [User](./user.md)? | 用户对象 |
 | status | [Status](#status) | 在线状态 |
 
 ### Status
@@ -25,4 +25,16 @@
 
 > <badge>POST</badge>`/self.get` {.route}
 
-获取登录号自身的信息。
+获取登录号自身的信息。返回一个 [`Login`](#login) 对象。
+
+### 获取方法列表
+
+> <badge>POST</badge>`/method.list` {.route}
+
+获取当前可以调用的方法列表。返回一个 `string` 数组。
+
+## 事件
+
+### login-updated
+
+自身信息更新时触发。

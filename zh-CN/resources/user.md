@@ -38,7 +38,7 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| id | string | 请求 ID |
+| message_id | string | 请求 ID |
 | approve | boolean | 是否通过请求 |
 | comment | string? | 备注信息 |
 

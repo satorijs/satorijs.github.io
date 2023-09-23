@@ -20,9 +20,9 @@
       }, {
         "text": "资源",
         "items": [
-          { "text": "通用功能", "link": "/resources/general.md" },
           { "text": "频道 (Channel)", "link": "/resources/channel.md" },
           { "text": "群组 (Guild)", "link": "/resources/guild.md" },
+          { "text": "登录 (Login)", "link": "/resources/login.md" },
           { "text": "成员 (Member)", "link": "/resources/member.md" },
           { "text": "消息 (Message)", "link": "/resources/message.md" },
           { "text": "表态 (Reaction)", "link": "/resources/reaction.md" },

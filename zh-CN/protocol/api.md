@@ -24,6 +24,18 @@ X-Self-ID: 1234567890
 {"channel_id": "1234567890"}
 ```
 
+### 错误码
+
+| 错误码 | 描述 |
+| --- | --- |
+| 200 (OK) | 请求成功 |
+| 400 (BAD REQUEST) | 请求格式错误 |
+| 401 (UNAUTHORIZED) | 缺失鉴权 |
+| 403 (FORBIDDEN) | 权限不足 |
+| 404 (NOT FOUND) | 资源不存在 |
+| 405 (METHOD NOT ALLOWED) | 请求方法不支持 |
+| 5XX (SERVER ERROR) | 服务器错误 |
+
 ### 鉴权
 
 请查看 [鉴权](./auth.md) 章节。
