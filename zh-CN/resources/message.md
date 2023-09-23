@@ -7,13 +7,13 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 消息 ID |
+| content | string | 消息内容 |
 | channel | [Channel](./channel.md#channel)? | 频道对象 |
 | guild | [Guild](./guild.md#guild)? | 群组对象 |
 | member | [Member](./member.md#member)? | 成员对象 |
 | user | [User](./user.md#user)? | 用户对象 |
-| content | string | 消息内容 |
-| createdAt | number? | 消息发送的时间戳 |
-| updatedAt | number? | 消息修改的时间戳 |
+| created_at | number? | 消息发送的时间戳 |
+| updated_at | number? | 消息修改的时间戳 |
 
 ## API
 

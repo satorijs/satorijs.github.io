@@ -15,6 +15,7 @@
           { "text": "事件", "link": "/protocol/events.md" },
           { "text": "鉴权", "link": "/protocol/auth.md" },
           { "text": "消息编码", "link": "/protocol/message.md" },
+          { "text": "标准元素", "link": "/protocol/elements.md" },
           { "text": "内部接口", "link": "/protocol/internal.md" }
         ]
       }, {
