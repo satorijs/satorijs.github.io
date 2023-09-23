@@ -26,7 +26,7 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 ## WebSocket
 
-WebSocket 服务用于在 Satori 客户端与服务器之间维护一个持久的、有状态的链接。通过这个链接，Satori 客户端可以实时接收服务器推送的事件。
+WebSocket 服务用于在 Satori SDK 与应用之间维护一个持久的、有状态的链接。通过这个链接，Satori 应用可以实时接收 SDK 推送的事件。
 
 WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API 的版本号。
 
@@ -34,11 +34,11 @@ WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API �
 
 ### 连接流程
 
-总的来说，Satori 的客户端需要在连接后遵循以下步骤：
+总的来说，Satori 应用需要在连接后遵循以下步骤：
 
-1. 连接建立后，在 10s 内发送一个 `IDENTIFY` 信令，用于鉴权和恢复会话；<br>服务端收到后会回复一个 `READY` 信令，并开启事件推送；
-1. 连接建立后，与服务端每隔 10s 发送一次 `PING` 信令；<br>服务端收到后会回复一个 `PONG` 信令；
-1. 客户端持续接收来自服务端的 `EVENT` 信令，用于接收事件。
+1. 连接建立后，在 10s 内发送一个 `IDENTIFY` 信令，用于鉴权和恢复会话；<br>SDK 收到后会回复一个 `READY` 信令，并开启事件推送；
+1. 连接建立后，每隔 10s 向 SDK 发送一次 `PING` 信令；<br>SDK 收到后会回复一个 `PONG` 信令；
+1. 应用持续接收来自 SDK 的 `EVENT` 信令，用于接收事件。
 
 信令的数据结构如下：
 
@@ -49,13 +49,13 @@ WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API �
 
 信令类型如下：
 
-| 名称 | 值 | 描述 |
-| --- | --- | --- |
-| EVENT | 0 | 事件 |
-| PING | 1 | 心跳 |
-| PONG | 2 | 心跳回复 |
-| IDENTIFY | 3 | 鉴权 |
-| READY | 4 | 鉴权回复 |
+| 名称 | 值 | 方向 | 描述 |
+| --- | --- | --- | --- |
+| EVENT | 0 | 接收 | 事件 |
+| PING | 1 | 发送 | 心跳 |
+| PONG | 2 | 接收 | 心跳回复 |
+| IDENTIFY | 3 | 发送 | 鉴权 |
+| READY | 4 | 接收 | 鉴权回复 |
 
 `IDENTIFY` 信令的数据结构如下：
 
@@ -68,10 +68,10 @@ WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API �
 
 ### 会话恢复
 
-当连接短暂中断时，Satori 客户端可以通过 `IDENTIFY` 信令的 `sequence` 字段来恢复会话。`sequence` 字段的值为上一次连接中最后一个接收到的 `EVENT` 信令的 `id` 字段。会话恢复后，服务端会向客户端推送所有在断开连接期间发生的事件。
+当连接短暂中断时，Satori 应用可以通过 `IDENTIFY` 信令的 `sequence` 字段来恢复会话。`sequence` 字段的值为上一次连接中最后一个接收到的 `EVENT` 信令的 `id` 字段。会话恢复后，SDK 会向应用推送所有在断开连接期间发生的事件。
 
 ## WebHook
 
-::: danger
-这部分功能尚未完成。
-:::
+WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供的 HTTP 地址推送事件。这些地址的配置方式由 SDK 自身决定，本协议不做任何限制。
+
+事件推送以 POST 的形式进行，参数以 `application/json` 的形式编码在请求体中。数据结构参见 [Event](#event)。
