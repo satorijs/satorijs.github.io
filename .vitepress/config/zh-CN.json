@@ -1,7 +1,7 @@
 {
   "themeConfig": {
     "nav": [
-      { "text": "Protocol", "link": "/protocol/", "activeMatch": "^/(protocol|resources)/" }
+      { "text": "协议", "link": "/protocol/", "activeMatch": "^/(protocol|resources)/" }
     ],
     "sidebar": {
       "/": [{
