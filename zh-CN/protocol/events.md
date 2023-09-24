@@ -64,6 +64,12 @@ WebSocket 服务的地址为 `/{version}/events`。其中，`version` 为 API �
 | `token` | string? | 鉴权令牌 |
 | `sequence` | number? | 序列号 |
 
+`READY` 信令的数据结构如下：
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| `logins` | [`Login[]`](../resources/login.md) | 登录信息 |
+
 `EVENT` 信令的数据结构参见 [Event](#event)。
 
 ### 会话恢复

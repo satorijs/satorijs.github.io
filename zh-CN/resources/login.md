@@ -23,7 +23,7 @@
 
 ### 获取自身信息
 
-> <badge>POST</badge>`/self.get` {.route}
+> <badge>POST</badge>`/login.get` {.route}
 
 获取登录号自身的信息。返回一个 [`Login`](#login) 对象。
 
