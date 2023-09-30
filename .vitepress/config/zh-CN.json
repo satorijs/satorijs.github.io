@@ -23,11 +23,11 @@
         "items": [
           { "text": "频道 (Channel)", "link": "/resources/channel.md" },
           { "text": "群组 (Guild)", "link": "/resources/guild.md" },
-          { "text": "登录 (Login)", "link": "/resources/login.md" },
-          { "text": "成员 (Member)", "link": "/resources/member.md" },
+          { "text": "群组成员 (GuildMember)", "link": "/resources/member.md" },
+          { "text": "群组角色 (GuildRole)", "link": "/resources/role.md" },
+          { "text": "登录信息 (Login)", "link": "/resources/login.md" },
           { "text": "消息 (Message)", "link": "/resources/message.md" },
           { "text": "表态 (Reaction)", "link": "/resources/reaction.md" },
-          { "text": "角色 (Role)", "link": "/resources/role.md" },
           { "text": "用户 (User)", "link": "/resources/user.md" }
         ]
       }]

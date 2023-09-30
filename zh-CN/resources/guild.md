@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | id | string | 群组 ID |
 | name | string | 群组名称 |
+| avatar | string? | 群组头像 |
 
 ## API
 

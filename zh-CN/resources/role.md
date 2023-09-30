@@ -1,8 +1,8 @@
-# 角色 (Role)
+# 群组角色 (GuildRole)
 
 ## 类型定义
 
-### Role
+### GuildRole
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -44,7 +44,7 @@
 | guild_id | string | 群组 ID |
 | next | string? | 分页令牌 |
 
-获取群组角色列表。
+获取群组角色列表。返回一个 [GuildRole](#guildrole) 的 [分页列表](../protocol/api.md#分页)。
 
 ### 创建群组角色
 
@@ -53,9 +53,9 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | guild_id | string | 群组 ID |
-| role | [Role](#role) | 角色数据 |
+| role | [GuildRole](#guildrole) | 角色数据 |
 
-创建群组角色。
+创建群组角色。返回一个 [GuildRole](#guildrole) 对象。
 
 ### 修改群组角色
 
@@ -65,7 +65,7 @@
 | --- | --- | --- |
 | guild_id | string | 群组 ID |
 | role_id | string | 角色 ID |
-| role | [Role](#role) | 角色数据 |
+| role | [GuildRole](#guildrole) | 角色数据 |
 
 修改群组角色。
 

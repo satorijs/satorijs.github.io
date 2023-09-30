@@ -1,14 +1,15 @@
-# 成员 (Member)
+# 群组成员 (GuildMember)
 
 ## 类型定义
 
-### Member
+### GuildMember
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | user | [User](./user.md#user)? | 用户对象 |
 | name | string? | 用户在群组中的名称 |
 | avatar | string? | 用户在群组中的头像 |
+| joined_at | number? | 加入时间 |
 
 ## API
 
@@ -21,7 +22,7 @@
 | guild_id | string | 群组 ID |
 | user_id | string | 用户 ID |
 
-获取群成员信息。返回一个 [Member](#member) 对象。
+获取群成员信息。返回一个 [GuildMember](#guildmember) 对象。
 
 ### 获取群组成员列表
 
@@ -32,7 +33,7 @@
 | guild_id | string | 群组 ID |
 | next | string | 分页令牌 |
 
-获取群成员列表。返回一个 [Member](#member) 的 [分页列表](../protocol/api.md#分页)。
+获取群成员列表。返回一个 [GuildMember](#guildmember) 的 [分页列表](../protocol/api.md#分页)。
 
 ### 踢出群组成员
 
@@ -79,8 +80,8 @@
 
 ### guild-member-updated
 
-群组成员增加时触发。
+群组成员信息更新时触发。
 
 ### guild-member-removed
 
-群组成员增加时触发。
+群组成员移除时触发。

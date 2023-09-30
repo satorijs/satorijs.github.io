@@ -1,4 +1,4 @@
-# 通用功能
+# 登录信息 (Login)
 
 ## 类型定义
 
@@ -7,7 +7,9 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | user | [User](./user.md)? | 用户对象 |
-| status | [Status](#status) | 在线状态 |
+| self_id | string? | 平台账号 |
+| platform | string? | 平台名称 |
+| status | [Status](#status) | 登录状态 |
 
 ### Status
 
@@ -21,20 +23,28 @@
 
 ## API
 
-### 获取自身信息
+### 获取登录信息
 
 > <badge>POST</badge>`/login.get` {.route}
 
-获取登录号自身的信息。返回一个 [`Login`](#login) 对象。
+获取登录信息。返回一个 [`Login`](#login) 对象。
 
-### 获取方法列表
+<!-- ### 获取方法列表
 
 > <badge>POST</badge>`/method.list` {.route}
 
-获取当前可以调用的方法列表。返回一个 `string` 数组。
+获取当前可以调用的方法列表。返回一个 `string` 数组。 -->
 
 ## 事件
 
+### login-added
+
+登录被创建时触发。
+
+### login-removed
+
+登录被删除时触发。
+
 ### login-updated
 
-自身信息更新时触发。
+登录信息更新时触发。
