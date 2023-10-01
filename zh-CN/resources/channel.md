@@ -22,7 +22,7 @@
 
 ## API
 
-### 获取频道
+### 获取群组频道
 
 > <badge>POST</badge>`/channel.get` {.route}
 
@@ -32,7 +32,7 @@
 
 根据 ID 获取频道。返回一个 [Channel](#channel) 对象。
 
-### 获取频道列表
+### 获取群组频道列表
 
 > <badge>POST</badge>`/channel.list` {.route}
 
@@ -42,3 +42,45 @@
 | next | string | 分页令牌 |
 
 获取群组中的全部频道。返回一个 [Channel](#channel) 的 [分页列表](../protocol/api.md#分页)。
+
+### 创建群组频道
+
+> <badge>POST</badge>`/channel.create` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| guild_id | string | 群组 ID |
+| data | [Channel](#channel) | 频道数据 |
+
+创建群组频道。返回一个 [Channel](#channel) 对象。
+
+### 修改群组频道
+
+> <badge>POST</badge>`/channel.update` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| channel_id | string | 频道 ID |
+| data | [Channel](#channel) | 频道数据 |
+
+修改群组频道。
+
+### 删除群组频道
+
+> <badge>POST</badge>`/channel.delete` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| channel_id | string | 频道 ID |
+
+删除群组频道。
+
+### 创建私聊频道
+
+> <badge>POST</badge>`/user.channel.create` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| user_id | string | 用户 ID |
+
+创建一个私聊频道。返回一个 [Channel](#channel) 对象。

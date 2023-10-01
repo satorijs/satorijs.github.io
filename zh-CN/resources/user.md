@@ -35,7 +35,7 @@
 
 ### 处理好友申请
 
-> <badge>POST</badge>`/friend.request.handle` {.route}
+> <badge>POST</badge>`/friend.approve` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |

@@ -16,13 +16,13 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | `channel` | [Channel](../resources/channel.md)? | 事件所属的频道 |
 | `guild` | [Guild](../resources/guild.md)? | 事件所属的群组 |
 | `login` | [Login](../resources/login.md)? | 事件的登录信息 |
-| `member` | [Member](../resources/member.md)? | 事件的目标成员 |
+| `member` | [GuildMember](../resources/member.md)? | 事件的目标成员 |
 | `message` | [Message](../resources/message.md)? | 事件的消息 |
 | `operator` | [User](../resources/user.md)? | 事件的操作者 |
-| `role` | [Role](../resources/role.md)? | 事件的目标角色 |
+| `role` | [GuildRole](../resources/role.md)? | 事件的目标角色 |
 | `user` | [User](../resources/user.md)? | 事件的目标用户 |
 
-事件中的各属性遵循 [资源提升](./index.md) 的规则。
+事件中的各属性遵循 [资源提升](./index.md) 规则。
 
 ## WebSocket
 

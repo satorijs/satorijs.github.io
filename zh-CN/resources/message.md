@@ -23,9 +23,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| content | string | 消息内容 |
 | channel_id | string | 频道 ID |
-| guild_id | string? | 群组 ID |
+| content | string | 消息内容 |
 
 发送消息。返回一个 [`Message`](#message) 对象构成的数组。
 

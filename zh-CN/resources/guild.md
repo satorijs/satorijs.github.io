@@ -34,7 +34,7 @@
 
 ### 处理群组邀请
 
-> <badge>POST</badge>`/guild.request.handle` {.route}
+> <badge>POST</badge>`/guild.approve` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
