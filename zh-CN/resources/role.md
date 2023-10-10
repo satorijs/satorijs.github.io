@@ -7,7 +7,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 角色 ID |
-| name | string | 角色名称 |
+| name | string? | 角色名称 |
 
 ## API
 
@@ -84,12 +84,12 @@
 
 ### guild-role-created
 
-群组角色被创建时触发。
+群组角色被创建时触发。必需资源：`guild`，`role`。
 
 ### guild-role-updated
 
-群组角色被修改时触发。
+群组角色被修改时触发。必需资源：`guild`，`role`。
 
 ### guild-role-deleted
 
-群组角色被删除时触发。
+群组角色被删除时触发。必需资源：`guild`，`role`。

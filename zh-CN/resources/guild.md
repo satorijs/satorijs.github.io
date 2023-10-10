@@ -7,7 +7,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 群组 ID |
-| name | string | 群组名称 |
+| name | string? | 群组名称 |
 | avatar | string? | 群组头像 |
 
 ## API
@@ -48,12 +48,16 @@
 
 ### guild-added
 
-加入群组时触发。
+加入群组时触发。必需资源：`guild`。
 
 ### guild-updated
 
-群组被修改时触发。
+群组被修改时触发。必需资源：`guild`。
 
 ### guild-removed
 
-退出群组时触发。
+退出群组时触发。必需资源：`guild`。
+
+### guild-request
+
+接收到新的入群邀请时触发。必需资源：`guild`。

@@ -7,9 +7,9 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 频道 ID |
-| name | string | 频道名称 |
 | type | [Channel.Type](#channel-type) | 频道类型 |
-| parent_id | string | 父频道 ID |
+| name | string? | 频道名称 |
+| parent_id | string? | 父频道 ID |
 
 ### Channel.Type
 

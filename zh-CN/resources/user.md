@@ -7,7 +7,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 用户 ID |
-| name | string | 用户名称 |
+| name | string? | 用户名称 |
 | avatar | string? | 用户头像 |
 | is_bot | boolean? | 是否为机器人 |
 
@@ -44,3 +44,9 @@
 | comment | string? | 备注信息 |
 
 处理好友申请。
+
+## 事件
+
+### friend-request
+
+接收到新的好友申请时触发。必需资源：`user`。

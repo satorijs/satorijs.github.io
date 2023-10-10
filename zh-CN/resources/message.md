@@ -77,12 +77,12 @@
 
 ### message-created
 
-当消息被创建时触发。
+当消息被创建时触发。必需资源：`channel`，`message`，`user`。
 
 ### message-updated
 
-当消息被编辑时触发。
+当消息被编辑时触发。必需资源：`channel`，`message`，`user`。
 
 ### message-deleted
 
-当消息被删除时触发。
+当消息被删除时触发。必需资源：`channel`，`message`，`user`。

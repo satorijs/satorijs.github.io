@@ -11,7 +11,7 @@
     "build": "vitepress build ."
   },
   "devDependencies": {
-    "@koishijs/vitepress": "^3.0.0",
+    "@koishijs/vitepress": "^3.0.1",
     "@types/node": "^20.4.2",
     "@vueuse/core": "^10.2.1",
     "cross-env": "^7.0.3",

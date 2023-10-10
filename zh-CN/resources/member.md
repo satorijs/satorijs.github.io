@@ -76,12 +76,16 @@
 
 ### guild-member-added
 
-群组成员增加时触发。
+群组成员增加时触发。必需资源：`guild`，`member`，`user`。
 
 ### guild-member-updated
 
-群组成员信息更新时触发。
+群组成员信息更新时触发。必需资源：`guild`，`member`，`user`。
 
 ### guild-member-removed
 
-群组成员移除时触发。
+群组成员移除时触发。必需资源：`guild`，`member`，`user`。
+
+### guild-member-request
+
+接收到新的加群请求时触发。必需资源：`guild`，`member`，`user`。
