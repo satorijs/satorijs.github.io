@@ -82,5 +82,6 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | user_id | string | 用户 ID |
+| guild_id | string? | 群组 ID |
 
 创建一个私聊频道。返回一个 [Channel](#channel) 对象。

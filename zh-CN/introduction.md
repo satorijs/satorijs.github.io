@@ -14,12 +14,12 @@ Satori 的开发团队长期从事聊天机器人开发，熟悉各种聊天平�
   <a class="adapter">LINE</a>
   <a class="adapter">邮件</a>
   <a class="adapter">Matrix</a>
-  <a class="adapter">OneBot</a>
   <a class="adapter">QQ</a>
   <a class="adapter">Slack</a>
   <a class="adapter">Telegram</a>
   <a class="adapter">微信公众号</a>
   <a class="adapter">企业微信</a>
+  <a class="adapter">米游社</a>
   <a class="adapter">WhatsApp</a>
   <a class="adapter">Zulip</a>
 </div>
