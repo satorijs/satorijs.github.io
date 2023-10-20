@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | id | string | 用户 ID |
 | name | string? | 用户名称 |
+| nick | string? | 用户昵称 |
 | avatar | string? | 用户头像 |
 | is_bot | boolean? | 是否为机器人 |
 
