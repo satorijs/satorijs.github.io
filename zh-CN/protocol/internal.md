@@ -4,7 +4,7 @@ Satori 提供了访问任意平台内部接口的能力。这意味着，你可�
 
 ## 内部 API
 
-内部 API 通过 `/{version}/internal/{method}` 路由提供。通信方式基本与 [HTTP API](./api.md) 相同。
+内部 API 通过 `/{path}/{version}/internal/{method}` 路由提供。通信方式基本与 [HTTP API](./api.md) 相同。
 
 一个合法的请求示例形如：
 

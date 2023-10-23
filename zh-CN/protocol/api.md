@@ -4,7 +4,7 @@ Satori 协议规定了一套基于 HTTP 的 API 服务，用于发送消息和�
 
 ## HTTP API
 
-这是一套 HTTP RPC 风格的 API，所有 URL 的形式均为 `/{version}/{resource}.{method}`。其中，`version` 为 API 的版本号，`resource` 是资源类型，`method` 为方法名。
+这是一套 HTTP RPC 风格的 API，所有 URL 的形式均为 `/{path}/{version}/{resource}.{method}`。其中，`path` 为部署路径 (可以为空)，`version` 为 API 的版本号，`resource` 是资源类型，`method` 为方法名。
 
 目前 Satori 仅有 v1 一个版本。
 
@@ -24,9 +24,9 @@ X-Self-ID: 1234567890
 {"channel_id": "1234567890"}
 ```
 
-### 错误码
+### 状态码
 
-| 错误码 | 描述 |
+| 状态码 | 描述 |
 | --- | --- |
 | 200 (OK) | 请求成功 |
 | 400 (BAD REQUEST) | 请求格式错误 |
@@ -38,7 +38,9 @@ X-Self-ID: 1234567890
 
 ### 鉴权
 
-请查看 [鉴权](./auth.md) 章节。
+鉴权通过 HTTP API 中的 `Authorization` 请求头来实现。其中涉及的鉴权令牌由 SDK 分发，本协议不做任何限制。
+
+如果 SDK 没有配置鉴权，则应用无需提供上述请求头。
 
 ### 分页
 
