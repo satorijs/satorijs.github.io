@@ -57,20 +57,20 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 | IDENTIFY | 3 | 发送 | 鉴权 |
 | READY | 4 | 接收 | 鉴权回复 |
 
-`IDENTIFY` 信令的数据结构如下：
+`IDENTIFY` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | `token` | string? | 鉴权令牌 |
 | `sequence` | number? | 序列号 |
 
-`READY` 信令的数据结构如下：
+`READY` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | `logins` | [`Login[]`](../resources/login.md) | 登录信息 |
 
-`EVENT` 信令的数据结构参见 [Event](#event)。
+`EVENT` 信令的 `body` 数据结构参见 [Event](#event)。
 
 ### 鉴权
 
@@ -82,7 +82,11 @@ WebSocket 鉴权通过 IDENTIFY 信令的 `token` 字段来实现。其中涉及
 
 当连接短暂中断时，Satori 应用可以通过 `IDENTIFY` 信令的 `sequence` 字段来恢复会话。`sequence` 字段的值为上一次连接中最后一个接收到的 `EVENT` 信令的 `id` 字段。会话恢复后，SDK 会向应用推送所有在断开连接期间发生的事件。
 
-## WebHook
+## WebHook <badge>可选</badge>
+
+::: tip
+这是一个可选功能，Satori SDK 可以不支持 WebHook。
+:::
 
 WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供的 HTTP 地址推送事件。一个 SDK 应当可以配置多个 WebHook，并允许应用对发送者进行鉴权。这些 WebHook 的配置方式由 SDK 自身决定，本协议不做任何限制。
 
@@ -93,7 +97,13 @@ WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供�
 ### 反向鉴权
 
 ::: tip
-注意：这里的鉴权与 API 与 WebSocket 中的鉴权逻辑类似，但方向相反。
+这里的鉴权与 API 与 WebSocket 中的鉴权逻辑类似，但方向相反。
 :::
 
 Satori 应用可以要求 SDK 在发送 WebHook 请求时附带一个 `Authorization` 请求头，格式为 `Bearer {token}`。其中，`token` 由应用进行分发。
+
+### 管理 API
+
+管理 API 包含了与 SDK 状态相关、与具体的平台无关的操作，例如创建和移除 WebHook 等。
+
+管理 API 通过 `/{path}/{version}/admin/{method}` 路由提供。通信方式与 [HTTP API](./api.md) 类似，但不需要 `X-Platform` 和 `X-Self-ID` 请求头。

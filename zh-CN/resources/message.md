@@ -37,7 +37,7 @@
 | channel_id | string | 频道 ID |
 | message_id | string | 消息 ID |
 
-获取特定消息。返回一个 [`Message`](#message) 对象。
+获取特定消息。返回一个 [`Message`](#message) 对象。必需资源：`channel`，`user`。
 
 ### 撤回消息
 
@@ -71,7 +71,7 @@
 | channel_id | string | 频道 ID |
 | next | string | 分页令牌 |
 
-获取频道消息列表。返回一个 [`Message`](#message) 的 [分页列表](../protocol/api.md#分页)。
+获取频道消息列表。返回一个 [`Message`](#message) 的 [分页列表](../protocol/api.md#分页)。必需资源：`channel`，`user`。
 
 ## 事件
 
