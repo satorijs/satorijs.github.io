@@ -1,10 +1,14 @@
-# 内部接口
+# 内部接口 <badge>可选</badge>
+
+::: tip
+这是一个可选功能。
+:::
 
 Satori 提供了访问任意平台内部接口的能力。这意味着，你可以大多数情况下编写通用代码，并在需要的时候使用内部接口来实现平台特定功能。
 
 ## 内部 API
 
-内部 API 通过 `/{path}/{version}/internal/{method}` 路由提供。通信方式与 [HTTP API](./api.md) 类似。
+内部 API 通过 `/{path}/{version}/internal/{method}` 路由提供。通信方式与 [HTTP API](../protocol/api.md) 类似。
 
 一个合法的请求示例形如：
 

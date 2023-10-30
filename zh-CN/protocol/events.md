@@ -85,10 +85,10 @@ WebSocket 鉴权通过 IDENTIFY 信令的 `token` 字段来实现。其中涉及
 ## WebHook <badge>可选</badge>
 
 ::: tip
-这是一个可选功能，Satori SDK 可以不支持 WebHook。
+这是一个可选功能。
 :::
 
-WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供的 HTTP 地址推送事件。一个 SDK 应当可以配置多个 WebHook，并允许应用对发送者进行鉴权。这些 WebHook 的配置方式由 SDK 自身决定，本协议不做任何限制。
+WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供的 HTTP 地址推送事件。一个 SDK 应当可以配置多个 WebHook，并允许应用对发送者进行鉴权。这些 WebHook 的配置方式由 SDK 自身决定，本协议规范化了一组 [管理接口](../advanced/admin.md)，但不做强制要求。
 
 事件推送以 POST 的形式进行，参数以 `application/json` 的形式编码在请求体中。数据结构参见 [Event](#event)。
 
@@ -101,9 +101,3 @@ WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供�
 :::
 
 Satori 应用可以要求 SDK 在发送 WebHook 请求时附带一个 `Authorization` 请求头，格式为 `Bearer {token}`。其中，`token` 由应用进行分发。
-
-### 管理 API
-
-管理 API 包含了与 SDK 状态相关、与具体的平台无关的操作，例如创建和移除 WebHook 等。
-
-管理 API 通过 `/{path}/{version}/admin/{method}` 路由提供。通信方式与 [HTTP API](./api.md) 类似，但不需要 `X-Platform` 和 `X-Self-ID` 请求头。

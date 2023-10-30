@@ -14,8 +14,7 @@
           { "text": "API", "link": "/protocol/api.md" },
           { "text": "事件", "link": "/protocol/events.md" },
           { "text": "消息编码", "link": "/protocol/message.md" },
-          { "text": "标准元素", "link": "/protocol/elements.md" },
-          { "text": "内部接口", "link": "/protocol/internal.md" }
+          { "text": "标准元素", "link": "/protocol/elements.md" }
         ]
       }, {
         "text": "资源",
@@ -28,6 +27,12 @@
           { "text": "消息 (Message)", "link": "/resources/message.md" },
           { "text": "表态 (Reaction)", "link": "/resources/reaction.md" },
           { "text": "用户 (User)", "link": "/resources/user.md" }
+        ]
+      }, {
+        "text": "进阶",
+        "items": [
+          { "text": "管理接口", "link": "/advanced/admin.md" },
+          { "text": "内部接口", "link": "/advanced/internal.md" }
         ]
       }]
     }

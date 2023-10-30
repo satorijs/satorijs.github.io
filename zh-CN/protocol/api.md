@@ -57,5 +57,5 @@ X-Self-ID: 1234567890
 
 除了标准的资源 API 外，Satori 还提供了一些扩展 API，用于获取特定的数据。
 
-- `/{path}/{version}/admin` 的子路由用于访问 SDK 相关接口，请参见 [管理 API](./events.md#管理-api)。
-- `/{path}/{version}/internal` 的子路由用于访问平台内部接口，请参见 [内部 API](./internal.md#内部-api)。
+- `/{path}/{version}/admin` 的子路由用于访问 SDK 相关接口，请参见 [管理 API](../advanced/admin.md)。
+- `/{path}/{version}/internal` 的子路由用于访问平台内部接口，请参见 [内部 API](../advanced/internal.md)。
