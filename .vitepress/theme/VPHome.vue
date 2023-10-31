@@ -9,14 +9,30 @@
         <a class="action-button secondary" :href="frontmatter.links.starter">{{ frontmatter.home.primary }}</a>
       </div>
     </div>
+    <a
+      v-if="beian"
+      class="footer"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://beian.miit.gov.cn/"
+    >苏ICP备2022025524号-2</a>
   </div>
 </template>
 
 <script lang="ts" setup>
 
 import { useData } from 'vitepress'
+import { onMounted, ref } from 'vue'
 
 const { frontmatter } = useData()
+
+const beian = ref(false)
+
+onMounted(() => {
+  if (window.location.href.includes('satori.chat')) {
+    beian.value = true
+  }
+})
 
 </script>
 
@@ -31,6 +47,22 @@ const { frontmatter } = useData()
   overflow-y: auto;
   display: grid;
   grid-template-rows: repeat(1, 100vh);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  color: var(--vp-text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: var(--vp-text);
+  }
 }
 
 .screen {
