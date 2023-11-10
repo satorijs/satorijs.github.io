@@ -18,10 +18,21 @@
 
 > <badge>POST</badge>`/admin/login.list` {.route}
 
+返回 [Login](../resources/login.md) 对象构成的数组。
+
 ### 创建 WebHook
 
 > <badge>POST</badge>`/admin/webhook.create` {.route}
 
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| url | string | WebHook 地址 |
+| token | string? | 鉴权令牌 |
+
 ### 移除 WebHook
 
 > <badge>POST</badge>`/admin/webhook.delete` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| url | string | WebHook 地址 |
