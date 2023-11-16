@@ -13,14 +13,16 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | `platform` | string | 接收者的平台名称 |
 | `self_id` | string | 接收者的平台账号 |
 | `timestamp` | number | 事件的时间戳 |
-| `channel` | [Channel](../resources/channel.md)? | 事件所属的频道 |
-| `guild` | [Guild](../resources/guild.md)? | 事件所属的群组 |
-| `login` | [Login](../resources/login.md)? | 事件的登录信息 |
-| `member` | [GuildMember](../resources/member.md)? | 事件的目标成员 |
-| `message` | [Message](../resources/message.md)? | 事件的消息 |
-| `operator` | [User](../resources/user.md)? | 事件的操作者 |
-| `role` | [GuildRole](../resources/role.md)? | 事件的目标角色 |
-| `user` | [User](../resources/user.md)? | 事件的目标用户 |
+| `argv` | [Argv](../resources/interaction.md#argv)? | 交互指令 |
+| `button` | [Button](../resources/interaction.md#button)? | 交互按钮 |
+| `channel` | [Channel](../resources/channel.md#channel)? | 事件所属的频道 |
+| `guild` | [Guild](../resources/guild.md#guild)? | 事件所属的群组 |
+| `login` | [Login](../resources/login.md#login)? | 事件的登录信息 |
+| `member` | [GuildMember](../resources/member.md#guildmember)? | 事件的目标成员 |
+| `message` | [Message](../resources/message.md#message)? | 事件的消息 |
+| `operator` | [User](../resources/user.md#user)? | 事件的操作者 |
+| `role` | [GuildRole](../resources/role.md#guildrole)? | 事件的目标角色 |
+| `user` | [User](../resources/user.md#user)? | 事件的目标用户 |
 
 事件中的各属性遵循 [资源提升](./index.md) 规则。
 

@@ -155,7 +155,7 @@ hello<message/>world
 
 ```html
 <message>
-  <author user-id="123123123" nickname="Alice" avatar="url"/>
+  <author id="123123123" name="Alice" avatar="url"/>
   hello world
 </message>
 ```
@@ -174,7 +174,7 @@ hello<message/>world
   <message id="987654321"/>
   <!-- 合并转发里也可以嵌套模拟其他用户发送的消息 -->
   <message>
-    <author user-id="123123123" nickname="Alice" avatar="url"/>
+    <author id="123123123" name="Alice" avatar="url"/>
     hello world
   </message>
 </message>
@@ -192,8 +192,39 @@ hello<message/>world
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| user-id | string? | 发 | 用户 ID |
-| nickname | string? | 发 | 昵称 |
+| id | string? | 发 | 用户 ID |
+| name | string? | 发 | 昵称 |
 | avatar | string? | 发 | 头像 URL |
 
 `<author>` 元素用于表示消息的作者。它的子元素会被渲染为作者的名字。
+
+## 交互元素
+
+交互元素用于显然消息中的可交互性内容。如果平台不支持此类元素且难以提供回退，可以直接忽略整个元素。实现侧应当根据平台特性，针对性地返回带有交互和不带有交互的消息。
+
+### 按钮 (button) <badge type="warning">实验性</badge>
+
+| 属性 | 类型 | 范围 | 描述 |
+| --- | --- | --- | --- |
+| id | string? | 发 | 按钮的 ID |
+| type | string? | 发 | 按钮的类型 |
+| href | string? | 发 | 按钮的链接 |
+| text | string? | 发 | 待输入文本 |
+| theme | string? | 发 | 按钮的样式 |
+
+`<button>` 元素用于表示一个按钮。它的子元素会被渲染为按钮的文本。
+
+按钮目前支持三种不同的类型：
+
+- 点击 `action` 类型的按钮时会触发一个 `interaction/button` 事件，该事件的 `button` 资源会包含上述 `id`
+- 点击 `link` 类型的按钮时会打开一个链接，该链接的地址为上述 `href`
+- 点击 `input` 类型的按钮时会在用户的输入框中填充上述 `text`
+
+`theme` 仅建议使用下列值：
+
+- primary
+- secondary
+- success
+- warning
+- danger
+- info
