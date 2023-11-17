@@ -28,7 +28,7 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| next | string | 分页令牌 |
+| next | string? | 分页令牌 |
 
 获取当前用户加入的全部群组。返回一个 [Guild](#guild) 的 [分页列表](../protocol/api.md#分页)。
 

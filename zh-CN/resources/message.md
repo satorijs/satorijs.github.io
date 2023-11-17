@@ -69,7 +69,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | channel_id | string | 频道 ID |
-| next | string | 分页令牌 |
+| next | string? | 分页令牌 |
 
 获取频道消息列表。返回一个 [`Message`](#message) 的 [分页列表](../protocol/api.md#分页)。必需资源：`channel`，`user`。
 
