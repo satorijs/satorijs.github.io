@@ -8,10 +8,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "vitepress dev . --port 7514 --open",
-    "build": "vitepress build ."
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "devDependencies": {
-    "@koishijs/vitepress": "^3.2.0",
+    "@cordisjs/vitepress": "^3.2.6",
     "@types/node": "^20.10.2",
     "@vueuse/core": "^10.6.1",
     "cross-env": "^7.0.3",
@@ -19,6 +20,6 @@
     "esbuild-register": "^3.5.0",
     "sass": "^1.69.5",
     "typescript": "^5.3.2",
-    "vitepress": "1.0.0-rc.35"
+    "vitepress": "1.0.0-rc.40"
   }
 }

@@ -63,8 +63,8 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| width | number? | 收 | 图片的宽度 (像素) |
-| height | number? | 收 | 图片的高度 (像素) |
+| width | number? | 收 | 图片宽度 (像素) |
+| height | number? | 收 | 图片高度 (像素) |
 
 `<img>` 元素用于表示图片。
 
@@ -75,7 +75,7 @@
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
 | duration | number? | 收 | 音频长度 (秒) |
-| poster | string? | 收发 | 缩略图 URL |
+| poster | string? | 收发 | 音频封面 URL |
 
 `<audio>` 元素用于表示语音。
 
@@ -85,10 +85,10 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| width | number? | 收 | 视频的宽度 (像素) |
-| height | number? | 收 | 视频的高度 (像素) |
+| width | number? | 收 | 视频宽度 (像素) |
+| height | number? | 收 | 视频高度 (像素) |
 | duration | number? | 收 | 视频长度 (秒) |
-| poster | string? | 收发 | 缩略图 URL |
+| poster | string? | 收发 | 视频封面 URL |
 
 `<video>` 元素用于表示视频。
 

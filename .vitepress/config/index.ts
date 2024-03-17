@@ -1,4 +1,4 @@
-import { defineConfig } from '@koishijs/vitepress'
+import { defineConfig } from '@cordisjs/vitepress'
 import zhCN from './zh-CN.json'
 import enUS from './en-US.json'
 
