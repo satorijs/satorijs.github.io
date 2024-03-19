@@ -75,6 +75,17 @@
 
 删除群组频道。
 
+### 禁言群组频道 <badge type="warning">实验性</badge>
+
+> <badge>POST</badge>`/channel.mute` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| channel_id | string | 频道 ID |
+| duration | number | 禁言时长 (毫秒) |
+
+禁言群组频道。如果传入的禁言时长为 `0` 则表示解除禁言。
+
 ### 创建私聊频道
 
 > <badge>POST</badge>`/user.channel.create` {.route}

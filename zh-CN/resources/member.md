@@ -47,7 +47,7 @@
 
 将某个用户踢出群组。
 
-<!-- ### 禁言群组成员
+### 禁言群组成员 <badge type="warning">实验性</badge>
 
 > <badge>POST</badge>`/guild.member.mute` {.route}
 
@@ -56,9 +56,8 @@
 | guild_id | string | 群组 ID |
 | user_id | string | 用户 ID |
 | duration | number | 禁言时长 (毫秒) |
-| comment | string? | 说明信息 |
 
-将某个用户禁言。如果传入的禁言时长为 `0` 则表示解除禁言。 -->
+将某个用户禁言。如果传入的禁言时长为 `0` 则表示解除禁言。
 
 ### 通过群组成员申请
 
