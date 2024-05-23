@@ -10,6 +10,7 @@
 | self_id | string? | 平台账号 |
 | platform | string? | 平台名称 |
 | status | [Status](#status) | 登录状态 |
+| features | string[] | [平台特性](../protocol/api.md#平台特性) 列表 |
 
 ### Status
 
