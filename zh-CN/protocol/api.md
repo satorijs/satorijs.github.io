@@ -8,7 +8,7 @@ Satori 协议规定了一套基于 HTTP 的 API 服务，用于发送消息和�
 
 目前 Satori 仅有 v1 一个版本。
 
-所有 API 的请求都使用 POST，参数以 `application/json` 的形式编码在请求体中。返回值也是 JSON 格式。
+几乎所有 API 的请求都使用 POST，参数通过 `application/json` 编码在请求体中。返回值也是 JSON 格式。作为特例，具有 [文件上传](../advanced/resource.md#api-upload-create) 功能的 API 使用 `multipart/form-data` 编码。
 
 请求头中需要包含 `X-Platform` 和 `X-Self-ID` 字段，分别表示平台名称和平台账号。
 
@@ -50,8 +50,8 @@ X-Self-ID: 1234567890
 
 [`Login`](../resources/login.md) 对象中的 `features` 字段是一个字符串数组，用于表示平台的特性。这些特性可以用于判断平台是否支持某些 API。合法的平台特性包括：
 
-- API 可用性，如特性 `message.delete` 表示支持删除消息。
-- API 额外特性，如特性 `message.list.from` 表示使用 `message.list` 查询消息列表时支持将消息 ID 作为分页令牌。
+- API 可用性，如特性 `message.delete` 表示支持使用 [`message.delete`](../resources/message.md#api-message-delete) 撤回消息。
+- API 额外特性，如特性 `message.list.from` 表示使用 [`message.list`](../resources/message.md#api-message-create) 查询消息列表时支持将消息 ID 作为分页令牌。
 - 平台额外特性，如特性 `guild.plain` 表示该平台的群组内只能存在一个消息频道。
 
 目前仅有 API 名称本身是规范的用法。我们将在后续版本中提供更全面的标准特性列表。
@@ -92,9 +92,10 @@ X-Self-ID: 1234567890
 - `asc`：升序排列。
 - `desc`：降序排列。
 
-## 扩展 API
+## 进阶 API
 
-除了标准的资源 API 外，Satori 还提供了一些扩展 API，用于获取特定的数据。
+除了标准 API 外，Satori 还提供了一些进阶功能。
 
+- `/{path}/{version}/proxy` 的子路由用于代理平台资源，请参见 [资源文件](../advanced/resource.md)。
 - `/{path}/{version}/admin` 的子路由用于访问 SDK 相关接口，请参见 [管理 API](../advanced/admin.md)。
 - `/{path}/{version}/internal` 的子路由用于访问平台内部接口，请参见 [内部 API](../advanced/internal.md)。

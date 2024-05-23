@@ -32,6 +32,7 @@
       }, {
         "text": "进阶",
         "items": [
+          { "text": "资源文件", "link": "/advanced/resource.md" },
           { "text": "管理接口", "link": "/advanced/admin.md" },
           { "text": "内部接口", "link": "/advanced/internal.md" }
         ]

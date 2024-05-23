@@ -17,7 +17,7 @@
 
 ## API
 
-### 发送消息
+### 发送消息 {#api-message-create}
 
 > <badge>POST</badge>`/message.create` {.route}
 
@@ -28,7 +28,7 @@
 
 发送消息。返回一个 [`Message`](#message) 对象构成的数组。
 
-### 获取消息
+### 获取消息 {#api-message-get}
 
 > <badge>POST</badge>`/message.get` {.route}
 
@@ -39,7 +39,7 @@
 
 获取特定消息。返回一个 [`Message`](#message) 对象。必需资源：`channel`，`user`。
 
-### 撤回消息
+### 撤回消息 {#api-message-delete}
 
 > <badge>POST</badge>`/message.delete` {.route}
 
@@ -50,7 +50,7 @@
 
 撤回特定消息。
 
-### 编辑消息
+### 编辑消息 {#api-message-update}
 
 > <badge>POST</badge>`/message.update` {.route}
 
@@ -62,7 +62,7 @@
 
 编辑特定消息。
 
-### 获取消息列表
+### 获取消息列表 {#api-message-list}
 
 > <badge>POST</badge>`/message.list` {.route}
 
