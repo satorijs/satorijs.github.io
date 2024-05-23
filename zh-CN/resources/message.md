@@ -10,7 +10,7 @@
 | content | string | 消息内容 |
 | channel | [Channel](./channel.md#channel)? | 频道对象 |
 | guild | [Guild](./guild.md#guild)? | 群组对象 |
-| member | [Member](./member.md#member)? | 成员对象 |
+| member | [Member](./member.md#member)? | 群组成员对象 |
 | user | [User](./user.md#user)? | 用户对象 |
 | created_at | number? | 消息发送的时间戳 |
 | updated_at | number? | 消息修改的时间戳 |
@@ -70,8 +70,16 @@
 | --- | --- | --- |
 | channel_id | string | 频道 ID |
 | next | string? | 分页令牌 |
+| direction | [Direction](../protocol/api.md#bidi-list)? | 查询方向 |
+| limit | number? | 消息数量限制 |
+| order | [Order](../protocol/api.md#bidi-list)? | 对结果排序 |
 
-获取频道消息列表。返回一个 [`Message`](#message) 的 [分页列表](../protocol/api.md#分页)。必需资源：`channel`，`user`。
+获取频道消息列表。返回一个 [`Message`](#message) 的 [双向分页列表](../protocol/api.md#bidi-list)。必需资源：`user`。
+
+- `next` 参数默认值为空，表示从最新消息开始查询。此时 `direction` 参数只能为 `before`。
+- `direction` 参数默认为 `before`。
+- `order` 参数默认为 `asc` (无论查询方向)。
+- `limit` 参数的默认值与平台默认值保持一致。如果平台 API 没有设定默认值，则可以自行设定，推荐值为 50。如果用户传入值超出平台要求的上限，则应当改为使用平台的上限值，而不是返回错误。开发者应当使用返回值中 `prev` 或 `next` 的存在性判断是否有更多数据，而非依赖于返回值中 `data` 的长度。
 
 ## 事件
 

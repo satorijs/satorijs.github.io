@@ -33,7 +33,7 @@
 | guild_id | string | 群组 ID |
 | next | string? | 分页令牌 |
 
-获取群成员列表。返回一个 [GuildMember](#guildmember) 的 [分页列表](../protocol/api.md#分页)。
+获取群成员列表。返回一个 [GuildMember](#guildmember) 的 [分页列表](../protocol/api.md#list)。
 
 ### 踢出群组成员
 

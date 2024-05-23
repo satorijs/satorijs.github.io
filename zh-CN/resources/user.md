@@ -32,7 +32,7 @@
 | --- | --- | --- |
 | next | string? | 分页令牌 |
 
-获取好友列表。返回一个 [`User`](#user) 的 [分页列表](../protocol/api.md#分页)。
+获取好友列表。返回一个 [`User`](#user) 的 [分页列表](../protocol/api.md#list)。
 
 ### 处理好友申请
 

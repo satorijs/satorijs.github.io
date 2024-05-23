@@ -50,7 +50,7 @@
 | emoji | string | 表态名称 |
 | next | string? | 分页令牌 |
 
-获取添加特定消息的特定表态的用户列表。返回一个 [`User`](./user.md) 的 [分页列表](../protocol/api.md#分页)。
+获取添加特定消息的特定表态的用户列表。返回一个 [`User`](./user.md) 的 [分页列表](../protocol/api.md#list)。
 
 ## 事件
 
