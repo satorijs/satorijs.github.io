@@ -11,7 +11,7 @@
 | platform | string? | 平台名称 |
 | status | [Status](#status) | 登录状态 |
 | features | string[] | [平台特性](../protocol/api.md#平台特性) 列表 |
-| resourceUrls | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| resource_urls | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 ### Status
 
