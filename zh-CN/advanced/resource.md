@@ -97,7 +97,7 @@ SDK 本身和不同的平台适配器都可能实现内部链接，因此我们�
 
 通常，由适配器实现的内部链接需要以 `upload://{platform}/{self_id}/` 开头，确保各个登录号所使用的资源不会冲突。由 SDK 自身实现的内部链接相对没有那么严格，但通常还需要在链接中加入每个实例的唯一标识，以避免跨接过程中的混淆。
 
-无论是适配器还是 SDK 实现的内部链接，都应当将所占用的路由写入 [`login.resource_urls`](../resources/login.md)。
+无论是适配器还是 SDK 实现的内部链接，都应当将所占用的路由写入 [`login.proxy_urls`](../resources/login.md)。
 
 ## 代理路由 <badge>可选</badge> {#proxy-route}
 
@@ -120,12 +120,12 @@ GET /v1/proxy/upload://temp/z0q9lgqb/3j6emd92-image1.png
 
 在具体的应用场景中，代理路由可根据需要添加 `Access-Control-Allow-Origin` 等响应头，以限制或允许跨域请求。
 
-为了辨别需要代理的路径以防滥用，Satori 还引入了 [`login.resource_urls`](../resources/login.md) 属性。这个属性标注了一个登录号所可能需要代理的资源链接前缀，应用侧可以根据这个属性来判断是否需要代理。
+为了辨别需要代理的路径以防滥用，Satori 还引入了 [`login.proxy_urls`](../resources/login.md) 属性。这个属性标注了一个登录号所可能需要代理的资源链接前缀，应用侧可以根据这个属性来判断是否需要代理。
 
 根据 `url` 的不同形式，SDK 提供的代理路由会有不同的行为：
 
 - 如果 `url` 不是合法的 URL，会直接返回 400；
-- 如果 `url` 不以任何一个 [`login.resource_urls`](../resources/login.md) 中的前缀开头，会直接返回 403；
+- 如果 `url` 不以任何一个 [`login.proxy_urls`](../resources/login.md) 中的前缀开头，会直接返回 403；
 - 如果 `url` 是一个内部链接，会由该内部链接的实现决定如何提供此资源 (可能的方式包括直接返回数据、重定向以及资源无法访问的报错)；
 - 如果 `url` 是一个外部链接，会在 SDK 侧下载该资源并返回 (通常使用流式传输)。
 
