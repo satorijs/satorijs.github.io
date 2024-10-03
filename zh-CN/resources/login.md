@@ -6,14 +6,14 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| user | [User](./user.md)? | 用户对象 |
-| self_id | string? | 平台账号 |
-| platform | string? | 平台名称 |
-| status | [Status](#status) | 登录状态 |
-| features | string[] | [平台特性](../protocol/api.md#平台特性) 列表 |
-| proxy_urls | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| `adapter` | string | [适配器名称](../advanced/internal.md#platform-adapter) |
+| `platform` | string? | 平台名称 |
+| `user` | [User](./user.md)? | 用户对象 |
+| `status` | [LoginStatus](#loginstatus)? | 登录状态 |
+| `features` | string[]? | [平台特性](../protocol/api.md#平台特性) 列表 |
+| `proxy_urls` | string[]? | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
-### Status
+### LoginStatus
 
 | 名称 | 值 | 描述 |
 | --- | --- | --- |
