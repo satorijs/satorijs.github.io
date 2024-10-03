@@ -10,7 +10,7 @@
 
 管理 API 包含了与 SDK 状态相关、与具体的平台无关的操作，例如创建和移除 WebHook 等。
 
-管理 API 通过 `/{path}/{version}/admin/{method}` 路由提供。通信方式与 [HTTP API](../protocol/api.md) 类似，但不需要 `X-Platform` 和 `X-Self-ID` 请求头。
+管理 API 通过 `/{path}/{version}/admin/{method}` 路由提供。通信方式与 [HTTP API](../protocol/api.md) 类似，但不需要 `Satori-Platform` 和 `Satori-User-ID` 请求头。
 
 ## API
 

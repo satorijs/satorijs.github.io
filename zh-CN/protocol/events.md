@@ -84,7 +84,7 @@ WebSocket 鉴权通过 IDENTIFY 信令的 `token` 字段来实现。其中涉及
 
 当连接短暂中断时，Satori 应用可以通过 `IDENTIFY` 信令的 `sequence` 字段来恢复会话。`sequence` 字段的值为上一次连接中最后一个接收到的 `EVENT` 信令的 `id` 字段。会话恢复后，SDK 会向应用推送所有在断开连接期间发生的事件。
 
-## WebHook <badge>可选</badge>
+## WebHook <badge>可选</badge> <badge type="warning">实验性</badge>
 
 ::: tip
 这是一个可选功能。

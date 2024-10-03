@@ -18,8 +18,8 @@ SDK 可以通过 `/{path}/{version}/internal/{method}` 路由代理平台原生 
 POST /v1/internal/get_channel
 Content-Type: application/json
 Authorization: Bearer 1234567890
-X-Platform: discord
-X-Self-ID: 1234567890
+Satori-Platform: discord
+Satori-User-ID: 1234567890
 
 ["1234567890"]
 ```

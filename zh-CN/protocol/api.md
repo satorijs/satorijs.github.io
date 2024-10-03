@@ -8,9 +8,9 @@ Satori 协议规定了一套基于 HTTP 的 API 服务，用于发送消息和�
 
 目前 Satori 仅有 v1 一个版本。
 
-几乎所有 API 的请求都使用 POST，参数通过 `application/json` 编码在请求体中。返回值也是 JSON 格式。作为特例，具有 [文件上传](../advanced/resource.md#api-upload-create) 功能的 API 使用 `multipart/form-data` 编码。
+绝大多数 API 的请求都使用 POST，参数通过 `application/json` 编码在请求体中。返回值也是 JSON 格式。作为特例，具有 [文件上传](../advanced/resource.md#api-upload-create) 功能的 API 使用 `multipart/form-data` 编码。
 
-请求头中需要包含 `X-Platform` 和 `X-Self-ID` 字段，分别表示平台名称和平台账号。
+请求头中需要包含 `Satori-Platform` 和 `Satori-User-ID` 字段，分别表示平台名称和平台账号。
 
 一个合法的请求示例形如：
 
@@ -18,8 +18,8 @@ Satori 协议规定了一套基于 HTTP 的 API 服务，用于发送消息和�
 POST /v1/channel.get
 Content-Type: application/json
 Authorization: Bearer 1234567890
-X-Platform: discord
-X-Self-ID: 1234567890
+Satori-Platform: discord
+Satori-User-ID: 1234567890
 
 {"channel_id": "1234567890"}
 ```
@@ -43,7 +43,7 @@ X-Self-ID: 1234567890
 | 5XX (SERVER ERROR) | 服务器错误 |
 
 ::: tip
-如果某个标准 API 没有被某个平台支持，则应该返回 404 而非 501 (NOT IMPLEMENTED)。
+如果某个标准 API 没有被某个平台支持，则应该返回 404 而非 501 (NOT IMPLEMENTED)。只有当一个 API 被平台支持但是未被适配器实现时，才应该返回 501。
 :::
 
 ### 平台特性 <badge type="warning">实验性</badge>

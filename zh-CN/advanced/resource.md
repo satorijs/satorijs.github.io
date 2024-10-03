@@ -16,8 +16,8 @@
 POST /v1/upload.create
 Content-Type: multipart/form-data
 Authorization: Bearer 1234567890
-X-Platform: discord
-X-Self-ID: 1234567890
+Satori-Platform: discord
+Satori-User-ID: 1234567890
 
 --boundary
 Content-Disposition: form-data; name="foo"; filename="image1.png"
@@ -110,7 +110,7 @@ SDK 本身和不同的平台适配器都可能实现内部链接，因此我们�
 1. 该资源链接由平台生成，且含有防盗链机制，无法在跨域请求中访问；
 2. 该资源链接是一个内部链接，无法在 HTML 中直接访问。
 
-为此，SDK 需要额外提供一个代理路由 `/{path}/{version}/proxy/{url}`，用于访问这些资源链接。这个路由下只接受 GET 请求，且不需要 `X-Platform` 和 `X-Self-ID` 请求头。
+为此，SDK 需要额外提供一个代理路由 `/{path}/{version}/proxy/{url}`，用于访问这些资源链接。这个路由下只接受 GET 请求，且不需要 `Satori-Platform` 和 `Satori-User-ID` 请求头。
 
 下面是一个典型的代理路由请求示例：
 
