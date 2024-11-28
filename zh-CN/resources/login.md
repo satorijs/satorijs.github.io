@@ -6,12 +6,21 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
+| `id` | string | 登录 ID<sup>[[1]](#login-id)</sup> |
 | `adapter` | string | [适配器名称](../advanced/internal.md#platform-adapter) |
 | `platform` | string? | 平台名称 |
 | `user` | [User](./user.md)? | 用户对象 |
 | `status` | [LoginStatus](#loginstatus)? | 登录状态 |
 | `features` | string[]? | [平台特性](../protocol/api.md#平台特性) 列表 |
 | `proxy_urls` | string[]? | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+
+::: tip
+**[1] 关于登录 ID** {#login-id}
+
+这个字段仅用于标识 Login 对象，与平台逻辑无关 (意味着任何平台相关的 API 调用都不需要传入这个 `id`)，也不进行持久化 (意味着两次连接中同一个登录号的 `id` 可能是不同的，不同登录号的 `id` 可能是相同的)。请尤其注意与 `login.user.id` 区分。
+
+此外，对于桥接场景，则还需要对这个 ID 进行映射。具体的映射方式请参见 [桥接](../advanced/bridge.md)。
+:::
 
 ### LoginStatus
 
