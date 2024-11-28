@@ -7,11 +7,11 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 频道 ID |
-| type | [Channel.Type](#channel-type) | 频道类型 |
+| type | [ChannelType](#channeltype) | 频道类型 |
 | name | string? | 频道名称 |
 | parent_id | string? | 父频道 ID |
 
-### Channel.Type
+### ChannelType
 
 | 名称 | 值 | 描述 |
 | --- | --- | --- |
