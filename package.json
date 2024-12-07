@@ -12,7 +12,7 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
-    "@cordisjs/vitepress": "^3.2.7",
+    "@cordisjs/vitepress": "^3.3.1",
     "@types/node": "^22.7.5",
     "@vueuse/core": "^11.1.0",
     "cross-env": "^7.0.3",

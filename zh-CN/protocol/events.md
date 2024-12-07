@@ -11,11 +11,11 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | `id` | number | 事件 ID |
 | `type` | string | 事件类型 |
 | `timestamp` | number | 事件的时间戳 |
+| `login` | [Login](../resources/login.md#login) | 登录信息<sup>[[1]](#partial-login)</sup> |
 | `argv` | [Argv](../resources/interaction.md#argv)? | 交互指令 |
 | `button` | [Button](../resources/interaction.md#button)? | 交互按钮 |
 | `channel` | [Channel](../resources/channel.md#channel)? | 事件所属的频道 |
 | `guild` | [Guild](../resources/guild.md#guild)? | 事件所属的群组 |
-| `login` | [Login](../resources/login.md#login)? | 登录信息<sup>[[1]](#partial-login)</sup> |
 | `member` | [GuildMember](../resources/member.md#guildmember)? | 事件的目标成员 |
 | `message` | [Message](../resources/message.md#message)? | 事件的消息 |
 | `operator` | [User](../resources/user.md#user)? | 事件的操作者 |
@@ -26,6 +26,8 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 ::: tip
 **[1] 事件中的登录信息** {#partial-login}
+
+普通事件中的 `login` 资源只会带有 `sn`, `user` 和 `platform` 三个属性。与 Login 自身相关的事件 (例如 [login-added](../resources/login.md#login-added)) 会带有完整的 Login 资源。
 :::
 
 ## WebSocket
