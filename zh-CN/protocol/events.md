@@ -10,14 +10,12 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | --- | --- | --- |
 | `id` | number | 事件 ID |
 | `type` | string | 事件类型 |
-| `platform` | string | 接收者的平台名称 |
-| `self_id` | string | 接收者的平台账号 |
 | `timestamp` | number | 事件的时间戳 |
 | `argv` | [Argv](../resources/interaction.md#argv)? | 交互指令 |
 | `button` | [Button](../resources/interaction.md#button)? | 交互按钮 |
 | `channel` | [Channel](../resources/channel.md#channel)? | 事件所属的频道 |
 | `guild` | [Guild](../resources/guild.md#guild)? | 事件所属的群组 |
-| `login` | [Login](../resources/login.md#login)? | 事件的登录信息 |
+| `login` | [Login](../resources/login.md#login)? | 登录信息<sup>[[1]](#partial-login)</sup> |
 | `member` | [GuildMember](../resources/member.md#guildmember)? | 事件的目标成员 |
 | `message` | [Message](../resources/message.md#message)? | 事件的消息 |
 | `operator` | [User](../resources/user.md#user)? | 事件的操作者 |
@@ -25,6 +23,10 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | `user` | [User](../resources/user.md#user)? | 事件的目标用户 |
 
 事件中的各属性遵循 [资源提升](./index.md) 规则。
+
+::: tip
+**[1] 事件中的登录信息** {#partial-login}
+:::
 
 ## WebSocket
 
