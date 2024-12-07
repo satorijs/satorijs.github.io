@@ -12,7 +12,6 @@
 | `user` | [User](./user.md)? | 用户对象<sup>[[1]](#login-sn)</sup> |
 | `status` | [LoginStatus](#loginstatus)? | 登录状态 |
 | `features` | string[]? | [平台特性](../protocol/api.md#平台特性) 列表 |
-| `proxy_urls` | string[]? | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 ::: tip
 **[1] 关于序列号** {#login-sn}

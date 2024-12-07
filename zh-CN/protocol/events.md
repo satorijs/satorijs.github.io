@@ -61,7 +61,8 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 | PING | 1 | 发送 | 心跳 |
 | PONG | 2 | 接收 | 心跳回复 |
 | IDENTIFY | 3 | 发送 | 鉴权 |
-| READY | 4 | 接收 | 鉴权回复 |
+| READY | 4 | 接收 | 鉴权成功 |
+| META | 5 | 接收 | 元信息更新 |
 
 `IDENTIFY` 信令的 `body` 数据结构如下：
 
@@ -75,6 +76,13 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | `logins` | [`Login[]`](../resources/login.md) | 登录信息 |
+| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+
+`META` 信令的 `body` 数据结构如下：
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 `EVENT` 信令的 `body` 数据结构参见 [Event](#event)。
 

@@ -117,7 +117,7 @@ GET /v1/proxy/satori:discord/1234567890/_tmp/3j6emd92-image1.png
 
 在具体的应用场景中，代理路由可根据需要添加 `Access-Control-Allow-Origin` 等响应头，以限制或允许跨域请求。
 
-为了辨别需要代理的路径以防滥用，Satori 还引入了 [`login.proxy_urls`](../resources/login.md) 属性。这个属性标注了一个登录号所可能需要代理的资源链接前缀，应用侧可以根据这个属性来判断是否需要代理。
+为了辨别需要代理的路径以防滥用，Satori 还引入了 [`proxy_urls`](../protocol/events.md) 属性。这个属性记录了所有需要代理的 (非内部) 资源链接前缀，应用侧可以根据这个属性来判断是否需要代理。
 
 根据 `url` 的不同形式，SDK 提供的代理路由会有不同的行为：
 
@@ -127,7 +127,7 @@ GET /v1/proxy/satori:discord/1234567890/_tmp/3j6emd92-image1.png
   - 解析链接中的 `platform` 和 `user.id`，并找到对应的登录号；
   - 如果登录号存在，则由该登录号的扩展逻辑进行返回；
   - 如果登录号不存在，直接返回 404；
-- 如果 `url` 以某个 [`proxy_urls`](../resources/login.md) 中的链接为前缀：
+- 如果 `url` 以某个 [`proxy_urls`](../protocol/events.md) 中的链接为前缀：
   - 在 SDK 侧下载该 `url` 并返回 (SDK 提供了该资源的代理)；
 - 其他情况下：直接返回 403。
 

@@ -20,6 +20,12 @@
 
 返回 [Login](../resources/login.md) 对象构成的数组。
 
+### 获取元信息
+
+> <badge>POST</badge>`/admin/meta.get` {.route}
+
+返回 [READY](../protocol/events.md#ready) 信令的 `body` 数据。
+
 ### 创建 WebHook
 
 > <badge>POST</badge>`/admin/webhook.create` {.route}
