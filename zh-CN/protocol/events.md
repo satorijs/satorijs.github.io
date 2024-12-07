@@ -1,6 +1,6 @@
 # 事件
 
-Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。你可以根据自己的需要进行选择。
+Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 ## 类型定义
 
@@ -8,10 +8,10 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `id` | number | 事件 ID |
+| `sn` | number | 序列号 |
 | `type` | string | 事件类型 |
 | `timestamp` | number | 事件的时间戳 |
-| `login` | [Login](../resources/login.md#login) | 登录信息<sup>[[1]](#partial-login)</sup> |
+| `login` | [Login](../resources/login.md#login) | 登录信息 |
 | `argv` | [Argv](../resources/interaction.md#argv)? | 交互指令 |
 | `button` | [Button](../resources/interaction.md#button)? | 交互按钮 |
 | `channel` | [Channel](../resources/channel.md#channel)? | 事件所属的频道 |
@@ -22,13 +22,13 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | `role` | [GuildRole](../resources/role.md#guildrole)? | 事件的目标角色 |
 | `user` | [User](../resources/user.md#user)? | 事件的目标用户 |
 
+事件分为普通事件与登录事件，其中登录事件特指与 Login 变化相关的事件 (如 [login-added](../resources/login.md#login-added))。所有事件都采用上述数据结构，不过在细节上有所区别：
+
+- 普通事件中的 `login` 资源只会带有 `sn`, `user` 和 `platform` 三个属性；
+- 登录事件会带有完整的 `login` 资源，但可能不存在 `user` 和 `platform`；
+- 登录事件不参与 [会话恢复](#会话恢复)。
+
 事件中的各属性遵循 [资源提升](./index.md) 规则。
-
-::: tip
-**[1] 事件中的登录信息** {#partial-login}
-
-普通事件中的 `login` 资源只会带有 `sn`, `user` 和 `platform` 三个属性。与 Login 自身相关的事件 (例如 [login-added](../resources/login.md#login-added)) 会带有完整的 Login 资源。
-:::
 
 ## WebSocket
 
@@ -69,7 +69,7 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | `token` | string? | 鉴权令牌 |
-| `sequence` | number? | 序列号 |
+| `sn` | number? | 序列号 |
 
 `READY` 信令的 `body` 数据结构如下：
 
@@ -94,7 +94,9 @@ WebSocket 鉴权通过 IDENTIFY 信令的 `token` 字段来实现。其中涉及
 
 ### 会话恢复
 
-当连接短暂中断时，Satori 应用可以通过 `IDENTIFY` 信令的 `sequence` 字段来恢复会话。`sequence` 字段的值为上一次连接中最后一个接收到的 `EVENT` 信令的 `id` 字段。会话恢复后，SDK 会向应用推送所有在断开连接期间发生的事件。
+当连接短暂中断时，Satori 应用可以通过 `IDENTIFY` 信令的 `sn` 字段来恢复会话。`sn` 字段的值为上一次连接中最后一个接收到的 `EVENT` 信令的 `sn` 字段。会话恢复后，SDK 会向应用推送所有在断开连接期间发生的事件。
+
+登录事件将不会在会话恢复过程中推送，因为在 `READY` 信令中已经包含了最新的登录状态。
 
 ## WebHook <badge>可选</badge> <badge type="warning">实验性</badge>
 

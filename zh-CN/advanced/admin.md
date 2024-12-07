@@ -1,4 +1,4 @@
-# 管理接口 <badge>可选</badge> <badge type="warning">实验性</badge>
+# 元信息 <badge>可选</badge> <badge type="warning">实验性</badge>
 
 ::: tip
 这是一个可选功能。
@@ -8,27 +8,38 @@
 这是一个实验性功能。
 :::
 
-管理 API 包含了与 SDK 状态相关、与具体的平台无关的操作，例如创建和移除 WebHook 等。
+元信息对象包含了与 SDK 状态相关、与具体的账号无关的信息，例如 [代理路由](../advanced/resource.md#proxy-route) 等。
 
-管理 API 通过 `/{path}/{version}/admin/{method}` 路由提供。通信方式与 [HTTP API](../protocol/api.md) 类似，但不需要 `Satori-Platform` 和 `Satori-User-ID` 请求头。
+元信息通过以下方式获取和更新：
+
+- 在 WebSocket 推送方式下，`READY` 信令将提供完整的元信息；
+- 在 WebHook 推送方式下，应用启动时应当通过 API 获取元信息；
+- 应用启动后，持续接收 `META` 信令和登录事件对元信息进行更新。
+
+需要注意的是，`META` 信令不反映登录状态变化，也不会包含 `logins` 字段。
+
+元信息 API 通过 `/{path}/{version}/meta/{method}` 路由提供。通信方式与 [HTTP API](../protocol/api.md) 类似，但不需要 `Satori-Platform` 和 `Satori-User-ID` 请求头。
+
+## 类型定义
+
+### Meta
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| `logins` | [`Login[]`](../resources/login.md) | 登录信息 |
+| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 ## API
 
-### 获取登录信息列表
-
-> <badge>POST</badge>`/admin/login.list` {.route}
-
-返回 [Login](../resources/login.md) 对象构成的数组。
-
 ### 获取元信息
 
-> <badge>POST</badge>`/admin/meta.get` {.route}
+> <badge>POST</badge>`/meta` {.route}
 
-返回 [READY](../protocol/events.md#ready) 信令的 `body` 数据。
+返回一个 [Meta](#meta) 对象。
 
 ### 创建 WebHook
 
-> <badge>POST</badge>`/admin/webhook.create` {.route}
+> <badge>POST</badge>`/meta/webhook.create` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -37,7 +48,7 @@
 
 ### 移除 WebHook
 
-> <badge>POST</badge>`/admin/webhook.delete` {.route}
+> <badge>POST</badge>`/meta/webhook.delete` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |

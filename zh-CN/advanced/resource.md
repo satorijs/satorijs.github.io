@@ -38,23 +38,23 @@ binary-data
 
 ```json
 {
-  "foo": "satori:discord/1234567890/_tmp/3j6emd92-image1.png",
-  "bar": "satori:discord/1234567890/_tmp/reacpmeq-image2.gif"
+  "foo": "internal:discord/1234567890/_tmp/3j6emd92-image1.png",
+  "bar": "internal:discord/1234567890/_tmp/reacpmeq-image2.gif"
 }
 ```
 
 在实现此 API 时，如果平台已经支持了文件上传功能，可以直接使用平台提供的上传 API，返回平台的 URL 即可。如果平台不支持文件上传功能，应当回退到 SDK 提供的默认实现。
 
-SDK 可以基于本地文件系统实现上传功能。上传到本地文件系统中的文件 URL 通过 `satori:` 协议进一步代理，且有一定的有效期。各实现可以根据自身情况调整有效期，推荐值为 5 分钟。
+SDK 可以基于本地文件系统实现上传功能。上传到本地文件系统中的文件 URL 通过 `internal:` 协议进一步代理，且有一定的有效期。各实现可以根据自身情况调整有效期，推荐值为 5 分钟。
 
 ## 内部链接 {#internal-url}
 
-`satori:` 称为内部链接协议，用于代理一些无法直接通过公网访问的资源。
+`internal:` 称为内部链接协议，用于代理一些无法直接通过公网访问的资源。
 
 内部链接的标准格式如下：
 
 ```text
-satori:{platform}/{user.id}/{path}
+internal:{platform}/{user.id}/{path}
 ```
 
 其中，`platform` 为平台名称，`user.id` 为登录号，`path` 为资源路径。
@@ -112,7 +112,7 @@ satori:{platform}/{user.id}/{path}
 
 ```text
 GET /v1/proxy/https://cdn.discordapp.com/attachments/bf6f121d.jpg
-GET /v1/proxy/satori:discord/1234567890/_tmp/3j6emd92-image1.png
+GET /v1/proxy/internal:discord/1234567890/_tmp/3j6emd92-image1.png
 ```
 
 在具体的应用场景中，代理路由可根据需要添加 `Access-Control-Allow-Origin` 等响应头，以限制或允许跨域请求。
@@ -122,7 +122,7 @@ GET /v1/proxy/satori:discord/1234567890/_tmp/3j6emd92-image1.png
 根据 `url` 的不同形式，SDK 提供的代理路由会有不同的行为：
 
 - 如果 `url` 不是合法的 URL，直接返回 400；
-- 如果 `url` 是一个内部链接 (即以 `satori:` 开头)：
+- 如果 `url` 是一个内部链接 (即以 `internal:` 开头)：
   - 如果链接不符合内部链接的格式，直接返回 400；
   - 解析链接中的 `platform` 和 `user.id`，并找到对应的登录号；
   - 如果登录号存在，则由该登录号的扩展逻辑进行返回；
