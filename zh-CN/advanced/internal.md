@@ -34,21 +34,17 @@ Satori 协议的大多数 API 都需要传入 `Satori-Platform` 和 `Satori-User
 
 ## API 扩展
 
-SDK 可以通过 `/{path}/{version}/internal/{method}` 路由代理平台原生 API。通信方式与 [HTTP API](../protocol/api.md) 类似。返回值与平台返回值一致。
+SDK 可以通过 `/{path}/{version}/internal/{method}` 路由代理平台原生 API。
 
-一个合法的请求示例形如：
+例如，Discord 平台提供了 Restful API，那么你可以进行如下请求：
 
 ```text
-POST /v1/internal/get_channel
-Content-Type: application/json
-Authorization: Bearer 1234567890
+DELETE /v1/internal/channels/111222333
 Satori-Platform: discord
 Satori-User-ID: 1234567890
-
-["1234567890"]
 ```
 
-除此以外，SDK 还可以实现 [内部链接](./resource.md#internal-url)。
+除了作为前缀的路由和额外的 `Satori-Platform` 和 `Satori-User-ID` 请求头之外，整个请求和响应的格式都与平台原生 API 一致。
 
 ## 事件扩展
 

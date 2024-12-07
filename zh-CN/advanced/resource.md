@@ -15,7 +15,6 @@
 ```text
 POST /v1/upload.create
 Content-Type: multipart/form-data
-Authorization: Bearer 1234567890
 Satori-Platform: discord
 Satori-User-ID: 1234567890
 
@@ -49,7 +48,9 @@ SDK 可以基于本地文件系统实现上传功能。上传到本地文件系�
 
 ## 内部链接 {#internal-url}
 
-`internal:` 称为内部链接协议，用于代理一些无法直接通过公网访问的资源。
+`internal:` 称为内部链接协议，用于代理平台原生 API 或是无法直接通过公网访问的资源。
+
+### 格式规范 {#format}
 
 内部链接的标准格式如下：
 
@@ -57,11 +58,32 @@ SDK 可以基于本地文件系统实现上传功能。上传到本地文件系�
 internal:{platform}/{user.id}/{path}
 ```
 
-其中，`platform` 为平台名称，`user.id` 为登录号，`path` 为资源路径。
+其中，`platform` 为平台名称，`user.id` 为登录账号，`path` 为资源路径。
+
+SDK 可以根据需要自行设计资源路径，但以下划线 `_` 开头的路径需要保留给 Satori 自身使用，拥有固定的语义。现有的保留路径有：
+
+- `_tmp`：用于 SDK 的默认文件上传实现；
+- `_raw`：用于代理平台原生 HTTP API。
+
+### API 代理 {#api-proxy}
+
+Satori 会将所有内部 API 访问重定向到 `_raw` 内部链接。换言之，以下两个请求是等价的：
+
+```text
+DELETE /v1/internal/channel/111222333
+Satori-Platform: discord
+Satori-User-ID: 1234567890
+```
+
+```text
+DELETE /v1/proxy/internal:discord/1234567890/_raw/channel/111222333
+```
+
+因此，适配器开发者无需专门实现内部 API，只需实现 `_raw` 路径下的代理即可。
 
 ### 适用场景 {#scenario}
 
-上一节中已经提到，在不支持文件上传的平台上调用 `/upload.create`，你将获得内部链接。除此以外，还有一些内部链接的适用场景。
+上一节中已经提到，在不支持文件上传的平台上调用 `/upload.create`，你将获得内部链接。对平台原生 API 的访问同样通过内部链接进行。除此以外，还有一些内部链接的适用场景。
 
 ::: tip
 **场景：通过平台 API 请求资源**
@@ -131,11 +153,11 @@ GET /v1/proxy/internal:discord/1234567890/_tmp/3j6emd92-image1.png
   - 在 SDK 侧下载该 `url` 并返回 (SDK 提供了该资源的代理)；
 - 其他情况下：直接返回 403。
 
-## 最佳实践 {#best-practice}
+## 实践指南 {#best-practice}
 
 综上所述，我们总结出了一套关于资源链接的最佳实践：
 
-对于 SDK 开发者，你需要：
+对于核心库开发者，你需要：
 
 1. 提供 `REGISTER_INTERNAL_ROUTE` 方法用于注册内部链接路由，以便适配器实现；
 2. 提供 `DOWNLOAD_URL` 方法用于将一个链接下载为数据，无论其是否为内部链接；
@@ -144,7 +166,9 @@ GET /v1/proxy/internal:discord/1234567890/_tmp/3j6emd92-image1.png
 
 对于适配器开发者，你需要：
 
-1. 如果需要使用内部链接 (下一条)：调用 `REGISTER_INTERNAL_ROUTE` 方法注册相应的路由；
+1. 在以下情况下，调用 `REGISTER_INTERNAL_ROUTE` 方法注册内部路由：
+   - 平台符合内部链接的 [适用场景](#scenario)；
+   - 平台提供了 HTTP API (此时只需在 `_raw` 路径下代理平台原生 API)；
 2. 接收事件推送时：如果收到的资源链接符合内部链接的适用场景，将它们转化为内部链接；
 3. 发送消息时：根据平台行为和资源链接的形式，合理选择下载和发送资源的方式；
-4. 如果平台支持文件上传：实现 `/upload.create` API，覆盖 SDK 的默认实现。
+4. 如果平台支持文件上传：实现 `/upload.create` API，覆盖 SDK 的默认实现；

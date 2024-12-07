@@ -33,8 +33,8 @@
         "text": "进阶",
         "items": [
           { "text": "跨平台", "link": "/advanced/internal.md" },
-          { "text": "桥接", "link": "/advanced/bridge.md" },
           { "text": "资源链接", "link": "/advanced/resource.md" },
+          { "text": "桥接", "link": "/advanced/bridge.md" },
           { "text": "元信息", "link": "/advanced/meta.md" }
         ]
       }]
