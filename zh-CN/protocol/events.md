@@ -4,6 +4,17 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 ## 类型定义
 
+### OpCode
+
+| 名称 | 值 | 方向 | 描述 |
+| --- | --- | --- | --- |
+| EVENT | 0 | 接收 | 事件 |
+| PING | 1 | 发送 | 心跳 |
+| PONG | 2 | 接收 | 心跳回复 |
+| IDENTIFY | 3 | 发送 | 鉴权 |
+| READY | 4 | 接收 | 鉴权成功 |
+| META | 5 | 接收 | 元信息更新 |
+
 ### Event
 
 | 字段 | 类型 | 描述 |
@@ -50,19 +61,8 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `op` | number | 信令类型 |
+| `op` | [`OpCode`](#opcode) | 信令类型 |
 | `body` | object? | 信令数据 |
-
-信令类型如下：
-
-| 名称 | 值 | 方向 | 描述 |
-| --- | --- | --- | --- |
-| EVENT | 0 | 接收 | 事件 |
-| PING | 1 | 发送 | 心跳 |
-| PONG | 2 | 接收 | 心跳回复 |
-| IDENTIFY | 3 | 发送 | 鉴权 |
-| READY | 4 | 接收 | 鉴权成功 |
-| META | 5 | 接收 | 元信息更新 |
 
 `IDENTIFY` 信令的 `body` 数据结构如下：
 
@@ -104,9 +104,11 @@ WebSocket 鉴权通过 IDENTIFY 信令的 `token` 字段来实现。其中涉及
 这是一个可选功能。
 :::
 
-WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供的 HTTP 地址推送事件。一个 SDK 应当可以配置多个 WebHook，并允许应用对发送者进行鉴权。这些 WebHook 的配置方式由 SDK 自身决定，本协议规范化了一组 [管理接口](../advanced/admin.md)，但不做强制要求。
+WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供的 HTTP 地址推送事件。一个 SDK 应当可以配置多个 WebHook，并允许应用对发送者进行鉴权。这些 WebHook 的配置方式由 SDK 自身决定，本协议仅规范化了一组 [API](../advanced/meta.md#api)，不做强制要求。
 
-事件推送以 POST 的形式进行，参数以 `application/json` 的形式编码在请求体中。数据结构参见 [Event](#event)。
+事件推送以 POST 的形式进行。请求头包含 `Satori-OpCode` 字段，对应本次推送的 [信令类型](#opcode)；请求体是一个 JSON 对象，对应本次推送的信令数据。例如，一次事件推送将会拥有 `Satori-OpCode: 0` 的请求头，以及一个符合 [Event](#event) 结构的请求体。
+
+WebHook 所涉及的信令仅包含 `EVENT`, `META` 两种。
 
 应用收到 WebHook 请求时，如果能够顺利鉴权并处理请求，应当返回 2XX 的状态码。如果鉴权失败，应当返回 4XX 的状态码。如果处理失败，应当返回 5XX 的状态码。
 

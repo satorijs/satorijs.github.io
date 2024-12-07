@@ -56,6 +56,16 @@ Satori-User-ID: 1234567890
 
 目前仅有 API 名称本身是规范的用法。我们将在后续版本中提供更全面的标准特性列表。
 
+### 进阶 API
+
+除了标准 API 外，Satori 还提供了一些进阶功能。
+
+- `/{path}/{version}/proxy` 的子路由用于代理平台资源，请参见 [代理路由](../advanced/resource.md#proxy-route)。
+- `/{path}/{version}/meta` 的子路由用于访问 SDK 相关接口，请参见 [元信息 API](../advanced/meta.md#api)。
+- `/{path}/{version}/internal` 的子路由用于访问平台内部接口，请参见 [内部 API](../advanced/internal.md)。
+
+## 类型定义
+
 ### 分页列表 {#list}
 
 部分 API 可能会返回分页数据。这种情况下，响应会是一个 `List` 对象：
@@ -91,11 +101,3 @@ Satori-User-ID: 1234567890
 
 - `asc`：升序排列。
 - `desc`：降序排列。
-
-## 进阶 API
-
-除了标准 API 外，Satori 还提供了一些进阶功能。
-
-- `/{path}/{version}/proxy` 的子路由用于代理平台资源，请参见 [资源文件](../advanced/resource.md)。
-- `/{path}/{version}/admin` 的子路由用于访问 SDK 相关接口，请参见 [管理 API](../advanced/admin.md)。
-- `/{path}/{version}/internal` 的子路由用于访问平台内部接口，请参见 [内部 API](../advanced/internal.md)。
