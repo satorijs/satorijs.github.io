@@ -1,7 +1,7 @@
 # 资源链接 <badge type="warning">实验性</badge>
 
 ::: warning
-这是一个实验性功能。
+这是一个实验性功能，可能在未来的版本中发生变化。
 :::
 
 ## 文件上传 {#api-upload-create}

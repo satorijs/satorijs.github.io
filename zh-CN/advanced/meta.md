@@ -1,11 +1,7 @@
-# 元信息 <badge>可选</badge> <badge type="warning">实验性</badge>
-
-::: tip
-这是一个可选功能。
-:::
+# 元信息 <badge type="warning">实验性</badge>
 
 ::: warning
-这是一个实验性功能。
+这是一个实验性功能，可能在未来的版本中发生变化。
 :::
 
 元信息对象包含了与 SDK 状态相关、与具体的账号无关的信息，例如 [代理路由](../advanced/resource.md#proxy-route) 等。
@@ -37,7 +33,7 @@
 
 返回一个 [Meta](#meta) 对象。
 
-### 创建 WebHook
+### 创建 WebHook <badge>可选</badge>
 
 > <badge>POST</badge>`/meta/webhook.create` {.route}
 
@@ -46,7 +42,7 @@
 | url | string | WebHook 地址 |
 | token | string? | 鉴权令牌 |
 
-### 移除 WebHook
+### 移除 WebHook <badge>可选</badge>
 
 > <badge>POST</badge>`/meta/webhook.delete` {.route}
 

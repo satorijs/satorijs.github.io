@@ -13,7 +13,7 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | PONG | 2 | 接收 | 心跳回复 |
 | IDENTIFY | 3 | 发送 | 鉴权 |
 | READY | 4 | 接收 | 鉴权成功 |
-| META | 5 | 接收 | 元信息更新 |
+| META | 5 | 接收 | 元信息更新 <badge type="warning">实验性</badge> |
 
 ### Event
 
