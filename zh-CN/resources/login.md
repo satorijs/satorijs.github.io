@@ -6,7 +6,7 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `sn` | string | 序列号<sup>[[1]](#login-sn)</sup> <badge type="warning">实验性</badge> |
+| `sn` | number | 序列号<sup>[[1]](#login-sn)</sup> <badge type="warning">实验性</badge> |
 | `platform` | string?<sup>[[3]](#login-nullable)</sup> | 平台名称 |
 | `user` | [User](./user.md)?<sup>[[3]](#login-nullable)</sup> | 用户对象<sup>[[2]](#login-user)</sup> |
 | `status` | [LoginStatus](#loginstatus) | 登录状态 |

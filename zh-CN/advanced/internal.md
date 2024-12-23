@@ -54,7 +54,7 @@ SDK 可以通过 `internal` 事件的 `_type` 和 `_data` 属性代理平台原�
 
 | 字段 | 类型 | 说明 |
 | --- | --- | --- |
-| `id` | number | 事件 ID |
+| `sn` | number | 事件序列号 |
 | `type` | string | 事件类型 (固定为 `internal`) |
 | `login` | [Login](../resources/login.md) | 登录信息 |
 | `_type` | string | 原生事件类型 |

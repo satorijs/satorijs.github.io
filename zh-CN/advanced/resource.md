@@ -63,23 +63,7 @@ internal:{platform}/{user.id}/{path}
 SDK 可以根据需要自行设计资源路径，但以下划线 `_` 开头的路径需要保留给 Satori 自身使用，拥有固定的语义。现有的保留路径有：
 
 - `_tmp`：用于 SDK 的默认文件上传实现；
-- `_raw`：用于代理平台原生 HTTP API。
-
-### API 代理 {#api-proxy}
-
-Satori 会将所有内部 API 访问重定向到 `_raw` 内部链接。换言之，以下两个请求是等价的：
-
-```text
-DELETE /v1/internal/channel/111222333
-Satori-Platform: discord
-Satori-User-ID: 1234567890
-```
-
-```text
-DELETE /v1/proxy/internal:discord/1234567890/_raw/channel/111222333
-```
-
-因此，适配器开发者无需专门实现内部 API，只需实现 `_raw` 路径下的代理即可。
+- `_api`：用于 API 桥接反射。
 
 ### 适用场景 {#scenario}
 
@@ -166,9 +150,7 @@ GET /v1/proxy/internal:discord/1234567890/_tmp/3j6emd92-image1.png
 
 对于适配器开发者，你需要：
 
-1. 在以下情况下，调用 `REGISTER_INTERNAL_ROUTE` 方法注册内部路由：
-   - 平台符合内部链接的 [适用场景](#scenario)；
-   - 平台提供了 HTTP API (此时只需在 `_raw` 路径下代理平台原生 API)；
+1. 平台符合内部链接的 [适用场景](#scenario)，调用 `REGISTER_INTERNAL_ROUTE` 方法注册内部路由：
 2. 接收事件推送时：如果收到的资源链接符合内部链接的适用场景，将它们转化为内部链接；
 3. 发送消息时：根据平台行为和资源链接的形式，合理选择下载和发送资源的方式；
-4. 如果平台支持文件上传：实现 `/upload.create` API，覆盖 SDK 的默认实现；
+4. 如果平台支持文件上传：实现 `/upload.create` API，覆盖 SDK 的默认实现。
