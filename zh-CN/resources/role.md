@@ -11,9 +11,9 @@
 
 ## API
 
-### 设置群组成员角色
+### 设置群组成员角色 {#api-guild-member-role-set}
 
-> <badge>POST</badge>`/guild.member.role.set` {.route}
+> <badge>POST</badge> `/guild.member.role.set` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -23,9 +23,9 @@
 
 设置群组内用户的角色。
 
-### 取消群组成员角色
+### 取消群组成员角色 {#api-guild-member-role-unset}
 
-> <badge>POST</badge>`/guild.member.role.unset` {.route}
+> <badge>POST</badge> `/guild.member.role.unset` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -35,9 +35,9 @@
 
 取消群组内用户的角色。
 
-### 获取群组角色列表
+### 获取群组角色列表 {#api-guild-role-list}
 
-> <badge>POST</badge>`/guild.role.list` {.route}
+> <badge>POST</badge> `/guild.role.list` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -46,9 +46,9 @@
 
 获取群组角色列表。返回一个 [GuildRole](#guildrole) 的 [分页列表](../protocol/api.md#list)。
 
-### 创建群组角色
+### 创建群组角色 {#api-guild-role-create}
 
-> <badge>POST</badge>`/guild.role.create` {.route}
+> <badge>POST</badge> `/guild.role.create` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -57,9 +57,9 @@
 
 创建群组角色。返回一个 [GuildRole](#guildrole) 对象。
 
-### 修改群组角色
+### 修改群组角色 {#api-guild-role-update}
 
-> <badge>POST</badge>`/guild.role.update` {.route}
+> <badge>POST</badge> `/guild.role.update` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -69,9 +69,9 @@
 
 修改群组角色。
 
-### 删除群组角色
+### 删除群组角色 {#api-guild-role-delete}
 
-> <badge>POST</badge>`/guild.role.delete` {.route}
+> <badge>POST</badge> `/guild.role.delete` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |

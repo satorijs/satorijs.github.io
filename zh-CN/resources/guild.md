@@ -12,9 +12,9 @@
 
 ## API
 
-### 获取群组
+### 获取群组 {#api-guild-get}
 
-> <badge>POST</badge>`/guild.get` {.route}
+> <badge>POST</badge> `/guild.get` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -22,9 +22,9 @@
 
 根据 ID 获取。返回一个 [Guild](#guild) 对象。
 
-### 获取群组列表
+### 获取群组列表 {#api-guild-list}
 
-> <badge>POST</badge>`/guild.list` {.route}
+> <badge>POST</badge> `/guild.list` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -32,9 +32,9 @@
 
 获取当前用户加入的全部群组。返回一个 [Guild](#guild) 的 [分页列表](../protocol/api.md#list)。
 
-### 处理群组邀请
+### 处理群组邀请 {#api-guild-approve}
 
-> <badge>POST</badge>`/guild.approve` {.route}
+> <badge>POST</badge> `/guild.approve` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |

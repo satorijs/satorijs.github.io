@@ -37,9 +37,9 @@
 
 ## API
 
-### 获取登录信息
+### 获取登录信息 {#api-login-get}
 
-> <badge>POST</badge>`/login.get` {.route}
+> <badge>POST</badge> `/login.get` {.route}
 
 获取登录信息。返回一个 [`Login`](#login) 对象。
 

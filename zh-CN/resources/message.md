@@ -19,7 +19,7 @@
 
 ### 发送消息 {#api-message-create}
 
-> <badge>POST</badge>`/message.create` {.route}
+> <badge>POST</badge> `/message.create` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -30,7 +30,7 @@
 
 ### 获取消息 {#api-message-get}
 
-> <badge>POST</badge>`/message.get` {.route}
+> <badge>POST</badge> `/message.get` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -41,7 +41,7 @@
 
 ### 撤回消息 {#api-message-delete}
 
-> <badge>POST</badge>`/message.delete` {.route}
+> <badge>POST</badge> `/message.delete` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -52,7 +52,7 @@
 
 ### 编辑消息 {#api-message-update}
 
-> <badge>POST</badge>`/message.update` {.route}
+> <badge>POST</badge> `/message.update` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -64,7 +64,7 @@
 
 ### 获取消息列表 {#api-message-list}
 
-> <badge>POST</badge>`/message.list` {.route}
+> <badge>POST</badge> `/message.list` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |

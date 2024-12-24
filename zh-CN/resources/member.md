@@ -13,9 +13,9 @@
 
 ## API
 
-### 获取群组成员
+### 获取群组成员 {#api-guild-member-get}
 
-> <badge>POST</badge>`/guild.member.get` {.route}
+> <badge>POST</badge> `/guild.member.get` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -24,9 +24,9 @@
 
 获取群成员信息。返回一个 [GuildMember](#guildmember) 对象。
 
-### 获取群组成员列表
+### 获取群组成员列表 {#api-guild-member-list}
 
-> <badge>POST</badge>`/guild.member.list` {.route}
+> <badge>POST</badge> `/guild.member.list` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -35,9 +35,9 @@
 
 获取群成员列表。返回一个 [GuildMember](#guildmember) 的 [分页列表](../protocol/api.md#list)。
 
-### 踢出群组成员
+### 踢出群组成员 {#api-guild-member-kick}
 
-> <badge>POST</badge>`/guild.member.kick` {.route}
+> <badge>POST</badge> `/guild.member.kick` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -47,9 +47,9 @@
 
 将某个用户踢出群组。
 
-### 禁言群组成员 <badge type="warning">实验性</badge>
+### 禁言群组成员 <badge type="warning">实验性</badge> {#api-guild-member-mute}
 
-> <badge>POST</badge>`/guild.member.mute` {.route}
+> <badge>POST</badge> `/guild.member.mute` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -59,9 +59,9 @@
 
 将某个用户禁言。如果传入的禁言时长为 `0` 则表示解除禁言。
 
-### 通过群组成员申请
+### 通过群组成员申请 {#api-guild-member-approve}
 
-> <badge>POST</badge>`/guild.member.approve` {.route}
+> <badge>POST</badge> `/guild.member.approve` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |

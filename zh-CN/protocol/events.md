@@ -4,7 +4,7 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 ## 类型定义
 
-### OpCode
+### Opcode
 
 | 名称 | 值 | 方向 | 描述 |
 | --- | --- | --- | --- |
@@ -62,7 +62,7 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `op` | [`OpCode`](#opcode) | 信令类型 |
+| `op` | [`Opcode`](#opcode) | 信令类型 |
 | `body` | object? | 信令数据 |
 
 `IDENTIFY` 信令的 `body` 数据结构如下：
@@ -107,7 +107,7 @@ WebSocket 鉴权通过 IDENTIFY 信令的 `token` 字段来实现。其中涉及
 
 WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供的 HTTP 地址推送事件。一个 SDK 应当可以配置多个 WebHook，并允许应用对发送者进行鉴权。这些 WebHook 的配置方式由 SDK 自身决定，本协议仅规范化了一组 [API](../advanced/meta.md#api)，不做强制要求。
 
-事件推送以 POST 的形式进行。请求头包含 `Satori-OpCode` 字段，对应本次推送的 [信令类型](#opcode)；请求体是一个 JSON 对象，对应本次推送的信令数据。例如，一次事件推送将会拥有 `Satori-OpCode: 0` 的请求头，以及一个符合 [Event](#event) 结构的请求体。
+事件推送以 POST 的形式进行。请求头包含 `Satori-Opcode` 字段，对应本次推送的 [信令类型](#opcode)；请求体是一个 JSON 对象，对应本次推送的信令数据。例如，一次事件推送将会拥有 `Satori-Opcode: 0` 的请求头，以及一个符合 [Event](#event) 结构的请求体。
 
 WebHook 所涉及的信令仅包含 `EVENT`, `META` 两种。
 

@@ -2,9 +2,9 @@
 
 ## API
 
-### 添加表态
+### 添加表态 {#api-reaction-create}
 
-> <badge>POST</badge>`/reaction.create` {.route}
+> <badge>POST</badge> `/reaction.create` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -14,9 +14,9 @@
 
 向特定消息添加表态。
 
-### 删除表态
+### 删除表态 {#api-reaction-delete}
 
-> <badge>POST</badge>`/reaction.delete` {.route}
+> <badge>POST</badge> `/reaction.delete` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -27,9 +27,9 @@
 
 从特定消息删除某个用户添加的特定表态。如果没有传入用户 ID 则表示删除自己的表态。
 
-### 清除表态
+### 清除表态 {#api-reaction-clear}
 
-> <badge>POST</badge>`/reaction.clear` {.route}
+> <badge>POST</badge> `/reaction.clear` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -39,9 +39,9 @@
 
 从特定消息清除某个特定表态。如果没有传入表态名称则表示清除所有表态。
 
-### 获取表态列表
+### 获取表态列表 {#api-reaction-list}
 
-> <badge>POST</badge>`/reaction.list` {.route}
+> <badge>POST</badge> `/reaction.list` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |

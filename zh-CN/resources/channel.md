@@ -22,9 +22,9 @@
 
 ## API
 
-### 获取群组频道
+### 获取群组频道 {#api-channel-get}
 
-> <badge>POST</badge>`/channel.get` {.route}
+> <badge>POST</badge> `/channel.get` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -32,9 +32,9 @@
 
 根据 ID 获取频道。返回一个 [Channel](#channel) 对象。
 
-### 获取群组频道列表
+### 获取群组频道列表 {#api-channel-list}
 
-> <badge>POST</badge>`/channel.list` {.route}
+> <badge>POST</badge> `/channel.list` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -43,9 +43,9 @@
 
 获取群组中的全部频道。返回一个 [Channel](#channel) 的 [分页列表](../protocol/api.md#list)。
 
-### 创建群组频道
+### 创建群组频道 {#api-channel-create}
 
-> <badge>POST</badge>`/channel.create` {.route}
+> <badge>POST</badge> `/channel.create` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -54,9 +54,9 @@
 
 创建群组频道。返回一个 [Channel](#channel) 对象。
 
-### 修改群组频道
+### 修改群组频道 {#api-channel-update}
 
-> <badge>POST</badge>`/channel.update` {.route}
+> <badge>POST</badge> `/channel.update` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -65,9 +65,9 @@
 
 修改群组频道。
 
-### 删除群组频道
+### 删除群组频道 {#api-channel-delete}
 
-> <badge>POST</badge>`/channel.delete` {.route}
+> <badge>POST</badge> `/channel.delete` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -75,9 +75,9 @@
 
 删除群组频道。
 
-### 禁言群组频道 <badge type="warning">实验性</badge>
+### 禁言群组频道 <badge type="warning">实验性</badge> {#api-channel-mute}
 
-> <badge>POST</badge>`/channel.mute` {.route}
+> <badge>POST</badge> `/channel.mute` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -86,9 +86,9 @@
 
 禁言群组频道。如果传入的禁言时长为 `0` 则表示解除禁言。
 
-### 创建私聊频道
+### 创建私聊频道 {#api-user-channel-create}
 
-> <badge>POST</badge>`/user.channel.create` {.route}
+> <badge>POST</badge> `/user.channel.create` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |

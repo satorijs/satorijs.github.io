@@ -1,16 +1,20 @@
 blockquote.route {
-  .badge {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  border-left: none;
+  padding-left: 0;
+
+  .VPBadge {
+    --vp-badge-tip-border: var(--vp-badge-tip-text);
   }
 
   code {
     display: inline-flex;
     align-items: center;
-    vertical-align: middle;
-    height: 20px;
+    vertical-align: top;
+    height: 22px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    background-color: transparent;
+    margin-left: 2px;
   }
 }
 

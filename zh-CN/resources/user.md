@@ -22,9 +22,9 @@
 
 ## API
 
-### 获取用户信息
+### 获取用户信息 {#api-user-get}
 
-> <badge>POST</badge>`/user.get` {.route}
+> <badge>POST</badge> `/user.get` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -32,9 +32,9 @@
 
 获取用户信息。返回一个 [`User`](#user) 对象。
 
-### 获取好友列表
+### 获取好友列表 {#api-friend-list}
 
-> <badge>POST</badge>`/friend.list` {.route}
+> <badge>POST</badge> `/friend.list` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -42,9 +42,9 @@
 
 获取好友列表。返回一个 [`User`](#user) 的 [分页列表](../protocol/api.md#list)。
 
-### 处理好友申请
+### 处理好友申请 {#api-friend-approve}
 
-> <badge>POST</badge>`/friend.approve` {.route}
+> <badge>POST</badge> `/friend.approve` {.route}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
