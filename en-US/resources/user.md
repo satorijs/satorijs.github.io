@@ -1,42 +1,61 @@
-# 用户 (User)
+# User
 
-## 类型定义
+## Definitions
 
-```ts
-export interface User {
-  id: string
-  name: string
-  avatar?: string
-}
-```
+### User {#def-user}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| id | string | user ID |
+| name | string? | user name<sup>[[1]](#name-nick)</sup> |
+| nick | string? | user nickname<sup>[[1]](#name-nick)</sup> |
+| avatar | string? | user avatar |
+| is_bot | boolean? | whether the user is a bot |
+
+::: tip
+**[1] Difference between `name` and `nick`** {#name-nick}
+
+Both fields can be used to identify a user. On some platforms (e.g., Telegram), a user may have multiple types of names, so the SDK can set both fields. On other platforms, these concepts may not be distinct, in which case the SDK only needs to set either `name` or `nick` based on semantics.
+
+In application-level implementations, `nick` takes precedence over `name` because nicknames are easier for users to recognize and understand. If you are developing a client based on the Satori protocol, you should prioritize displaying the `nick` field for usernames and only use the `name` field when `nick` is absent.
+:::
 
 ## API
 
-### bot.getSelf()
+### Get User Information {#api-user-get}
 
-- 返回值: `Promise<User>` 用户信息
+> <badge>POST</badge> `/user.get` {.route}
 
-获取机器人自己的信息。
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| user_id | string | user ID |
 
-### bot.getUser(userId)
+Get a user by ID. Returns a [User](#def-user) object.
 
-- **userId:** `string` 用户 ID
-- 返回值: `Promise<User>` 用户信息
+### Get Friend List {#api-friend-list}
 
-获取用户信息。
+> <badge>POST</badge> `/friend.list` {.route}
 
-### bot.getFriendList(next?)
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| next | string? | pagination token |
 
-- **next:** `string` 分页令牌
-- 返回值: `Promise<List<User>>` 好友列表
+Get the friend list. Returns a [List](../protocol/api.md#list) of [User](#def-user) objects.
 
-获取机器人的好友列表。
+### Handle Friend Request {#api-friend-approve}
 
-### bot.handleFriendRequest(messageId, approve, comment?)
+> <badge>POST</badge> `/friend.approve` {.route}
 
-- **messageId:** `string` 请求 ID
-- **approve:** `boolean` 是否通过请求
-- **comment:** `string` 备注信息
-- 返回值: `Promise<void>`
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| message_id | string | request ID |
+| approve | boolean | whether to approve the request |
+| comment | string? | comment |
 
-处理好友请求。
+Handle a friend request.
+
+## Events
+
+### friend-request
+
+Triggered when a new friend request is received. Required resource: [`user`](#def-user).

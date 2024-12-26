@@ -1,57 +1,90 @@
-# 群组成员 (GuildMember)
+# Guild Member
 
-## 类型定义
+## Definitions
 
-```ts
-interface GuildMember {
-  user: User
-  nick?: string
-  avatar?: string
-}
-```
+### GuildMember {#def-guild-member}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| user | [User](./user.md#user)? | user object |
+| nick | string? | user's nickname in the guild |
+| avatar | string? | user's avatar in the guild |
+| joined_at | number? | join time |
 
 ## API
 
-### bot.getGuildMember(guildId, userId)
+### Get Guild Member {#api-guild-member-get}
 
-- **guildId:** `string` 群组 ID
-- **userId:** `string` 用户 ID
-- 返回值: `Promise<GuildMember>` 群成员信息
+> <badge>POST</badge> `/guild.member.get` {.route}
 
-获取群成员信息。
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| user_id | string | user ID |
 
-### bot.getGuildMemberList(guildId, next?)
+Get guild member information. Returns a [GuildMember](#def-guild-member) object.
 
-- **guildId:** `string` 群组 ID
-- **next:** `string` 分页令牌
-- 返回值: `Promise<List<GuildMember>>` 群成员列表
+### Get Guild Member List {#api-guild-member-list}
 
-获取群成员列表。
+> <badge>POST</badge> `/guild.member.list` {.route}
 
-### bot.kickGuildMember(guildId, userId, permanent?)
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| next | string? | pagination token |
 
-- **guildId:** `string` 群组 ID
-- **userId:** `string` 用户 ID
-- **permanent:** `boolean` 是否永久踢出 (用户无法再次加入群组)
-- 返回值: `Promise<void>`
+Get all the members in a guild. Returns a [List](../protocol/api.md#list) of [GuildMember](#def-guild-member) objects.
 
-将某个用户踢出群组。
+### Kick Guild Member {#api-guild-member-kick}
 
-### bot.muteGuildMember(guildId, userId, duration?, reason?)
+> <badge>POST</badge> `/guild.member.kick` {.route}
 
-- **guildId:** `string` 群组 ID
-- **userId:** `string` 用户 ID
-- **duration:** `number` 禁言时长 (毫秒)
-- **reason:** `string` 禁言说明
-- 返回值: `Promise<void>`
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| user_id | string | user ID |
+| permanent | boolean? | whether to permanently ban the user (preventing rejoin) |
 
-将某个用户禁言。如果传入的禁言时长为 `0` 则表示解除禁言。
+Kick a user from the guild.
 
-### bot.handleGuildMemberRequest(messageId, approve, comment?)
+### Mute Guild Member <badge type="warning">experimental</badge> {#api-guild-member-mute}
 
-- **messageId:** `string` 请求 ID
-- **approve:** `boolean` 是否通过请求
-- **comment:** `string` 备注信息
-- 返回值: `Promise<void>`
+> <badge>POST</badge> `/guild.member.mute` {.route}
 
-处理加群请求。
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| user_id | string | user ID |
+| duration | number | mute duration (in milliseconds) |
+
+Mute a user. If the duration is set to 0, it will unmute the user.
+
+### Approve Guild Member Request {#api-guild-member-approve}
+
+> <badge>POST</badge> `/guild.member.approve` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| message_id | string | request ID |
+| approve | boolean | whether to approve the request |
+| comment | string? | comment |
+
+Handle a guild join request.
+
+## Events
+
+### guild-member-added
+
+Triggered when a guild member is added. Required resources: [`guild`](./guild.md#def-guild), [`member`](#def-guild-member), [`user`](./user.md#def-user).
+
+### guild-member-updated
+
+Triggered when guild member information is updated. Required resources: [`guild`](./guild.md#def-guild), [`member`](#def-guild-member), [`user`](./user.md#def-user).
+
+### guild-member-removed
+
+Triggered when a guild member is removed. Required resources: [`guild`](./guild.md#def-guild), [`member`](#def-guild-member), [`user`](./user.md#def-user).
+
+### guild-member-request
+
+Triggered when a new guild join request is received. Required resources: [`guild`](./guild.md#def-guild), [`member`](#def-guild-member), [`user`](./user.md#def-user).

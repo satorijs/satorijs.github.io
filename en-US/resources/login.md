@@ -37,11 +37,11 @@
 
 ## API
 
-### Get Login Information {#api-login-get}
+### Get Login {#api-login-get}
 
 > <badge>POST</badge> `/login.get` {.route}
 
-Get Login Information. Returns a [`Login`](#def-login) object.
+Get the current login. Returns a [`Login`](#def-login) object.
 
 ## Events
 

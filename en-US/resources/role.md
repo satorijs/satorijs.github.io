@@ -1,65 +1,95 @@
-# 群组角色 (GuildRole) <badge type="warning">实验性</badge>
+# Guild Role <badge type="warning">experimental</badge>
 
-## 类型定义
+## Definitions
 
-```ts
-export interface GuildRole {
-  id: string
-  name: string
-  color: number
-  position: number
-}
-```
+### GuildRole {#def-guild-role}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| id | string | role ID |
+| name | string? | role name |
 
 ## API
 
-### bot.setGuildMemberRole(guildId, userId, roleId)
+### Set Guild Member Role {#api-guild-member-role-set}
 
-- **guildId:** `string` 群组 ID
-- **userId:** `string` 用户 ID
-- **roleId:** `string` 角色 ID
-- 返回值: `Promise<void>`
+> <badge>POST</badge> `/guild.member.role.set` {.route}
 
-设置群组内用户的角色。
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| user_id | string | user ID |
+| role_id | string | role ID |
 
-### bot.unsetGuildMemberRole(guildId, userId, roleId)
+Set a role for a user in the guild.
 
-- **guildId:** `string` 群组 ID
-- **userId:** `string` 用户 ID
-- **roleId:** `string` 角色 ID
-- 返回值: `Promise<void>`
+### Unset Guild Member Role {#api-guild-member-role-unset}
 
-取消群组内用户的角色。
+> <badge>POST</badge> `/guild.member.role.unset` {.route}
 
-### bot.getGuildRoleList(guildId, next?)
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| user_id | string | user ID |
+| role_id | string | role ID |
 
-- **guildId:** `string` 群组 ID
-- **next:** `string` 分页令牌
-- 返回值: `Promise<List<GuildRole>>` 角色列表
+Remove a role from a user in the guild.
 
-获取群组角色列表。
+### Get Guild Role List {#api-guild-role-list}
 
-### bot.createGuildRole(guildId, data)
+> <badge>POST</badge> `/guild.role.list` {.route}
 
-- **guildId:** `string` 群组 ID
-- **data:** `Partial<GuildRole>` 角色信息
-- 返回值: `Promise<string>` 角色 ID
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| next | string? | pagination token |
 
-创建群组角色。
+Get all roles in a guild. Returns a [List](../protocol/api.md#list) of [GuildRole](#def-guild-role) objects.
 
-### bot.modifyGuildRole(guildId, roleId, data)
+### Create Guild Role {#api-guild-role-create}
 
-- **guildId:** `string` 群组 ID
-- **roleId:** `string` 角色 ID
-- **data:** `Partial<GuildRole>` 角色信息
-- 返回值: `Promise<void>`
+> <badge>POST</badge> `/guild.role.create` {.route}
 
-修改群组角色。
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| data | [GuildRole](#def-guild-role) | role data |
 
-### bot.deleteGuildRole(guildId, roleId)
+Create a guild role. Returns a [GuildRole](#def-guild-role) object.
 
-- **guildId:** `string` 群组 ID
-- **roleId:** `string` 角色 ID
-- 返回值: `Promise<void>`
+### Update Guild Role {#api-guild-role-update}
 
-删除群组角色。
+> <badge>POST</badge> `/guild.role.update` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| role_id | string | role ID |
+| data | [GuildRole](#def-guild-role) | role data |
+
+Update a guild role.
+
+### Delete Guild Role {#api-guild-role-delete}
+
+> <badge>POST</badge> `/guild.role.delete` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| role_id | string | role ID |
+
+Delete a guild role.
+
+## Events
+
+### guild-role-created
+
+Triggered when a guild role is created. Required resources: [`guild`](./guild.md#def-guild), [`role`](#def-guild-role).
+
+### guild-role-updated
+
+Triggered when a guild role is updated. Required resources: [`guild`](./guild.md#def-guild), [`role`](#def-guild-role).
+
+### guild-role-deleted
+
+Triggered when a guild role is deleted. Required resources: [`guild`](./guild.md#def-guild), [`role`](#def-guild-role).
