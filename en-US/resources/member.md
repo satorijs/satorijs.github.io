@@ -19,8 +19,8 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
-| user_id | string | user ID |
+| guild_id | string | guild id |
+| user_id | string | user id |
 
 Get guild member information. Returns a [GuildMember](#def-guild-member) object.
 
@@ -30,7 +30,7 @@ Get guild member information. Returns a [GuildMember](#def-guild-member) object.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
+| guild_id | string | guild id |
 | next | string? | pagination token |
 
 Get all the members in a guild. Returns a [List](../protocol/api.md#list) of [GuildMember](#def-guild-member) objects.
@@ -41,8 +41,8 @@ Get all the members in a guild. Returns a [List](../protocol/api.md#list) of [Gu
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
-| user_id | string | user ID |
+| guild_id | string | guild id |
+| user_id | string | user id |
 | permanent | boolean? | whether to permanently ban the user (preventing rejoin) |
 
 Kick a user from the guild.
@@ -53,8 +53,8 @@ Kick a user from the guild.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
-| user_id | string | user ID |
+| guild_id | string | guild id |
+| user_id | string | user id |
 | duration | number | mute duration (in milliseconds) |
 
 Mute a user. If the duration is set to 0, it will unmute the user.
@@ -65,7 +65,7 @@ Mute a user. If the duration is set to 0, it will unmute the user.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| message_id | string | request ID |
+| message_id | string | request id |
 | approve | boolean | whether to approve the request |
 | comment | string? | comment |
 

@@ -23,6 +23,8 @@
           { "text": "Guild", "link": "/resources/guild.md" },
           { "text": "Guild Member", "link": "/resources/member.md" },
           { "text": "Guild Role", "link": "/resources/role.md" },
+          { "text": "Interaction", "link": "/resources/interaction.md" },
+          { "text": "Login", "link": "/resources/login.md" },
           { "text": "Message", "link": "/resources/message.md" },
           { "text": "Reaction", "link": "/resources/reaction.md" },
           { "text": "User", "link": "/resources/user.md" }

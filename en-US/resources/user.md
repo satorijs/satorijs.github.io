@@ -6,7 +6,7 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| id | string | user ID |
+| id | string | user id |
 | name | string? | user name<sup>[[1]](#name-nick)</sup> |
 | nick | string? | user nickname<sup>[[1]](#name-nick)</sup> |
 | avatar | string? | user avatar |
@@ -28,9 +28,9 @@ In application-level implementations, `nick` takes precedence over `name` becaus
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| user_id | string | user ID |
+| user_id | string | user id |
 
-Get a user by ID. Returns a [User](#def-user) object.
+Get a user by id. Returns a [User](#def-user) object.
 
 ### Get Friend List {#api-friend-list}
 
@@ -48,7 +48,7 @@ Get the friend list. Returns a [List](../protocol/api.md#list) of [User](#def-us
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| message_id | string | request ID |
+| message_id | string | request id |
 | approve | boolean | whether to approve the request |
 | comment | string? | comment |
 

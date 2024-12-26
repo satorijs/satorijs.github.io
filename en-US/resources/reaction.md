@@ -1,41 +1,63 @@
-# 表态 (Reaction) <badge type="warning">实验性</badge>
+# Reaction <badge type="warning">experimental</badge>
 
 ## API
 
-### bot.createReaction(channelId, messageId, emoji)
+### Add Reaction {#api-reaction-create}
 
-- **channelId:** `string` 频道 ID
-- **messageId:** `string` 消息 ID
-- **emoji:** `string` 表态名称
-- 返回值: `Promise<void>`
+> <badge>POST</badge> `/reaction.create` {.route}
 
-向特定消息添加表态。
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| message_id | string | message id |
+| emoji | string | reaction emoji |
 
-### bot.deleteReaction(channelId, messageId, emoji, userId?)
+Add a reaction to a specific message.
 
-- **channelId:** `string` 频道 ID
-- **messageId:** `string` 消息 ID
-- **emoji:** `string` 表态名称
-- **userId:** `string` 用户 ID
-- 返回值: `Promise<void>`
+### Remove Reaction {#api-reaction-delete}
 
-从特定消息删除某个用户添加的特定表态。如果没有传入用户 ID 则表示删除自己的表态。
+> <badge>POST</badge> `/reaction.delete` {.route}
 
-### bot.clearReaction(channelId, messageId, emoji?)
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| message_id | string | message id |
+| emoji | string | reaction emoji |
+| user_id | string? | user id |
 
-- **channelId:** `string` 频道 ID
-- **messageId:** `string` 消息 ID
-- **emoji:** `string` 表态名称
-- 返回值: `Promise<void>`
+Remove a specific reaction added by a user from a specific message. If no user id is provided, it removes the reaction added by the current user.
 
-从特定消息清除某个特定表态。如果没有传入表态名称则表示清除所有表态。
+### Clear Reactions {#api-reaction-clear}
 
-### bot.getReactionList(channelId, messageId, emoji, next?)
+<badge>POST</badge> `/reaction.clear` {.route}
 
-- **channelId:** `string` 频道 ID
-- **messageId:** `string` 消息 ID
-- **emoji:** `string` 表态名称
-- **next:** `string` 分页令牌
-- 返回值: `Promise<List<User>>`
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| message_id | string | message id |
+| emoji | string? | reaction emoji |
 
-获取添加特定消息的特定表态的用户列表。
+Clear a specific reaction from a specific message. If no emoji is provided, it clears all reactions.
+
+### Get Reaction List {#api-reaction-list}
+
+> <badge>POST</badge> `/reaction.list` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| message_id | string | message id |
+| emoji | string | reaction emoji |
+| next | string? | pagination token |
+
+Get all the users who added a specific reaction to a specific message. Returns a [List](../protocol/api.md#list) of [User](./user.md) objects.
+
+## Events
+
+### reaction-added
+
+Triggered when a reaction is added.
+
+### reaction-removed
+
+Triggered when a reaction is removed.

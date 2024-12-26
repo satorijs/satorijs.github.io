@@ -18,7 +18,7 @@ Interaction features are primarily provided by bots and triggered by users in ch
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| id | string | button ID |
+| id | string | button id |
 
 ## Events
 

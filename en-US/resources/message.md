@@ -1,74 +1,97 @@
-# 消息 (Message)
+# Message
 
-## 类型定义
+## Definitions
 
-```ts
-interface Message {
-  isDirect: boolean
-  channelId: string
-  messageId: string
-  userId: string
-  content: string
-  timestamp?: number
-}
-```
+### Message {#def-message}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| id | string | message id |
+| content | string | message content |
+| channel | [Channel](./channel.md#def-channel)? | channel object |
+| guild | [Guild](./guild.md#def-guild)? | guild object |
+| member | [GuildMember](./member.md#def-guild-member)? | guild member object |
+| user | [User](./user.md#def-user)? | user object |
+| created_at | number? | timestamp of message creation |
+| updated_at | number? | timestamp of message update |
 
 ## API
 
-### bot.sendMessage(channelId, content, guildId?)
+### Create Message {#api-message-create}
 
-- **channelId:** `string` 频道 ID
-- **content:** `Fragment` 要发送的内容
-- **guildId:** `string` 群组 ID
-- 返回值: `Promise<string[]>` 发送的消息 ID
+> <badge>POST</badge> `/message.create` {.route}
 
-向特定频道发送消息。
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| content | string | message content |
 
-::: warning
-只要你能够获取到会话对象，你就不应使用此 API，而应该使用 `session.send()`。一些平台会将主动发送的消息同被动接收后回复的消息区分开来，甚至可能限制主动消息的发送，因此使用 `session.send()` 总是有更好的可靠性。
-:::
+Send (create) a message. Returns an array of [Message](#def-message) objects.
 
-::: tip
-`bot.sendMessage()` 既可以发送群聊消息，也可以发送私聊消息。当发送私聊消息时，其与 `bot.sendPrivateMessage()` 的区别在于前者传入的是频道 ID，而后者传入的是用户 ID。
-:::
+### Get Message {#api-message-get}
 
-### bot.sendPrivateMessage(userId, content)
+> <badge>POST</badge> `/message.get` {.route}
 
-- **userId:** `string` 对方 ID
-- **content:** `Fragment` 要发送的内容
-- 返回值: `Promise<string[]>` 发送的消息 ID
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| message_id | string | message id |
 
-向特定用户发送私聊消息。
+Get a message by id. Returns a [Message](#def-message) object. Required resources: [`channel`](./channel.md#def-channel), [`user`](./user.md#def-user).
 
-### bot.getMessage(channelId, messageId)
+### Delete Message {#api-message-delete}
 
-- **channelId:** `string` 频道 ID
-- **messageId:** `string` 消息 ID
-- 返回值: `Promise<Message>`
+> <badge>POST</badge> `/message.delete` {.route}
 
-获取特定消息。
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| message_id | string | message id |
 
-### bot.deleteMessage(channelId, messageId)
+Delete a specific message.
 
-- **channelId:** `string` 频道 ID
-- **messageId:** `string` 消息 ID
-- 返回值: `Promise<void>`
+### Update Message {#api-message-update}
 
-撤回特定消息。
+> <badge>POST</badge> `/message.update` {.route}
 
-### bot.editMessage(channelId, messageId, content)
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| message_id | string | message id |
+| content | string | message content |
 
-- **channelId:** `string` 频道 ID
-- **messageId:** `string` 消息 ID
-- **content:** `Fragment` 要发送的内容
-- 返回值: `Promise<void>`
+Edit (update) a specific message.
 
-修改特定消息。
+### Get Message List {#api-message-list}
 
-### bot.getMessageList(channelId, next?)
+> <badge>POST</badge> `/message.list` {.route}
 
-- **channelId:** `string` 频道 ID
-- **next:** `string` 分页令牌
-- 返回值: `Promise<List<Message>>` 消息列表
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel id |
+| message_id | string | message id |
+| next | string? | pagination token |
+| direction | [Direction](../protocol/api.md#bidi-list)? | query direction |
+| limit | number? | result limit |
+| order | [Order](../protocol/api.md#bidi-list)? | result order |
 
-获取频道消息列表。
+Get the list of messages in a channel. Returns a [bidirectional paged list](../protocol/api.md#bidi-list) of Message objects. Required resource: [`user`](./user.md#def-user).
+
+- The `next` parameter defaults to null, indicating the query starts from the latest message. In this case, the `direction` parameter can only be `before`.
+- The `direction` parameter defaults to `before`.
+- The `order` parameter defaults to `asc` (regardless of query direction).
+- The default value of the `limit` parameter aligns with the platform's default. If the platform API does not specify a default, it can be set independently, with a recommended value of 50. If the user-provided value exceeds the platform's limit, the platform's upper limit should be used instead of returning an error. Developers should use the presence of `prev` or `next` in the response to determine if more data exists, rather than relying on the length of the `data` in the response.
+
+## Events
+
+### message-created
+
+Triggered when a message is created. Required resources: [`channel`](./channel.md#def-channel), [`message`](#def-message), [`user`](./user.md#def-user).
+
+### message-updated
+
+Triggered when a message is updated. Required resources: [`channel`](./channel.md#def-channel), [`message`](#def-message), [`user`](./user.md#def-user).
+
+### message-deleted
+
+Triggered when a message is deleted. Required resources: [`channel`](./channel.md#def-channel), [`message`](#def-message), [`user`](./user.md#def-user).

@@ -6,7 +6,7 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| id | string | guild ID |
+| id | string | guild id |
 | name | string? | guild name |
 | avatar | string? | guild avatar |
 
@@ -18,9 +18,9 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| guild_id | string | guild ID |
+| guild_id | string | guild id |
 
-Get a guild by ID. Returns a [Guild](#def-guild) object.
+Get a guild by id. Returns a [Guild](#def-guild) object.
 
 ### Get Guild List {#api-guild-list}
 
@@ -38,7 +38,7 @@ Get guilds where the current user is a member. Returns a [List](../protocol/api.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| message_id | string | request ID |
+| message_id | string | request id |
 | approve | boolean | whether to approve the request |
 | comment | string? | comment |
 

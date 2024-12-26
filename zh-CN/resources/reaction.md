@@ -61,15 +61,3 @@
 ### reaction-removed
 
 当表态被移除时触发。
-
-<!-- ### reaction-removed-all
-
-当表态被移除时触发。
-
-### reaction-removed-user
-
-当表态被移除时触发。
-
-### reaction-removed-emoji
-
-当表态被移除时触发。 -->

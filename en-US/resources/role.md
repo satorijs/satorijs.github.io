@@ -6,7 +6,7 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| id | string | role ID |
+| id | string | role id |
 | name | string? | role name |
 
 ## API
@@ -17,9 +17,9 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
-| user_id | string | user ID |
-| role_id | string | role ID |
+| guild_id | string | guild id |
+| user_id | string | user id |
+| role_id | string | role id |
 
 Set a role for a user in the guild.
 
@@ -29,9 +29,9 @@ Set a role for a user in the guild.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
-| user_id | string | user ID |
-| role_id | string | role ID |
+| guild_id | string | guild id |
+| user_id | string | user id |
+| role_id | string | role id |
 
 Remove a role from a user in the guild.
 
@@ -41,7 +41,7 @@ Remove a role from a user in the guild.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
+| guild_id | string | guild id |
 | next | string? | pagination token |
 
 Get all roles in a guild. Returns a [List](../protocol/api.md#list) of [GuildRole](#def-guild-role) objects.
@@ -52,7 +52,7 @@ Get all roles in a guild. Returns a [List](../protocol/api.md#list) of [GuildRol
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
+| guild_id | string | guild id |
 | data | [GuildRole](#def-guild-role) | role data |
 
 Create a guild role. Returns a [GuildRole](#def-guild-role) object.
@@ -63,8 +63,8 @@ Create a guild role. Returns a [GuildRole](#def-guild-role) object.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
-| role_id | string | role ID |
+| guild_id | string | guild id |
+| role_id | string | role id |
 | data | [GuildRole](#def-guild-role) | role data |
 
 Update a guild role.
@@ -75,8 +75,8 @@ Update a guild role.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
-| role_id | string | role ID |
+| guild_id | string | guild id |
+| role_id | string | role id |
 
 Delete a guild role.
 

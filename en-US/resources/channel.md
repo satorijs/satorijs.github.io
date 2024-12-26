@@ -6,10 +6,10 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| id | string | channel ID |
+| id | string | channel id |
 | type | [ChannelType](#channeltype) | channel type |
 | name | string? | channel name |
-| parent_id | string? | parent channel ID |
+| parent_id | string? | parent channel id |
 
 ### ChannelType
 
@@ -28,9 +28,9 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| channel_id | string | channel ID |
+| channel_id | string | channel id |
 
-Get a channel by ID. Returns a [Channel](#def-channel) object.
+Get a channel by id. Returns a [Channel](#def-channel) object.
 
 ### Get Guild Channel List {#api-channel-list}
 
@@ -38,7 +38,7 @@ Get a channel by ID. Returns a [Channel](#def-channel) object.
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| guild_id | string | guild ID |
+| guild_id | string | guild id |
 | next | string | pagination token |
 
 Get all channels in a guild. Returns a [List](../protocol/api.md#list) of [Channel](#def-channel) objects.
@@ -49,7 +49,7 @@ Get all channels in a guild. Returns a [List](../protocol/api.md#list) of [Chann
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| guild_id | string | guild ID |
+| guild_id | string | guild id |
 | data | [Channel](#def-channel) | channel data |
 
 Create a guild channel. Returns a [Channel](#def-channel) object.
@@ -60,7 +60,7 @@ Create a guild channel. Returns a [Channel](#def-channel) object.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel ID |
+| channel_id | string | channel id |
 | data | [Channel](#def-channel) | channel data |
 
 Update a guild channel.
@@ -71,7 +71,7 @@ Update a guild channel.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel ID |
+| channel_id | string | channel id |
 
 Delete a guild channel.
 
@@ -81,7 +81,7 @@ Delete a guild channel.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel ID |
+| channel_id | string | channel id |
 | duration | number | mute duration (in milliseconds) |
 
 Mute a guild channel. If the duration is set to 0, it will unmute the channel.
@@ -92,7 +92,7 @@ Mute a guild channel. If the duration is set to 0, it will unmute the channel.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| user_id | string | user ID |
-| guild_id | string? | guild ID |
+| user_id | string | user id |
+| guild_id | string? | guild id |
 
 Create a direct message channel. Returns a [Channel](#def-channel) object.
