@@ -1,6 +1,6 @@
 # Channel
 
-## Definition
+## Definitions
 
 ### Channel {#def-channel}
 
@@ -13,7 +13,7 @@
 
 ### ChannelType
 
-| 名称 | 值 | 描述 |
+| TYPE | VALUE | DESCRIPTION |
 | --- | --- | --- |
 | TEXT | 0 | text channel |
 | DIRECT | 1 | direct message channel |

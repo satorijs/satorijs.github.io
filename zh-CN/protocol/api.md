@@ -46,7 +46,7 @@ Satori-User-ID: 1234567890
 如果某个标准 API 没有被某个平台支持，则应该返回 404 而非 501 (NOT IMPLEMENTED)。只有当一个 API 被平台支持但是未被适配器实现时，才应该返回 501。
 :::
 
-### 平台特性 <badge type="warning">实验性</badge>
+### 平台特性 <badge type="warning">实验性</badge> {#platform-features}
 
 [`Login`](../resources/login.md) 对象中的 `features` 字段是一个字符串数组，用于表示平台的特性。这些特性可以用于判断平台是否支持某些 API。合法的平台特性包括：
 

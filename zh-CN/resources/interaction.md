@@ -11,7 +11,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | name | string | 指令名称 |
-| arguments | any[] | 参数 |
+| arguments | array | 参数 |
 | options | object | 选项 |
 
 ### Button

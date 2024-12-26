@@ -1,6 +1,6 @@
 # Guild
 
-## Definition
+## Definitions
 
 ### Guild {#def-guild}
 
