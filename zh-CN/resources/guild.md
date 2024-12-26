@@ -40,7 +40,7 @@
 | --- | --- | --- |
 | message_id | string | 请求 ID |
 | approve | boolean | 是否通过请求 |
-| comment | string | 备注信息 |
+| comment | string? | 备注信息 |
 
 处理来自群组的邀请。
 

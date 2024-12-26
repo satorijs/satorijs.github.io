@@ -21,3 +21,28 @@ blockquote.route {
 .vp-doc sup a {
   text-decoration: none;
 }
+
+.adapter-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem 1rem;
+
+  a.adapter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    border-radius: 12px;
+    background-color: var(--vp-c-bg-soft);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--vp-c-text);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .adapter:hover {
+    background-color: var(--vp-c-bg-alt);
+  }
+}

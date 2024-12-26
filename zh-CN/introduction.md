@@ -24,33 +24,6 @@ Satori 的开发团队长期从事聊天机器人开发，熟悉各种聊天平�
   <a class="adapter">Zulip</a>
 </div>
 
-<style lang="scss">
-.adapter-table {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem 1rem;
-
-  a.adapter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 4rem;
-    border-radius: 12px;
-    background-color: var(--vp-c-bg-soft);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: var(--vp-c-text);
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .adapter:hover {
-    background-color: var(--vp-c-bg-alt);
-  }
-}
-</style>
-
 这些适配器不仅为你带来了开箱即用的体验，也从实际上证明了 Satori 协议的通用性和扩展性。
 
 不必担心使用 Satori 后会失去对聊天平台的控制。得益于 Satori 的内部接口机制，你完全可以大多数情况下编写通用代码，并在需要的时候使用内部接口来实现平台特定功能。

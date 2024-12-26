@@ -2,32 +2,97 @@
 
 ## Definition
 
-### Channel
+### Channel {#def-channel}
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
 | id | string | channel ID |
-| name | string | channel name |
+| type | [ChannelType](#channeltype) | channel type |
+| name | string? | channel name |
+| parent_id | string? | parent channel ID |
+
+### ChannelType
+
+| 名称 | 值 | 描述 |
+| --- | --- | --- |
+| TEXT | 0 | text channel |
+| DIRECT | 1 | direct message channel |
+| CATEGORY | 2 | category channel |
+| VOICE | 3 | voice channel |
 
 ## API
 
-### Get Channel
+### Get Guild Channel {#api-channel-get}
 
-- <badge>POST</badge> `/v1/channel.get`
+> <badge>POST</badge> `/channel.get` {.route}
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
 | channel_id | string | channel ID |
 
-Get a channel by ID. Returns a [channel](#channel-1) object.
+Get a channel by ID. Returns a [Channel](#def-channel) object.
 
-### bot.getChannelList(guildId, next?)
+### Get Guild Channel List {#api-channel-list}
 
-- <badge>POST</badge> `/v1/channel.list`
+> <badge>POST</badge> `/channel.list` {.route}
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
 | guild_id | string | guild ID |
 | next | string | pagination token |
 
-Get channels in a guild. Returns a [list](../protocol/api.md#pagination) of [channel](#channel-1) objects.
+Get all channels in a guild. Returns a [List](../protocol/api.md#list) of [Channel](#def-channel) objects.
+
+### Create Guild Channel {#api-channel-create}
+
+> <badge>POST</badge> `/channel.create` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild ID |
+| data | [Channel](#def-channel) | channel data |
+
+Create a guild channel. Returns a [Channel](#def-channel) object.
+
+### Update Guild Channel {#api-channel-update}
+
+> <badge>POST</badge> `/channel.update` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel ID |
+| data | [Channel](#def-channel) | channel data |
+
+Update a guild channel.
+
+### Delete Guild Channel {#api-channel-delete}
+
+> <badge>POST</badge> `/channel.delete` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel ID |
+
+Delete a guild channel.
+
+### Mute Guild Channel <badge type="warning">Experimental</badge> {#api-channel-mute}
+
+> <badge>POST</badge> `/channel.mute` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| channel_id | string | channel ID |
+| duration | number | mute duration (in milliseconds) |
+
+Mute a guild channel. If the duration is set to 0, it will unmute the channel.
+
+### Create Direct Message Channel {#api-user-channel-create}
+
+> <badge>POST</badge> `/user.channel.create` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| user_id | string | user ID |
+| guild_id | string? | guild ID |
+
+Create a direct message channel. Returns a [Channel](#def-channel) object.
