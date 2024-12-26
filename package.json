@@ -1,8 +1,9 @@
 {
   "name": "@satorijs/docs",
-  "type": "module",
+  "packageManager": "yarn@4.5.3",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "author": "Shigma <shigma10826@gmail.com>",
   "license": "MIT",
@@ -12,13 +13,11 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
-    "@cordisjs/vitepress": "^3.3.2",
+    "@cordisjs/vitepress": "^4.0.1",
     "@types/node": "^22.7.5",
     "@vueuse/core": "^11.1.0",
     "cross-env": "^7.0.3",
     "element-plus": "2.7.7",
-    "esbuild": "^0.23.1",
-    "esbuild-register": "^3.5.0",
     "sass": "^1.82.0",
     "typescript": "^5.7.2",
     "vitepress": "1.5.0",

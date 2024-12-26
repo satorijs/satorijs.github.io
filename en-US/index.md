@@ -2,7 +2,7 @@
 layout: home
 
 links:
-  starter: /en-US/protocol/
+  starter: /en-US/introduction.html
 
 home:
   primary: Get Started

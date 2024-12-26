@@ -14,23 +14,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up Node
         uses: actions/setup-node@v4
-      - id: cache
-        name: Yarn Cache Dir
-        run: echo "value=$(yarn cache dir)" >> $GITHUB_OUTPUT
-      - name: Restore Lockfile
-        uses: actions/cache@v2
-        with:
-          path: yarn.lock
-          key: yarn-lock-${{ github.sha }}
-          restore-keys: yarn-lock-
-      - name: Restore Cache
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.cache.outputs.value }}
-          key: yarn-cache-${{ github.sha }}
-          restore-keys: yarn-cache-
+      - name: Enable Corepack
+        run: corepack enable
       - name: Install
-        run: yarn
+        run: yarn --no-immutable
       - name: Build
         run: yarn build
       - name: Deploy
