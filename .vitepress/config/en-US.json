@@ -29,6 +29,14 @@
           { "text": "Reaction", "link": "/resources/reaction.md" },
           { "text": "User", "link": "/resources/user.md" }
         ]
+      }, {
+        "text": "Advanced",
+        "items": [
+          { "text": "Cross Platform", "link": "/advanced/internal.md" },
+          { "text": "Resource URLs", "link": "/advanced/resource.md" },
+          { "text": "Bridge", "link": "/advanced/bridge.md" },
+          { "text": "Meta", "link": "/advanced/meta.md" }
+        ]
       }]
     }
   }

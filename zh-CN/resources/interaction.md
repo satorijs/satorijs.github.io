@@ -28,7 +28,7 @@
 
 ### interaction/command
 
-调用斜线指令时触发。资源 [`argv`](#def-argv) 或 [`message`](./messsage.md#def-message) 中至少包含其一。
+调用斜线指令时触发。资源 [`argv`](#def-argv) 或 [`message`](./message.md#def-message) 中至少包含其一。
 
 ::: tip
 许多平台都支持斜线指令，但它们的实现方式各不相同。如果平台的斜线指令仅仅提供在前端，机器人无法直接判断一个事件是否为斜线指令调用，那么直接实现为普通消息事件即可。
