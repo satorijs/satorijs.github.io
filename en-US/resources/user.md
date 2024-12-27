@@ -40,7 +40,7 @@ Get a user by id. Returns a [User](#def-user) object.
 | --- | --- | --- |
 | next | string? | pagination token |
 
-Get the friend list. Returns a [paged list](../protocol/api.md#list) of [User](#def-user) objects.
+Get the friend list. Returns a [paginated list](../protocol/api.md#list) of [User](#def-user) objects.
 
 ### Handle Friend Request {#api-friend-approve}
 

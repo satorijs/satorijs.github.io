@@ -10,7 +10,7 @@
 | platform | string?<sup>[[3]](#login-nullable)</sup> | platform name |
 | user | [User](./user.md)?<sup>[[3]](#login-nullable)</sup> | user object<sup>[[2]](#login-user)</sup> |
 | status | [LoginStatus](#def-login-status) | login status |
-| adapter | string | [adapter name](../advanced/internal.md#platform-adapter) <badge type="warning">experimental</badge> |
+| adapter | string | [adapter name](../advanced/internal.md#platform-vs-adapter) <badge type="warning">experimental</badge> |
 | features | string[]? | list of [platform features](../protocol/api.md#platform-features) <badge type="warning">experimental</badge> |
 
 ::: tip

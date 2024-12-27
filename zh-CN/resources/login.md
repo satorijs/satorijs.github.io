@@ -10,7 +10,7 @@
 | platform | string?<sup>[[3]](#login-nullable)</sup> | 平台名称 |
 | user | [User](./user.md)?<sup>[[3]](#login-nullable)</sup> | 用户对象<sup>[[2]](#login-user)</sup> |
 | status | [LoginStatus](#def-login-status) | 登录状态 |
-| adapter | string | [适配器名称](../advanced/internal.md#platform-adapter) <badge type="warning">实验性</badge> |
+| adapter | string | [适配器名称](../advanced/internal.md#platform-vs-adapter) <badge type="warning">实验性</badge> |
 | features | string[]? | [平台特性](../protocol/api.md#platform-features) 列表 <badge type="warning">实验性</badge> |
 
 ::: tip

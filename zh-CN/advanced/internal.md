@@ -4,7 +4,7 @@
 
 这些原生能力被统称为内部接口，涵盖了 API、事件、消息元素、路由等各个方面。
 
-## 平台与适配器 {#platform-adapter}
+## 平台与适配器 {#platform-vs-adapter}
 
 Satori 协议的大多数 API 都需要传入 `Satori-Platform` 和 `Satori-User-ID` 请求头，这是为了区分发起请求的登录号。不同平台的登录号拥有不同的 `login.platform`，而同一平台的不同登录号则拥有不同的 `login.user.id`，由此这套机制实现了安全的隔离。
 
@@ -32,7 +32,7 @@ Satori 协议的大多数 API 都需要传入 `Satori-Platform` 和 `Satori-User
 - **单平台多适配器**：某平台同时有官方和非官方的 SDK，两套 SDK 使用的通信方式不同，因此 `adapter` 字段应该是不同的。但这两套 SDK 都是为了与同一平台通信，所有的 `user.id`, `guild.id` 等属于同一个命名空间，因此 `platform` 字段应该是相同的。
 :::
 
-## API 扩展
+## API 扩展 {#api}
 
 SDK 可以通过 `/{path}/{version}/internal/{method}` 路由代理平台原生 API。
 
@@ -46,7 +46,7 @@ Satori-User-ID: 1234567890
 
 除了作为前缀的路由和额外的 `Satori-Platform` 和 `Satori-User-ID` 请求头之外，整个请求和响应的格式都与平台原生 API 一致。
 
-## 事件扩展
+## 事件扩展 {#events}
 
 ### 平台原生事件
 
@@ -75,7 +75,7 @@ SDK 可以通过 `internal` 事件的 `_type` 和 `_data` 属性代理平台原�
 有些平台原生事件可以直接对应到标准事件。当这些事件触发时，SDK 可以同时触发标准事件和平台原生事件。这两个事件都带有 `_type` 和 `_data` 字段，但这两个字段的值可能是不同的。
 :::
 
-## 消息元素扩展
+## 消息元素扩展 {#elements}
 
 ### 平台原生消息元素
 

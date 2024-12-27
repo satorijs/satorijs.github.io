@@ -30,7 +30,7 @@ Get a guild by id. Returns a [Guild](#def-guild) object.
 | ----- | ---- | ----------- |
 | next | string | pagination token |
 
-Get guilds where the current user is a member. Returns a [paged list](../protocol/api.md#list) of partial [Guild](#def-guild) objects.
+Get guilds where the current user is a member. Returns a [paginated list](../protocol/api.md#list) of partial [Guild](#def-guild) objects.
 
 ### Handle Guild Invitation {#api-guild-approve}
 

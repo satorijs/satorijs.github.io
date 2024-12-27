@@ -75,7 +75,7 @@ Edit (update) a specific message.
 | limit | number? | result limit |
 | order | [Order](../protocol/api.md#bidi-list)? | result order |
 
-Get the list of messages in a channel. Returns a [bidirectional paged list](../protocol/api.md#bidi-list) of Message objects. Required resource: [`user`](./user.md#def-user).
+Get the list of messages in a channel. Returns a [bidirectional paginated list](../protocol/api.md#bidi-list) of Message objects. Required resource: [`user`](./user.md#def-user).
 
 - The `next` parameter defaults to null, indicating the query starts from the latest message. In this case, the `direction` parameter can only be `before`.
 - The `direction` parameter defaults to `before`.

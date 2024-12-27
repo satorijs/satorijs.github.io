@@ -8,7 +8,7 @@ Satori 协议规定了一套基于 HTTP 的 API 服务，用于发送消息和�
 
 目前 Satori 仅有 v1 一个版本。
 
-绝大多数 API 的请求都使用 POST，参数通过 `application/json` 编码在请求体中。返回值也是 JSON 格式。作为特例，具有 [文件上传](../advanced/resource.md#api-upload-create) 功能的 API 使用 `multipart/form-data` 编码。
+绝大多数 API 的请求都使用 `POST`，参数通过 `application/json` 编码在请求体中。返回值也是 JSON 格式。作为特例，[文件上传](../advanced/resource.md#api-upload-create) API 使用 `multipart/form-data` 编码。
 
 请求头中需要包含 `Satori-Platform` 和 `Satori-User-ID` 字段，分别表示平台名称和平台账号。
 
@@ -38,17 +38,17 @@ Satori-User-ID: 1234567890
 | 400 (BAD REQUEST) | 请求格式错误 |
 | 401 (UNAUTHORIZED) | 缺失鉴权 |
 | 403 (FORBIDDEN) | 权限不足 |
-| 404 (NOT FOUND) | 资源不存在 |
+| 404 (NOT FOUND) | API 不存在 |
 | 405 (METHOD NOT ALLOWED) | 请求方法不支持 |
 | 5XX (SERVER ERROR) | 服务器错误 |
 
 ::: tip
-如果某个标准 API 没有被某个平台支持，则应该返回 404 而非 501 (NOT IMPLEMENTED)。只有当一个 API 被平台支持但是未被适配器实现时，才应该返回 501。
+如果某个标准 API 没有被某个平台支持，则应该返回 404 (NOT FOUND) 而非 501 (NOT IMPLEMENTED)。只有当一个 API 被平台支持但是未被适配器实现时，才应该返回 501。
 :::
 
 ### 平台特性 <badge type="warning">实验性</badge> {#platform-features}
 
-[`Login`](../resources/login.md) 对象中的 `features` 字段是一个字符串数组，用于表示平台的特性。这些特性可以用于判断平台是否支持某些 API。合法的平台特性包括：
+[Login](../resources/login.md#def-login) 对象中的 `features` 字段是一个字符串数组，用于表示平台的特性。这些特性可以用于判断平台是否支持某些 API。合法的平台特性包括：
 
 - API 可用性，如特性 `message.delete` 表示支持使用 [`message.delete`](../resources/message.md#api-message-delete) 撤回消息。
 - API 额外特性，如特性 `message.list.from` 表示使用 [`message.list`](../resources/message.md#api-message-create) 查询消息列表时支持将消息 ID 作为分页令牌。
@@ -62,7 +62,7 @@ Satori-User-ID: 1234567890
 
 - `/{path}/{version}/proxy` 的子路由用于代理平台资源，请参见 [代理路由](../advanced/resource.md#proxy-route)。
 - `/{path}/{version}/meta` 的子路由用于访问 SDK 相关接口，请参见 [元信息 API](../advanced/meta.md#api)。
-- `/{path}/{version}/internal` 的子路由用于访问平台内部接口，请参见 [内部 API](../advanced/internal.md)。
+- `/{path}/{version}/internal` 的子路由用于访问平台内部接口，请参见 [内部 API](../advanced/internal.md#api)。
 
 ## 类型定义
 

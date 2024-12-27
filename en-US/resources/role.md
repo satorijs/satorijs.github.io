@@ -44,7 +44,7 @@ Remove a role from a user in the guild.
 | guild_id | string | guild id |
 | next | string? | pagination token |
 
-Get all roles in a guild. Returns a [paged list](../protocol/api.md#list) of [GuildRole](#def-guild-role) objects.
+Get all roles in a guild. Returns a [paginated list](../protocol/api.md#list) of [GuildRole](#def-guild-role) objects.
 
 ### Create Guild Role {#api-guild-role-create}
 

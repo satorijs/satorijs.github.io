@@ -33,7 +33,7 @@ Get guild member information. Returns a [GuildMember](#def-guild-member) object.
 | guild_id | string | guild id |
 | next | string? | pagination token |
 
-Get all the members in a guild. Returns a [paged list](../protocol/api.md#list) of [GuildMember](#def-guild-member) objects.
+Get all the members in a guild. Returns a [paginated list](../protocol/api.md#list) of [GuildMember](#def-guild-member) objects.
 
 ### Kick Guild Member {#api-guild-member-kick}
 
