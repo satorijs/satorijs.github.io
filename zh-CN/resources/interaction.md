@@ -6,7 +6,7 @@
 
 ## 类型定义
 
-### Argv
+### Argv {#def-argv}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -14,7 +14,7 @@
 | arguments | array | 参数 |
 | options | object | 选项 |
 
-### Button
+### Button {#def-button}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -24,11 +24,11 @@
 
 ### interaction/button
 
-类型为 `action` 的按钮被点击时触发。必需资源：`button`。
+类型为 `action` 的按钮被点击时触发。必需资源：[`button`](#def-button)。
 
 ### interaction/command
 
-调用斜线指令时触发。资源 `argv` 或 `message` 中至少包含其一。
+调用斜线指令时触发。资源 [`argv`](#def-argv) 或 [`message`](./messsage.md#def-message) 中至少包含其一。
 
 ::: tip
 许多平台都支持斜线指令，但它们的实现方式各不相同。如果平台的斜线指令仅仅提供在前端，机器人无法直接判断一个事件是否为斜线指令调用，那么直接实现为普通消息事件即可。

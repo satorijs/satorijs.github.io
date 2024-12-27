@@ -2,16 +2,16 @@
 
 ## 类型定义
 
-### Message
+### Message {#def-message}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 消息 ID |
 | content | string | 消息内容 |
-| channel | [Channel](./channel.md#channel)? | 频道对象 |
-| guild | [Guild](./guild.md#guild)? | 群组对象 |
-| member | [Member](./member.md#member)? | 群组成员对象 |
-| user | [User](./user.md#user)? | 用户对象 |
+| channel | [Channel](./channel.md#def-channel)? | 频道对象 |
+| guild | [Guild](./guild.md#def-guild)? | 群组对象 |
+| member | [Member](./member.md#def-member)? | 群组成员对象 |
+| user | [User](./user.md#def-user)? | 用户对象 |
 | created_at | number? | 消息发送的时间戳 |
 | updated_at | number? | 消息修改的时间戳 |
 
@@ -26,7 +26,7 @@
 | channel_id | string | 频道 ID |
 | content | string | 消息内容 |
 
-发送消息。返回一个 [`Message`](#message) 对象构成的数组。
+发送消息。返回一个 [`Message`](#def-message) 对象构成的数组。
 
 ### 获取消息 {#api-message-get}
 
@@ -37,7 +37,7 @@
 | channel_id | string | 频道 ID |
 | message_id | string | 消息 ID |
 
-获取特定消息。返回一个 [`Message`](#message) 对象。必需资源：`channel`，`user`。
+获取特定消息。返回一个 [`Message`](#def-message) 对象。必需资源：[`channel`](./channel.md#def-channel)，[`user`](./user.md#def-user)。
 
 ### 撤回消息 {#api-message-delete}
 
@@ -74,7 +74,7 @@
 | limit | number? | 消息数量限制 |
 | order | [Order](../protocol/api.md#bidi-list)? | 对结果排序 |
 
-获取频道消息列表。返回一个 [`Message`](#message) 的 [双向分页列表](../protocol/api.md#bidi-list)。必需资源：`user`。
+获取频道消息列表。返回一个 [`Message`](#def-message) 的 [双向分页列表](../protocol/api.md#bidi-list)。必需资源：[`user`](./user.md#def-user)。
 
 - `next` 参数默认值为空，表示从最新消息开始查询。此时 `direction` 参数只能为 `before`。
 - `direction` 参数默认为 `before`。
@@ -85,12 +85,12 @@
 
 ### message-created
 
-当消息被创建时触发。必需资源：`channel`，`message`，`user`。
+当消息被创建时触发。必需资源：[`channel`](./channel.md#def-channel)，[`message`](#def-message)，[`user`](./user.md#def-user)。
 
 ### message-updated
 
-当消息被编辑时触发。必需资源：`channel`，`message`，`user`。
+当消息被编辑时触发。必需资源：[`channel`](./channel.md#def-channel)，[`message`](#def-message)，[`user`](./user.md#def-user)。
 
 ### message-deleted
 
-当消息被删除时触发。必需资源：`channel`，`message`，`user`。
+当消息被删除时触发。必需资源：[`channel`](./channel.md#def-channel)，[`message`](#def-message)，[`user`](./user.md#def-user)。

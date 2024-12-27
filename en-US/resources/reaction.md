@@ -50,7 +50,7 @@ Clear a specific reaction from a specific message. If no emoji is provided, it c
 | emoji | string | reaction emoji |
 | next | string? | pagination token |
 
-Get all the users who added a specific reaction to a specific message. Returns a [List](../protocol/api.md#list) of [User](./user.md) objects.
+Get all the users who added a specific reaction to a specific message. Returns a [paged list](../protocol/api.md#list) of [User](./user.md#def-user) objects.
 
 ## Events
 

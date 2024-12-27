@@ -2,16 +2,16 @@
 
 ## 类型定义
 
-### Channel
+### Channel {#def-channel}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | id | string | 频道 ID |
-| type | [ChannelType](#channeltype) | 频道类型 |
+| type | [ChannelType](#def-channel-type) | 频道类型 |
 | name | string? | 频道名称 |
 | parent_id | string? | 父频道 ID |
 
-### ChannelType
+### ChannelType {#def-channel-type}
 
 | 名称 | 值 | 描述 |
 | --- | --- | --- |
@@ -30,7 +30,7 @@
 | --- | --- | --- |
 | channel_id | string | 频道 ID |
 
-根据 ID 获取频道。返回一个 [Channel](#channel) 对象。
+根据 ID 获取频道。返回一个 [Channel](#def-channel) 对象。
 
 ### 获取群组频道列表 {#api-channel-list}
 
@@ -41,7 +41,7 @@
 | guild_id | string | 群组 ID |
 | next | string? | 分页令牌 |
 
-获取群组中的全部频道。返回一个 [Channel](#channel) 的 [分页列表](../protocol/api.md#list)。
+获取群组中的全部频道。返回一个 [Channel](#def-channel) 的 [分页列表](../protocol/api.md#list)。
 
 ### 创建群组频道 {#api-channel-create}
 
@@ -52,7 +52,7 @@
 | guild_id | string | 群组 ID |
 | data | [Channel](#channel) | 频道数据 |
 
-创建群组频道。返回一个 [Channel](#channel) 对象。
+创建群组频道。返回一个 [Channel](#def-channel) 对象。
 
 ### 修改群组频道 {#api-channel-update}
 
@@ -61,7 +61,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | channel_id | string | 频道 ID |
-| data | [Channel](#channel) | 频道数据 |
+| data | [Channel](#def-channel) | 频道数据 |
 
 修改群组频道。
 
@@ -95,4 +95,4 @@
 | user_id | string | 用户 ID |
 | guild_id | string? | 群组 ID |
 
-创建一个私聊频道。返回一个 [Channel](#channel) 对象。
+创建一个私聊频道。返回一个 [Channel](#def-channel) 对象。

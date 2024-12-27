@@ -6,7 +6,7 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| user | [User](./user.md#user)? | user object |
+| user | [User](./user.md#def-user)? | user object |
 | nick | string? | user's nickname in the guild |
 | avatar | string? | user's avatar in the guild |
 | joined_at | number? | join time |
@@ -33,7 +33,7 @@ Get guild member information. Returns a [GuildMember](#def-guild-member) object.
 | guild_id | string | guild id |
 | next | string? | pagination token |
 
-Get all the members in a guild. Returns a [List](../protocol/api.md#list) of [GuildMember](#def-guild-member) objects.
+Get all the members in a guild. Returns a [paged list](../protocol/api.md#list) of [GuildMember](#def-guild-member) objects.
 
 ### Kick Guild Member {#api-guild-member-kick}
 

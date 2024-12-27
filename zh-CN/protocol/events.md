@@ -22,16 +22,16 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | `sn` | number | 序列号 |
 | `type` | string | 事件类型 |
 | `timestamp` | number | 事件的时间戳 |
-| `login` | [Login](../resources/login.md#login) | 登录信息 |
-| `argv` | [Argv](../resources/interaction.md#argv)? | 交互指令 |
-| `button` | [Button](../resources/interaction.md#button)? | 交互按钮 |
-| `channel` | [Channel](../resources/channel.md#channel)? | 事件所属的频道 |
-| `guild` | [Guild](../resources/guild.md#guild)? | 事件所属的群组 |
-| `member` | [GuildMember](../resources/member.md#guildmember)? | 事件的目标成员 |
-| `message` | [Message](../resources/message.md#message)? | 事件的消息 |
-| `operator` | [User](../resources/user.md#user)? | 事件的操作者 |
-| `role` | [GuildRole](../resources/role.md#guildrole)? | 事件的目标角色 |
-| `user` | [User](../resources/user.md#user)? | 事件的目标用户 |
+| `login` | [Login](../resources/login.md#def-login) | 登录信息 |
+| `argv` | [Argv](../resources/interaction.md#def-argv)? | 交互指令 |
+| `button` | [Button](../resources/interaction.md#def-button)? | 交互按钮 |
+| `channel` | [Channel](../resources/channel.md#def-channel)? | 事件所属的频道 |
+| `guild` | [Guild](../resources/guild.md#def-guild)? | 事件所属的群组 |
+| `member` | [GuildMember](../resources/member.md#def-guild-member)? | 事件的目标成员 |
+| `message` | [Message](../resources/message.md#def-message)? | 事件的消息 |
+| `operator` | [User](../resources/user.md#def-user)? | 事件的操作者 |
+| `role` | [GuildRole](../resources/role.md#def-guild-role)? | 事件的目标角色 |
+| `user` | [User](../resources/user.md#def-user)? | 事件的目标用户 |
 
 事件分为登录事件与非登录事件，其中登录事件特指与 Login 变化相关的事件 (如 [login-added](../resources/login.md#login-added))。所有事件都采用上述数据结构，不过在细节上有所区别：
 
@@ -76,7 +76,7 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `logins` | [`Login[]`](../resources/login.md) | 登录信息 |
+| `logins` | [`Login[]`](../resources/login.md#def-login) | 登录信息 |
 | `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 `META` 信令的 `body` 数据结构如下：

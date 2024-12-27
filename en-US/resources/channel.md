@@ -41,7 +41,7 @@ Get a channel by id. Returns a [Channel](#def-channel) object.
 | guild_id | string | guild id |
 | next | string | pagination token |
 
-Get all channels in a guild. Returns a [List](../protocol/api.md#list) of [Channel](#def-channel) objects.
+Get all channels in a guild. Returns a [paged list](../protocol/api.md#list) of [Channel](#def-channel) objects.
 
 ### Create Guild Channel {#api-channel-create}
 

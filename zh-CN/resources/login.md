@@ -2,7 +2,7 @@
 
 ## 类型定义
 
-### Login
+### Login {#def-login}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -41,18 +41,18 @@
 
 > <badge>POST</badge> `/login.get` {.route}
 
-获取登录信息。返回一个 [`Login`](#login) 对象。
+获取登录信息。返回一个 [`Login`](#def-login) 对象。
 
 ## 事件
 
 ### login-added
 
-登录被创建时触发。必需资源：`login`。
+登录被创建时触发。必需资源：[`login`](#def-login)。
 
 ### login-removed
 
-登录被删除时触发。必需资源：`login`。
+登录被删除时触发。必需资源：[`login`](#def-login)。
 
 ### login-updated
 
-登录信息更新时触发。必需资源：`login`。
+登录信息更新时触发。必需资源：[`login`](#def-login)。

@@ -2,7 +2,7 @@
 
 ## 类型定义
 
-### User
+### User {#def-user}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -30,7 +30,7 @@
 | --- | --- | --- |
 | user_id | string | 用户 ID |
 
-获取用户信息。返回一个 [`User`](#user) 对象。
+获取用户信息。返回一个 [`User`](#def-user) 对象。
 
 ### 获取好友列表 {#api-friend-list}
 
@@ -40,7 +40,7 @@
 | --- | --- | --- |
 | next | string? | 分页令牌 |
 
-获取好友列表。返回一个 [`User`](#user) 的 [分页列表](../protocol/api.md#list)。
+获取好友列表。返回一个 [`User`](#def-user) 的 [分页列表](../protocol/api.md#list)。
 
 ### 处理好友申请 {#api-friend-approve}
 
@@ -58,4 +58,4 @@
 
 ### friend-request
 
-接收到新的好友申请时触发。必需资源：`user`。
+接收到新的好友申请时触发。必需资源：[`user`](#def-user)。

@@ -2,7 +2,7 @@
 
 ## 类型定义
 
-### Guild
+### Guild {#def-guild}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
@@ -20,7 +20,7 @@
 | --- | --- | --- |
 | guild_id | string | 群组 ID |
 
-根据 ID 获取。返回一个 [Guild](#guild) 对象。
+根据 ID 获取。返回一个 [Guild](#def-guild) 对象。
 
 ### 获取群组列表 {#api-guild-list}
 
@@ -30,7 +30,7 @@
 | --- | --- | --- |
 | next | string? | 分页令牌 |
 
-获取当前用户加入的全部群组。返回一个 [Guild](#guild) 的 [分页列表](../protocol/api.md#list)。
+获取当前用户加入的全部群组。返回一个 [Guild](#def-guild) 的 [分页列表](../protocol/api.md#list)。
 
 ### 处理群组邀请 {#api-guild-approve}
 
@@ -48,16 +48,16 @@
 
 ### guild-added
 
-加入群组时触发。必需资源：`guild`。
+加入群组时触发。必需资源：[`guild`](#def-guild)。
 
 ### guild-updated
 
-群组被修改时触发。必需资源：`guild`。
+群组被修改时触发。必需资源：[`guild`](#def-guild)。
 
 ### guild-removed
 
-退出群组时触发。必需资源：`guild`。
+退出群组时触发。必需资源：[`guild`](#def-guild)。
 
 ### guild-request
 
-接收到新的入群邀请时触发。必需资源：`guild`。
+接收到新的入群邀请时触发。必需资源：[`guild`](#def-guild)。

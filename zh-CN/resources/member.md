@@ -2,11 +2,11 @@
 
 ## 类型定义
 
-### GuildMember
+### GuildMember {#def-guild-member}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| user | [User](./user.md#user)? | 用户对象 |
+| user | [User](./user.md#def-user)? | 用户对象 |
 | nick | string? | 用户在群组中的名称 |
 | avatar | string? | 用户在群组中的头像 |
 | joined_at | number? | 加入时间 |
@@ -22,7 +22,7 @@
 | guild_id | string | 群组 ID |
 | user_id | string | 用户 ID |
 
-获取群成员信息。返回一个 [GuildMember](#guildmember) 对象。
+获取群成员信息。返回一个 [GuildMember](#def-guild-member) 对象。
 
 ### 获取群组成员列表 {#api-guild-member-list}
 
@@ -33,7 +33,7 @@
 | guild_id | string | 群组 ID |
 | next | string? | 分页令牌 |
 
-获取群成员列表。返回一个 [GuildMember](#guildmember) 的 [分页列表](../protocol/api.md#list)。
+获取群成员列表。返回一个 [GuildMember](#def-guild-member) 的 [分页列表](../protocol/api.md#list)。
 
 ### 踢出群组成员 {#api-guild-member-kick}
 
@@ -75,16 +75,16 @@
 
 ### guild-member-added
 
-群组成员增加时触发。必需资源：`guild`，`member`，`user`。
+群组成员增加时触发。必需资源：[`guild`](./guild.md#def-guild)，[`member`](#def-guild-member)，[`user`](./user.md#def-user)。
 
 ### guild-member-updated
 
-群组成员信息更新时触发。必需资源：`guild`，`member`，`user`。
+群组成员信息更新时触发。必需资源：[`guild`](./guild.md#def-guild)，[`member`](#def-guild-member)，[`user`](./user.md#def-user)。
 
 ### guild-member-removed
 
-群组成员移除时触发。必需资源：`guild`，`member`，`user`。
+群组成员移除时触发。必需资源：[`guild`](./guild.md#def-guild)，[`member`](#def-guild-member)，[`user`](./user.md#def-user)。
 
 ### guild-member-request
 
-接收到新的加群请求时触发。必需资源：`guild`，`member`，`user`。
+接收到新的加群请求时触发。必需资源：[`guild`](./guild.md#def-guild)，[`member`](#def-guild-member)，[`user`](./user.md#def-user)。
