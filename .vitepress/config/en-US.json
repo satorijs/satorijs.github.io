@@ -11,11 +11,10 @@
         "text": "Protocol",
         "items": [
           { "text": "Overview", "link": "/protocol/index.md" },
-          { "text": "HTTP API", "link": "/protocol/api.md" },
-          { "text": "Standard Elements", "link": "/protocol/elements.md" },
-          { "text": "WebSocket", "link": "/protocol/websocket.md" },
-          { "text": "WebHook", "link": "/protocol/webhook.md" },
-          { "text": "Message", "link": "/protocol/message.md" }
+          { "text": "API", "link": "/protocol/api.md" },
+          { "text": "Events", "link": "/protocol/events.md" },
+          { "text": "Message Encoding", "link": "/protocol/message.md" },
+          { "text": "Standard Elements", "link": "/protocol/elements.md" }
         ]
       }, {
         "text": "Resources",

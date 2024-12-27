@@ -19,26 +19,26 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `sn` | number | 序列号 |
-| `type` | string | 事件类型 |
-| `timestamp` | number | 事件的时间戳 |
-| `login` | [Login](../resources/login.md#def-login) | 登录信息 |
-| `argv` | [Argv](../resources/interaction.md#def-argv)? | 交互指令 |
-| `button` | [Button](../resources/interaction.md#def-button)? | 交互按钮 |
-| `channel` | [Channel](../resources/channel.md#def-channel)? | 事件所属的频道 |
-| `guild` | [Guild](../resources/guild.md#def-guild)? | 事件所属的群组 |
-| `member` | [GuildMember](../resources/member.md#def-guild-member)? | 事件的目标成员 |
-| `message` | [Message](../resources/message.md#def-message)? | 事件的消息 |
-| `operator` | [User](../resources/user.md#def-user)? | 事件的操作者 |
-| `role` | [GuildRole](../resources/role.md#def-guild-role)? | 事件的目标角色 |
-| `user` | [User](../resources/user.md#def-user)? | 事件的目标用户 |
+| sn | number | 序列号 |
+| type | string | 事件类型 |
+| timestamp | number | 事件的时间戳 |
+| login | [Login](../resources/login.md#def-login) | 登录信息 |
+| argv | [Argv](../resources/interaction.md#def-argv)? | 交互指令 |
+| button | [Button](../resources/interaction.md#def-button)? | 交互按钮 |
+| channel | [Channel](../resources/channel.md#def-channel)? | 事件所属的频道 |
+| guild | [Guild](../resources/guild.md#def-guild)? | 事件所属的群组 |
+| member | [GuildMember](../resources/member.md#def-guild-member)? | 事件的目标成员 |
+| message | [Message](../resources/message.md#def-message)? | 事件的消息 |
+| operator | [User](../resources/user.md#def-user)? | 事件的操作者 |
+| role | [GuildRole](../resources/role.md#def-guild-role)? | 事件的目标角色 |
+| user | [User](../resources/user.md#def-user)? | 事件的目标用户 |
 
 事件分为登录事件与非登录事件，其中登录事件特指与 Login 变化相关的事件 (如 [login-added](../resources/login.md#login-added))。所有事件都采用上述数据结构，不过在细节上有所区别：
 
 - 非登录事件中的 `login` 资源只会带有 `sn`, `user` 和 `platform` 三个属性；
 - 非登录事件均确保 `login.status` 为 `ONLINE` (尽管不会传递这个字段）；
 - 登录事件会带有完整的 `login` 资源，但可能不存在 `user` 和 `platform`；
-- 登录事件不参与 [会话恢复](#会话恢复)。
+- 登录事件不参与 [会话恢复](#session-recovery)。
 
 事件中的各属性遵循 [资源提升](./index.md) 规则。
 
@@ -62,38 +62,38 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `op` | [`Opcode`](#opcode) | 信令类型 |
-| `body` | object? | 信令数据 |
+| op | [Opcode](#opcode) | 信令类型 |
+| body | object? | 信令数据 |
 
 `IDENTIFY` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `token` | string? | 鉴权令牌 |
-| `sn` | number? | 序列号 |
+| token | string? | 鉴权令牌 |
+| sn | number? | 序列号 |
 
 `READY` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `logins` | [`Login[]`](../resources/login.md#def-login) | 登录信息 |
-| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| logins | [Login](../resources/login.md#def-login)[] | 登录信息 |
+| proxy_urls | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 `META` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| proxy_urls | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 `EVENT` 信令的 `body` 数据结构参见 [Event](#event)。
 
 ### 鉴权
 
-WebSocket 鉴权通过 IDENTIFY 信令的 `token` 字段来实现。其中涉及的鉴权令牌由 SDK 分发，本协议不做任何限制。
+WebSocket 鉴权通过 `IDENTIFY` 信令的 `token` 字段来实现。其中涉及的鉴权令牌由 SDK 分发，本协议不做任何限制。
 
 如果 SDK 没有配置鉴权，则应用无需提供上述字段。
 
-### 会话恢复
+### 会话恢复 {#session-recovery}
 
 当连接短暂中断时，Satori 应用可以通过 `IDENTIFY` 信令的 `sn` 字段来恢复会话。`sn` 字段的值为上一次连接中最后一个接收到的 `EVENT` 信令的 `sn` 字段。会话恢复后，SDK 会向应用推送所有在断开连接期间发生的事件。
 

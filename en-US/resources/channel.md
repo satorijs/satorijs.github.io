@@ -27,7 +27,7 @@
 > <badge>POST</badge> `/channel.get` {.route}
 
 | FIELD | TYPE | DESCRIPTION |
-| ----- | ---- | ----------- |
+| --- | --- | --- |
 | channel_id | string | channel id |
 
 Get a channel by id. Returns a [Channel](#def-channel) object.
@@ -37,7 +37,7 @@ Get a channel by id. Returns a [Channel](#def-channel) object.
 > <badge>POST</badge> `/channel.list` {.route}
 
 | FIELD | TYPE | DESCRIPTION |
-| ----- | ---- | ----------- |
+| --- | --- | --- |
 | guild_id | string | guild id |
 | next | string | pagination token |
 
