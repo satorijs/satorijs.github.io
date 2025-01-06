@@ -35,6 +35,29 @@ Set a role for a user in the guild.
 
 Remove a role from a user in the guild.
 
+<!-- ### List Guild Member Roles {#api-guild-member-role-list}
+
+> <badge>POST</badge> `/guild.member.role.list` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild id |
+| user_id | string | user id |
+| next | string? | pagination token |
+
+Get all roles for a user in a guild. Returns a [paginated list](../protocol/api.md#list) of [GuildRole](#def-guild-role) objects. -->
+
+<!-- ### Get Guild Role {#api-guild-role-get}
+
+> <badge>POST</badge> `/guild.role.get` {.route}
+
+| FIELD | TYPE | DESCRIPTION |
+| --- | --- | --- |
+| guild_id | string | guild id |
+| role_id | string | role id |
+
+Get a guild role. Returns a [GuildRole](#def-guild-role) object. -->
+
 ### Get Guild Role List {#api-guild-role-list}
 
 > <badge>POST</badge> `/guild.role.list` {.route}

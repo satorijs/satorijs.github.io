@@ -35,6 +35,29 @@
 
 取消群组内用户的角色。
 
+<!-- ### 获取群组成员角色列表 {#api-guild-member-role-list}
+
+> <badge>POST</badge> `/guild.member.role.list` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| guild_id | string | 群组 ID |
+| user_id | string | 用户 ID |
+| next | string? | 分页令牌 |
+
+获取群组内用户的角色列表。返回一个 [GuildRole](#def-guild-role) 的 [分页列表](../protocol/api.md#list)。 -->
+
+<!-- ### 获取群组角色 {#api-guild-role-get}
+
+> <badge>POST</badge> `/guild.role.get` {.route}
+
+| 字段 | 类型 | 描述 |
+| --- | --- | --- |
+| guild_id | string | 群组 ID |
+| role_id | string | 角色 ID |
+
+获取群组角色。返回一个 [GuildRole](#def-guild-role) 对象。 -->
+
 ### 获取群组角色列表 {#api-guild-role-list}
 
 > <badge>POST</badge> `/guild.role.list` {.route}

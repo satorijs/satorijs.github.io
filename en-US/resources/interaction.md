@@ -28,7 +28,7 @@ Triggered when a button of type `action` is clicked. Required resource: [`button
 
 ### interaction/command
 
-Triggered when a slash command is invoked. At least one of the resources [`argv`](#def-argv) or `message` must be included.
+Triggered when a slash command is invoked. At least one of the resources [`argv`](#def-argv) or [`message`](./message.md#def-message) must be included.
 
 ::: tip
 Many platforms support slash commands, but their implementations vary. If the platform’s slash commands are only provided on the frontend and the bot cannot directly determine whether an event is a slash command invocation, it can be treated as a regular message event.
