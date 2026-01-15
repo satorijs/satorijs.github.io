@@ -6,11 +6,11 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| id | string | 用户 ID |
-| name | string? | 用户名称<sup>[[1]](#name-nick)</sup> |
-| nick | string? | 用户昵称<sup>[[1]](#name-nick)</sup> |
-| avatar | string? | 用户头像链接 |
-| is_bot | boolean? | 是否为机器人 |
+| `id` | string | 用户 ID |
+| `name` | string? | 用户名称<sup>[[1]](#name-nick)</sup> |
+| `nick` | string? | 用户昵称<sup>[[1]](#name-nick)</sup> |
+| `avatar` | string? | 用户头像链接 |
+| `is_bot` | boolean? | 是否为机器人 |
 
 ::: tip
 **[1] `name` 和 `nick` 字段的区别** {#name-nick}
@@ -28,7 +28,7 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| user_id | string | 用户 ID |
+| `user_id` | string | 用户 ID |
 
 获取用户信息。返回一个 [`User`](#def-user) 对象。
 
@@ -38,7 +38,7 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| next | string? | 分页令牌 |
+| `next` | string? | 分页令牌 |
 
 获取好友列表。返回一个 [`User`](#def-user) 的 [分页列表](../protocol/api.md#list)。
 
@@ -48,9 +48,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| message_id | string | 请求 ID |
-| approve | boolean | 是否通过请求 |
-| comment | string? | 备注信息 |
+| `message_id` | string | 请求 ID |
+| `approve` | boolean | 是否通过请求 |
+| `comment` | string? | 备注信息 |
 
 处理好友申请。
 

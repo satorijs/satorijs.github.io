@@ -10,15 +10,15 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| name | string | 指令名称 |
-| arguments | array | 参数 |
-| options | object | 选项 |
+| `name` | string | 指令名称 |
+| `arguments` | array | 参数 |
+| `options` | object | 选项 |
 
 ### Button {#def-button}
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| id | string | 按钮 ID |
+| `id` | string | 按钮 ID |
 
 ## 事件
 

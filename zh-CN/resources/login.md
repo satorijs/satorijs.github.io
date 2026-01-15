@@ -6,12 +6,12 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| sn | number | 序列号<sup>[[1]](#login-sn)</sup> <badge type="warning">实验性</badge> |
-| platform | string?<sup>[[3]](#login-nullable)</sup> | 平台名称 |
-| user | [User](./user.md)?<sup>[[3]](#login-nullable)</sup> | 用户对象<sup>[[2]](#login-user)</sup> |
-| status | [LoginStatus](#def-login-status) | 登录状态 |
-| adapter | string | [适配器名称](../advanced/internal.md#platform-vs-adapter) <badge type="warning">实验性</badge> |
-| features | string[]? | [平台特性](../protocol/api.md#platform-features) 列表 <badge type="warning">实验性</badge> |
+| `sn` | number | 序列号<sup>[[1]](#login-sn)</sup> <badge type="warning">实验性</badge> |
+| `platform` | string?<sup>[[3]](#login-nullable)</sup> | 平台名称 |
+| `user` | [User](./user.md)?<sup>[[3]](#login-nullable)</sup> | 用户对象<sup>[[2]](#login-user)</sup> |
+| `status` | [LoginStatus](#def-login-status) | 登录状态 |
+| `adapter` | string | [适配器名称](../advanced/internal.md#platform-vs-adapter) <badge type="warning">实验性</badge> |
+| `features` | string[]? | [平台特性](../protocol/api.md#platform-features) 列表 <badge type="warning">实验性</badge> |
 
 ::: tip
 [1] `login.sn` 仅用于标识 Login 对象，与平台逻辑无关 (意味着任何平台相关的 API 调用都不需要传入这个 `sn`)，也不进行持久化 (意味着两次连接中同一个登录号的 `sn` 可能是不同的，不同登录号的 `sn` 可能是相同的)。请尤其注意与 `login.user.id` 区分。 {#login-sn}
@@ -29,11 +29,11 @@
 
 | 名称 | 值 | 描述 |
 | --- | --- | --- |
-| OFFLINE | 0 | 离线 |
-| ONLINE | 1 | 在线 |
-| CONNECT | 2 | 正在连接 |
-| DISCONNECT | 3 | 正在断开连接 |
-| RECONNECT | 4 | 正在重新连接 |
+| `OFFLINE` | 0 | 离线 |
+| `ONLINE` | 1 | 在线 |
+| `CONNECT` | 2 | 正在连接 |
+| `DISCONNECT` | 3 | 正在断开连接 |
+| `RECONNECT` | 4 | 正在重新连接 |
 
 ## API
 

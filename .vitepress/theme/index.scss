@@ -18,8 +18,16 @@ blockquote.route {
   }
 }
 
-.vp-doc sup a {
-  text-decoration: none;
+.vp-doc {
+  sup a {
+    text-decoration: none;
+  }
+
+  table {
+    .VPBadge {
+      transform: none;
+    }
+  }
 }
 
 .adapter-table {

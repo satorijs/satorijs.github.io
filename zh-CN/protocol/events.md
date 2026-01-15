@@ -8,30 +8,30 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 
 | 名称 | 值 | 方向 | 描述 |
 | --- | --- | --- | --- |
-| EVENT | 0 | 接收 | 事件 |
-| PING | 1 | 发送 | 心跳 |
-| PONG | 2 | 接收 | 心跳回复 |
-| IDENTIFY | 3 | 发送 | 鉴权 |
-| READY | 4 | 接收 | 鉴权成功 |
-| META | 5 | 接收 | 元信息更新 <badge type="warning">实验性</badge> |
+| `EVENT` | 0 | 接收 | 事件 |
+| `PING` | 1 | 发送 | 心跳 |
+| `PONG` | 2 | 接收 | 心跳回复 |
+| `IDENTIFY` | 3 | 发送 | 鉴权 |
+| `READY` | 4 | 接收 | 鉴权成功 |
+| `META` | 5 | 接收 | 元信息更新 <badge type="warning">实验性</badge> |
 
 ### Event
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| sn | number | 序列号 |
-| type | string | 事件类型 |
-| timestamp | number | 事件的时间戳 |
-| login | [Login](../resources/login.md#def-login) | 登录信息 |
-| argv | [Argv](../resources/interaction.md#def-argv)? | 交互指令 |
-| button | [Button](../resources/interaction.md#def-button)? | 交互按钮 |
-| channel | [Channel](../resources/channel.md#def-channel)? | 事件所属的频道 |
-| guild | [Guild](../resources/guild.md#def-guild)? | 事件所属的群组 |
-| member | [GuildMember](../resources/member.md#def-guild-member)? | 事件的目标成员 |
-| message | [Message](../resources/message.md#def-message)? | 事件的消息 |
-| operator | [User](../resources/user.md#def-user)? | 事件的操作者 |
-| role | [GuildRole](../resources/role.md#def-guild-role)? | 事件的目标角色 |
-| user | [User](../resources/user.md#def-user)? | 事件的目标用户 |
+| `sn` | number | 序列号 |
+| `type` | string | 事件类型 |
+| `timestamp` | number | 事件的时间戳 |
+| `login` | [Login](../resources/login.md#def-login) | 登录信息 |
+| `argv` | [Argv](../resources/interaction.md#def-argv)? | 交互指令 |
+| `button` | [Button](../resources/interaction.md#def-button)? | 交互按钮 |
+| `channel` | [Channel](../resources/channel.md#def-channel)? | 事件所属的频道 |
+| `guild` | [Guild](../resources/guild.md#def-guild)? | 事件所属的群组 |
+| `member` | [GuildMember](../resources/member.md#def-guild-member)? | 事件的目标成员 |
+| `message` | [Message](../resources/message.md#def-message)? | 事件的消息 |
+| `operator` | [User](../resources/user.md#def-user)? | 事件的操作者 |
+| `role` | [GuildRole](../resources/role.md#def-guild-role)? | 事件的目标角色 |
+| `user` | [User](../resources/user.md#def-user)? | 事件的目标用户 |
 
 事件分为登录事件与非登录事件，其中登录事件特指与 Login 变化相关的事件 (如 [login-added](../resources/login.md#login-added))。所有事件都采用上述数据结构，不过在细节上有所区别：
 
@@ -62,28 +62,28 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| op | [Opcode](#opcode) | 信令类型 |
-| body | object? | 信令数据 |
+| `op` | [Opcode](#opcode) | 信令类型 |
+| `body` | object? | 信令数据 |
 
 `IDENTIFY` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| token | string? | 鉴权令牌 |
-| sn | number? | 序列号 |
+| `token` | string? | 鉴权令牌 |
+| `sn` | number? | 序列号 |
 
 `READY` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| logins | [Login](../resources/login.md#def-login)[] | 登录信息 |
-| proxy_urls | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| `logins` | [Login](../resources/login.md#def-login)[] | 登录信息 |
+| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 `META` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| proxy_urls | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
 
 `EVENT` 信令的 `body` 数据结构参见 [Event](#event)。
 

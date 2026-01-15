@@ -6,10 +6,10 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| user | [User](./user.md#def-user)? | 用户对象 |
-| nick | string? | 用户在群组中的名称 |
-| avatar | string? | 用户在群组中的头像 |
-| joined_at | number? | 加入时间 |
+| `user` | [User](./user.md#def-user)? | 用户对象 |
+| `nick` | string? | 用户在群组中的名称 |
+| `avatar` | string? | 用户在群组中的头像 |
+| `joined_at` | number? | 加入时间 |
 
 ## API
 
@@ -19,8 +19,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| user_id | string | 用户 ID |
+| `guild_id` | string | 群组 ID |
+| `user_id` | string | 用户 ID |
 
 获取群成员信息。返回一个 [GuildMember](#def-guild-member) 对象。
 
@@ -30,8 +30,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| next | string? | 分页令牌 |
+| `guild_id` | string | 群组 ID |
+| `next` | string? | 分页令牌 |
 
 获取群成员列表。返回一个 [GuildMember](#def-guild-member) 的 [分页列表](../protocol/api.md#list)。
 
@@ -41,9 +41,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| user_id | string | 用户 ID |
-| permanent | boolean? | 是否永久踢出 (无法再次加入群组) |
+| `guild_id` | string | 群组 ID |
+| `user_id` | string | 用户 ID |
+| `permanent` | boolean? | 是否永久踢出 (无法再次加入群组) |
 
 将某个用户踢出群组。
 
@@ -53,9 +53,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| user_id | string | 用户 ID |
-| duration | number | 禁言时长 (毫秒) |
+| `guild_id` | string | 群组 ID |
+| `user_id` | string | 用户 ID |
+| `duration` | number | 禁言时长 (毫秒) |
 
 将某个用户禁言。如果传入的禁言时长为 `0` 则表示解除禁言。
 
@@ -65,9 +65,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| message_id | string | 请求 ID |
-| approve | boolean | 是否通过请求 |
-| comment | string? | 备注信息 |
+| `message_id` | string | 请求 ID |
+| `approve` | boolean | 是否通过请求 |
+| `comment` | string? | 备注信息 |
 
 处理加群请求。
 

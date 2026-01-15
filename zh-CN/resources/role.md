@@ -6,8 +6,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| id | string | 角色 ID |
-| name | string? | 角色名称 |
+| `id` | string | 角色 ID |
+| `name` | string? | 角色名称 |
 
 ## API
 
@@ -17,9 +17,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| user_id | string | 用户 ID |
-| role_id | string | 角色 ID |
+| `guild_id` | string | 群组 ID |
+| `user_id` | string | 用户 ID |
+| `role_id` | string | 角色 ID |
 
 设置群组内用户的角色。
 
@@ -29,9 +29,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| user_id | string | 用户 ID |
-| role_id | string | 角色 ID |
+| `guild_id` | string | 群组 ID |
+| `user_id` | string | 用户 ID |
+| `role_id` | string | 角色 ID |
 
 取消群组内用户的角色。
 
@@ -41,9 +41,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| user_id | string | 用户 ID |
-| next | string? | 分页令牌 |
+| `guild_id` | string | 群组 ID |
+| `user_id` | string | 用户 ID |
+| `next` | string? | 分页令牌 |
 
 获取群组内用户的角色列表。返回一个 [GuildRole](#def-guild-role) 的 [分页列表](../protocol/api.md#list)。 -->
 
@@ -53,8 +53,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| role_id | string | 角色 ID |
+| `guild_id` | string | 群组 ID |
+| `role_id` | string | 角色 ID |
 
 获取群组角色。返回一个 [GuildRole](#def-guild-role) 对象。 -->
 
@@ -64,8 +64,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| next | string? | 分页令牌 |
+| `guild_id` | string | 群组 ID |
+| `next` | string? | 分页令牌 |
 
 获取群组角色列表。返回一个 [GuildRole](#def-guild-role) 的 [分页列表](../protocol/api.md#list)。
 
@@ -75,8 +75,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| role | [GuildRole](#def-guild-role) | 角色数据 |
+| `guild_id` | string | 群组 ID |
+| `role` | [GuildRole](#def-guild-role) | 角色数据 |
 
 创建群组角色。返回一个 [GuildRole](#def-guild-role) 对象。
 
@@ -86,9 +86,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| role_id | string | 角色 ID |
-| role | [GuildRole](#def-guild-role) | 角色数据 |
+| `guild_id` | string | 群组 ID |
+| `role_id` | string | 角色 ID |
+| `role` | [GuildRole](#def-guild-role) | 角色数据 |
 
 修改群组角色。
 
@@ -98,8 +98,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| guild_id | string | 群组 ID |
-| role_id | string | 角色 ID |
+| `guild_id` | string | 群组 ID |
+| `role_id` | string | 角色 ID |
 
 删除群组角色。
 

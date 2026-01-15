@@ -6,14 +6,14 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| id | string | 消息 ID |
-| content | string | 消息内容 |
-| channel | [Channel](./channel.md#def-channel)? | 频道对象 |
-| guild | [Guild](./guild.md#def-guild)? | 群组对象 |
-| member | [Member](./member.md#def-member)? | 群组成员对象 |
-| user | [User](./user.md#def-user)? | 用户对象 |
-| created_at | number? | 消息发送的时间戳 |
-| updated_at | number? | 消息修改的时间戳 |
+| `id` | string | 消息 ID |
+| `content` | string | 消息内容 |
+| `channel` | [Channel](./channel.md#def-channel)? | 频道对象 |
+| `guild` | [Guild](./guild.md#def-guild)? | 群组对象 |
+| `member` | [Member](./member.md#def-member)? | 群组成员对象 |
+| `user` | [User](./user.md#def-user)? | 用户对象 |
+| `created_at` | number? | 消息发送的时间戳 |
+| `updated_at` | number? | 消息修改的时间戳 |
 
 ## API
 
@@ -23,8 +23,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| channel_id | string | 频道 ID |
-| content | string | 消息内容 |
+| `channel_id` | string | 频道 ID |
+| `content` | string | 消息内容 |
 
 发送消息。返回一个 [`Message`](#def-message) 对象构成的数组。
 
@@ -34,8 +34,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| channel_id | string | 频道 ID |
-| message_id | string | 消息 ID |
+| `channel_id` | string | 频道 ID |
+| `message_id` | string | 消息 ID |
 
 获取特定消息。返回一个 [`Message`](#def-message) 对象。必需资源：[`channel`](./channel.md#def-channel)，[`user`](./user.md#def-user)。
 
@@ -45,8 +45,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| channel_id | string | 频道 ID |
-| message_id | string | 消息 ID |
+| `channel_id` | string | 频道 ID |
+| `message_id` | string | 消息 ID |
 
 撤回特定消息。
 
@@ -56,9 +56,9 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| channel_id | string | 频道 ID |
-| message_id | string | 消息 ID |
-| content | string | 消息内容 |
+| `channel_id` | string | 频道 ID |
+| `message_id` | string | 消息 ID |
+| `content` | string | 消息内容 |
 
 编辑特定消息。
 
@@ -68,11 +68,11 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| channel_id | string | 频道 ID |
-| next | string? | 分页令牌 |
-| direction | [Direction](../protocol/api.md#bidi-list)? | 查询方向 |
-| limit | number? | 消息数量限制 |
-| order | [Order](../protocol/api.md#bidi-list)? | 对结果排序 |
+| `channel_id` | string | 频道 ID |
+| `next` | string? | 分页令牌 |
+| `direction` | [Direction](../protocol/api.md#bidi-list)? | 查询方向 |
+| `limit` | number? | 消息数量限制 |
+| `order` | [Order](../protocol/api.md#bidi-list)? | 对结果排序 |
 
 获取频道消息列表。返回一个 [`Message`](#def-message) 的 [双向分页列表](../protocol/api.md#bidi-list)。必需资源：[`user`](./user.md#def-user)。
 
