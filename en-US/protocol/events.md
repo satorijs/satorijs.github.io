@@ -47,7 +47,7 @@ The attributes in events follow the resource promotion rules.
 
 The WebSocket service is used to maintain a persistent, stateful connection between the Satori SDK and the application. Through this connection, Satori applications can receive events pushed by the SDK in real time.
 
-The WebSocket service address is `/{path}/{version}/events`. Here, `path` is the deployment path (which can be empty), and `version` is the API version number.
+The WebSocket service address is `/{version}/events`. Here, `version` is the API version number.
 
 Currently, Satori has only one version: v1.
 

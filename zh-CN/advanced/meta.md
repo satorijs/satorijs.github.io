@@ -14,7 +14,7 @@
 
 需要注意的是，`META` 信令不反映登录状态变化，也不会包含 `logins` 字段。
 
-元信息 API 通过 `/{path}/{version}/meta/{method}` 路由提供。通信方式与 [HTTP API](../protocol/api.md) 类似，但不需要 `Satori-Platform` 和 `Satori-User-ID` 请求头。
+元信息 API 通过 `/{version}/meta/{method}` 路由提供。通信方式与 [HTTP API](../protocol/api.md) 类似，但不需要 `Satori-Platform` 和 `Satori-User-ID` 请求头。
 
 ## 类型定义
 

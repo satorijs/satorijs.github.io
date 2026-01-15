@@ -4,7 +4,7 @@ Satori 协议规定了一套基于 HTTP 的 API 服务，用于发送消息和�
 
 ## HTTP API
 
-这是一套 HTTP RPC 风格的 API，所有 URL 的形式均为 `/{path}/{version}/{resource}.{method}`。其中，`path` 为部署路径 (可以为空)，`version` 为 API 的版本号，`resource` 是资源类型，`method` 为方法名。
+这是一套 HTTP RPC 风格的 API，所有 URL 的形式均为 `/{version}/{resource}.{method}`。其中，`version` 为 API 的版本号，`resource` 是资源类型，`method` 为方法名。
 
 目前 Satori 仅有 v1 一个版本。
 
@@ -60,9 +60,9 @@ Satori-User-ID: 1234567890
 
 除了标准 API 外，Satori 还提供了一些进阶功能。
 
-- `/{path}/{version}/proxy` 的子路由用于代理平台资源，请参见[代理路由](../advanced/resource.md#proxy-route)。
-- `/{path}/{version}/meta` 的子路由用于访问 SDK 相关接口，请参见[元信息 API](../advanced/meta.md#api)。
-- `/{path}/{version}/internal` 的子路由用于访问平台内部接口，请参见[内部 API](../advanced/internal.md#api)。
+- `/{version}/proxy` 的子路由用于代理平台资源，请参见[代理路由](../advanced/resource.md#proxy-route)。
+- `/{version}/meta` 的子路由用于访问 SDK 相关接口，请参见[元信息 API](../advanced/meta.md#api)。
+- `/{version}/internal` 的子路由用于访问平台内部接口，请参见[内部 API](../advanced/internal.md#api)。
 
 ## 类型定义
 

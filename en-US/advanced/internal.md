@@ -33,7 +33,7 @@ Note that these two concepts are actually many-to-many. Some special scenarios:
 
 ## API Extensions {#api}
 
-SDKs can proxy platform-native APIs via the route `/{path}/{version}/internal/{method}`.
+SDKs can proxy platform-native APIs via the route `/{version}/internal/{method}`.
 
 For example, Discord provides a RESTful API, so you can make a request like:
 

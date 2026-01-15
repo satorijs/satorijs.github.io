@@ -34,7 +34,7 @@ Satori 协议的大多数 API 都需要传入 `Satori-Platform` 和 `Satori-User
 
 ## API 扩展 {#api}
 
-SDK 可以通过 `/{path}/{version}/internal/{method}` 路由代理平台原生 API。
+SDK 可以通过 `/{version}/internal/{method}` 路由代理平台原生 API。
 
 例如，Discord 平台提供了 Restful API，那么你可以进行如下请求：
 

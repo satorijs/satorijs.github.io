@@ -4,7 +4,7 @@ The Satori protocol defines a set of HTTP-based API services for sending message
 
 ## HTTP API
 
-This is an HTTP RPC-style API, where all URLs follow the format `/{path}/{version}/{resource}.{method}`. Here, `path` is the deployment path (which can be empty), version is the API version number, `resource` is the resource type, and `method` is the method name.
+This is an HTTP RPC-style API, where all URLs follow the format `/{version}/{resource}.{method}`. Here, `version` is the API version number, `resource` is the resource type, and `method` is the method name.
 
 Currently, Satori has only one version: v1.
 
@@ -60,9 +60,9 @@ Currently, only the API names themselves are standardized. We will provide a mor
 
 In addition to standard APIs, Satori also provides some advanced functionalities.
 
-- Sub-routes under `/{path}/{version}/proxy` are used to proxy platform resources. See [Proxy Routes](../advanced/resource.md#proxy-route).
-- Sub-routes under `/{path}/{version}/meta` are used to access SDK-related interfaces. See [Meta Information API](../advanced/meta.md#api).
-- Sub-routes under `/{path}/{version}/internal` are used to access platform internal interfaces. See [Internal API](../advanced/internal.md#api).
+- Sub-routes under `/{version}/proxy` are used to proxy platform resources. See [Proxy Routes](../advanced/resource.md#proxy-route).
+- Sub-routes under `/{version}/meta` are used to access SDK-related interfaces. See [Meta Information API](../advanced/meta.md#api).
+- Sub-routes under `/{version}/internal` are used to access platform internal interfaces. See [Internal API](../advanced/internal.md#api).
 
 ## Definitions
 
