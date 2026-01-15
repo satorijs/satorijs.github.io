@@ -8,10 +8,10 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| id | string? | 收发 | 目标用户的 ID |
-| name | string? | 收发 | 目标用户的名称 |
-| role | string? | 收发 | 目标角色 |
-| type | string? | 收发 | 特殊操作，例如 all 表示 @全体成员，here 表示 @在线成员 |
+| `id` | string? | 收发 | 目标用户的 ID |
+| `name` | string? | 收发 | 目标用户的名称 |
+| `role` | string? | 收发 | 目标角色 |
+| `type` | string? | 收发 | 特殊操作，例如 all 表示 @全体成员，here 表示 @在线成员 |
 
 `<at>` 元素用于提及某个或某些用户。
 
@@ -19,8 +19,8 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| id | string | 收发 | 目标频道的 ID |
-| name | string? | 收发 | 目标频道的名称 |
+| `id` | string | 收发 | 目标频道的 ID |
+| `name` | string? | 收发 | 目标频道的名称 |
 
 `<sharp>` 元素用于提及某个频道。
 
@@ -28,9 +28,9 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| id | string | 收发 | 表情的 ID |
-| name | string? | 收发 | 表情的名称 |
-| platform | string? | 发 | 表情显示的平台 |
+| `id` | string | 收发 | 表情的 ID |
+| `name` | string? | 收发 | 表情的名称 |
+| `platform` | string? | 发 | 表情显示的平台 |
 
 `<face>` 元素用于显示某个表情。通常来说为了跨平台转发，在 `<face>` 内部还会增加 `<img>` 作为回退。当图片的存在可能导致消息分片时，可以使用 `name` 取代图片的渲染。 -->
 
@@ -38,7 +38,7 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| href | string | 收发 | 链接的 URL |
+| `href` | string | 收发 | 链接的 URL |
 
 `<a>` 元素用于显示一个链接。当平台不支持链接时，建议显示为 `content (href)` 的形式。
 
@@ -48,10 +48,10 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| src | string | 收发 | 资源的 URL |
-| title | string? | 收发 | 资源文件名称 |
-| cache <badge type="warning">实验性</badge> | boolean? | 发 | 是否使用已缓存的文件 |
-| timeout <badge type="warning">实验性</badge> | number? | 发 | 下载文件的最长时间 (毫秒) |
+| `src` | string | 收发 | 资源的 URL |
+| `title` | string? | 收发 | 资源文件名称 |
+| `cache` <badge type="warning">实验性</badge> | boolean? | 发 | 是否使用已缓存的文件 |
+| `timeout` <badge type="warning">实验性</badge> | number? | 发 | 下载文件的最长时间 (毫秒) |
 
 ### 图片 (img) {#img}
 
@@ -59,8 +59,8 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| width | number? | 收 | 图片宽度 (像素) |
-| height | number? | 收 | 图片高度 (像素) |
+| `width` | number? | 收 | 图片宽度 (像素) |
+| `height` | number? | 收 | 图片高度 (像素) |
 
 `<img>` 元素用于表示图片。
 
@@ -70,8 +70,8 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| duration | number? | 收发 | 音频长度 (秒) |
-| poster | string? | 收发 | 音频封面 URL |
+| `duration` | number? | 收发 | 音频长度 (秒) |
+| `poster` | string? | 收发 | 音频封面 URL |
 
 `<audio>` 元素用于表示语音。
 
@@ -81,10 +81,10 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| width | number? | 收 | 视频宽度 (像素) |
-| height | number? | 收 | 视频高度 (像素) |
-| duration | number? | 收 | 视频长度 (秒) |
-| poster | string? | 收发 | 视频封面 URL |
+| `width` | number? | 收 | 视频宽度 (像素) |
+| `height` | number? | 收 | 视频高度 (像素) |
+| `duration` | number? | 收 | 视频长度 (秒) |
+| `poster` | string? | 收发 | 视频封面 URL |
 
 `<video>` 元素用于表示视频。
 
@@ -94,7 +94,7 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| poster | string? | 收发 | 缩略图 URL |
+| `poster` | string? | 收发 | 缩略图 URL |
 
 `<file>` 元素用于表示文件。
 
@@ -148,8 +148,8 @@
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| id | string? | 发 | 消息的 ID |
-| forward | boolean? | 发 | 是否为转发消息 |
+| `id` | string? | 发 | 消息的 ID |
+| `forward` | boolean? | 发 | 是否为转发消息 |
 
 `<message>` 元素的基本用法是表示一条消息。子元素对应于消息的内容。如果其没有子元素，则消息不会被发送。
 
@@ -205,9 +205,9 @@ hello<message/>world
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| id | string? | 发 | 用户 ID |
-| name | string? | 发 | 昵称 |
-| avatar | string? | 发 | 头像 URL |
+| `id` | string? | 发 | 用户 ID |
+| `name` | string? | 发 | 昵称 |
+| `avatar` | string? | 发 | 头像 URL |
 
 `<author>` 元素用于表示消息的作者。它的子元素会被渲染为作者的名字。
 
@@ -219,11 +219,11 @@ hello<message/>world
 
 | 属性 | 类型 | 范围 | 描述 |
 | --- | --- | --- | --- |
-| id | string? | 发 | 按钮的 ID |
-| type | string? | 发 | 按钮的类型 |
-| href | string? | 发 | 按钮的链接 |
-| text | string? | 发 | 待输入文本 |
-| theme | string? | 发 | 按钮的样式 |
+| `id` | string? | 发 | 按钮的 ID |
+| `type` | string? | 发 | 按钮的类型 |
+| `href` | string? | 发 | 按钮的链接 |
+| `text` | string? | 发 | 待输入文本 |
+| `theme` | string? | 发 | 按钮的样式 |
 
 `<button>` 元素用于表示一个按钮。它的子元素会被渲染为按钮的文本。
 
@@ -235,9 +235,9 @@ hello<message/>world
 
 `theme` 仅建议使用下列值：
 
-- primary
-- secondary
-- success
-- warning
-- danger
-- info
+- `primary`
+- `secondary`
+- `success`
+- `warning`
+- `danger`
+- `info`

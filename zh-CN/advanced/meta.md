@@ -39,8 +39,8 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| url | string | WebHook 地址 |
-| token | string? | 鉴权令牌 |
+| `url` | string | WebHook 地址 |
+| `token` | string? | 鉴权令牌 |
 
 ### 移除 WebHook <badge>可选</badge>
 
@@ -48,4 +48,4 @@
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| url | string | WebHook 地址 |
+| `url` | string | WebHook 地址 |

@@ -6,14 +6,14 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| id | string | message id |
-| content | string | message content |
-| channel | [Channel](./channel.md#def-channel)? | channel object |
-| guild | [Guild](./guild.md#def-guild)? | guild object |
-| member | [GuildMember](./member.md#def-guild-member)? | guild member object |
-| user | [User](./user.md#def-user)? | user object |
-| created_at | number? | timestamp of message creation |
-| updated_at | number? | timestamp of message update |
+| `id` | string | message id |
+| `content` | string | message content |
+| `channel` | [Channel](./channel.md#def-channel)? | channel object |
+| `guild` | [Guild](./guild.md#def-guild)? | guild object |
+| `member` | [GuildMember](./member.md#def-guild-member)? | guild member object |
+| `user` | [User](./user.md#def-user)? | user object |
+| `created_at` | number? | timestamp of message creation |
+| `updated_at` | number? | timestamp of message update |
 
 ## API
 
@@ -23,8 +23,8 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| content | string | message content |
+| `channel_id` | string | channel id |
+| `content` | string | message content |
 
 Send (create) a message. Returns an array of [Message](#def-message) objects.
 
@@ -34,8 +34,8 @@ Send (create) a message. Returns an array of [Message](#def-message) objects.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| message_id | string | message id |
+| `channel_id` | string | channel id |
+| `message_id` | string | message id |
 
 Get a message by id. Returns a [Message](#def-message) object. Required resources: [`channel`](./channel.md#def-channel), [`user`](./user.md#def-user).
 
@@ -45,8 +45,8 @@ Get a message by id. Returns a [Message](#def-message) object. Required resource
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| message_id | string | message id |
+| `channel_id` | string | channel id |
+| `message_id` | string | message id |
 
 Delete a specific message.
 
@@ -56,9 +56,9 @@ Delete a specific message.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| message_id | string | message id |
-| content | string | message content |
+| `channel_id` | string | channel id |
+| `message_id` | string | message id |
+| `content` | string | message content |
 
 Edit (update) a specific message.
 
@@ -68,12 +68,12 @@ Edit (update) a specific message.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| message_id | string | message id |
-| next | string? | pagination token |
-| direction | [Direction](../protocol/api.md#bidi-list)? | query direction |
-| limit | number? | result limit |
-| order | [Order](../protocol/api.md#bidi-list)? | result order |
+| `channel_id` | string | channel id |
+| `message_id` | string | message id |
+| `next` | string? | pagination token |
+| `direction` | [Direction](../protocol/api.md#bidi-list)? | query direction |
+| `limit` | number? | result limit |
+| `order` | [Order](../protocol/api.md#bidi-list)? | result order |
 
 Get the list of messages in a channel. Returns a [bidirectional paginated list](../protocol/api.md#bidi-list) of Message objects. Required resource: [`user`](./user.md#def-user).
 

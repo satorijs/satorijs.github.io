@@ -8,30 +8,30 @@ The Satori protocol defines two sets of event services, based on WebSocket and W
 
 | NAME | VALUE | DIRECTION | DESCRIPTION |
 | --- | --- | --- | --- |
-| EVENT | 0 | Receive | Event |
-| PING | 1 | Send | Heartbeat |
-| PONG | 2 | Receive | Heartbeat Response |
-| IDENTIFY | 3 | Send | Authentication |
-| READY | 4 | Receive | Authentication Success |
-| META | 5 | Receive | Metadata Update <badge type="warning">experimental</badge> |
+| `EVENT` | 0 | Receive | Event |
+| `PING` | 1 | Send | Heartbeat |
+| `PONG` | 2 | Receive | Heartbeat Response |
+| `IDENTIFY` | 3 | Send | Authentication |
+| `READY` | 4 | Receive | Authentication Success |
+| `META` | 5 | Receive | Metadata Update <badge type="warning">experimental</badge> |
 
 ### Event
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| sn | number | sequence number |
-| type | string | event type |
-| timestamp | number | event timestamp |
-| login | [Login](../resources/login.md#def-login) | login object |
-| argv | [Argv](../resources/interaction.md#def-argv)? | argv object |
-| button | [Button](../resources/interaction.md#def-button)? | button object |
-| channel | [Channel](../resources/channel.md#def-channel)? | channel object |
-| guild | [Guild](../resources/guild.md#def-guild)? | guild object |
-| member | [GuildMember](../resources/member.md#def-guild-member)? | guild member object |
-| message | [Message](../resources/message.md#def-message)? | message object |
-| operator | [User](../resources/user.md#def-user)? | operator user object |
-| role | [GuildRole](../resources/role.md#def-guild-role)? | guild role object |
-| user | [User](../resources/user.md#def-user)? | user object |
+| `sn` | number | sequence number |
+| `type` | string | event type |
+| `timestamp` | number | event timestamp |
+| `login` | [Login](../resources/login.md#def-login) | login object |
+| `argv` | [Argv](../resources/interaction.md#def-argv)? | argv object |
+| `button` | [Button](../resources/interaction.md#def-button)? | button object |
+| `channel` | [Channel](../resources/channel.md#def-channel)? | channel object |
+| `guild` | [Guild](../resources/guild.md#def-guild)? | guild object |
+| `member` | [GuildMember](../resources/member.md#def-guild-member)? | guild member object |
+| `message` | [Message](../resources/message.md#def-message)? | message object |
+| `operator` | [User](../resources/user.md#def-user)? | operator user object |
+| `role` | [GuildRole](../resources/role.md#def-guild-role)? | guild role object |
+| `user` | [User](../resources/user.md#def-user)? | user object |
 
 Events are divided into login events and non-login events. Login events specifically refer to events related to [Login](../resources/login.md) changes (e.g., [login-added](../resources/login.md#login-added)). All events use the above data structure, but there are some differences in details:
 
@@ -62,28 +62,28 @@ The signal data structure is as follows:
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| op | [Opcode](#opcode) | signal type |
-| body | object? | signal data |
+| `op` | [Opcode](#opcode) | signal type |
+| `body` | object? | signal data |
 
 The `body` data structure for the `IDENTIFY` signal is as follows:
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| token | string? | authentication token |
-| sn | number? | sequence number |
+| `token` | string? | authentication token |
+| `sn` | number? | sequence number |
 
 The `body` data structure for the `READY` signal is as follows:
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| logins | [Login](../resources/login.md#def-login)[] | login objects |
-| proxy_urls | string[] | list of [Proxy Routes](../advanced/resource.md#proxy-route) |
+| `logins` | [Login](../resources/login.md#def-login)[] | login objects |
+| `proxy_urls` | string[] | list of [Proxy Routes](../advanced/resource.md#proxy-route) |
 
 The `body` data structure for the `META` signal is as follows:
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| proxy_urls | string[] | list of [Proxy Routes](../advanced/resource.md#proxy-route) |
+| `proxy_urls` | string[] | list of [Proxy Routes](../advanced/resource.md#proxy-route) |
 
 The `body` data structure for the `EVENT` signal is described in [Event](#event).
 

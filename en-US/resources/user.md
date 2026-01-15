@@ -6,11 +6,11 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| id | string | user id |
-| name | string? | user name<sup>[[1]](#name-nick)</sup> |
-| nick | string? | user nickname<sup>[[1]](#name-nick)</sup> |
-| avatar | string? | user avatar |
-| is_bot | boolean? | whether the user is a bot |
+| `id` | string | user id |
+| `name` | string? | user name<sup>[[1]](#name-nick)</sup> |
+| `nick` | string? | user nickname<sup>[[1]](#name-nick)</sup> |
+| `avatar` | string? | user avatar |
+| `is_bot` | boolean? | whether the user is a bot |
 
 ::: tip
 **[1] Difference between `name` and `nick`** {#name-nick}
@@ -28,7 +28,7 @@ In application-level implementations, `nick` takes precedence over `name` becaus
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| user_id | string | user id |
+| `user_id` | string | user id |
 
 Get a user by id. Returns a [User](#def-user) object.
 
@@ -38,7 +38,7 @@ Get a user by id. Returns a [User](#def-user) object.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| next | string? | pagination token |
+| `next` | string? | pagination token |
 
 Get the friend list. Returns a [paginated list](../protocol/api.md#list) of [User](#def-user) objects.
 
@@ -48,9 +48,9 @@ Get the friend list. Returns a [paginated list](../protocol/api.md#list) of [Use
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| message_id | string | request id |
-| approve | boolean | whether to approve the request |
-| comment | string? | comment |
+| `message_id` | string | request id |
+| `approve` | boolean | whether to approve the request |
+| `comment` | string? | comment |
 
 Handle a friend request.
 

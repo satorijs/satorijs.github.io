@@ -10,15 +10,15 @@ Interaction features are primarily provided by bots and triggered by users in ch
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| name | string | command name |
-| arguments | array | arguments |
-| options | object | options |
+| `name` | string | command name |
+| `arguments` | array | arguments |
+| `options` | object | options |
 
 ### Button {#def-button}
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| id | string | button id |
+| `id` | string | button id |
 
 ## Events
 

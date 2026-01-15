@@ -8,10 +8,10 @@ Basic elements are the most common message elements. They can be displayed norma
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| id | string? | S/R | target user id |
-| name | string? | S/R | target user name |
-| role | string? | S/R | target roke |
-| type | string? | S/R | special operations, such as `all` for mentioning all members, `here` for mentioning online members |
+| `id` | string? | S/R | target user id |
+| `name` | string? | S/R | target user name |
+| `role` | string? | S/R | target role |
+| `type` | string? | S/R | special operations, such as `all` for mentioning all members, `here` for mentioning online members |
 
 The `<at>` element is used to mention a user or users.
 
@@ -19,8 +19,8 @@ The `<at>` element is used to mention a user or users.
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| id | string | S/R | target channel id |
-| name | string? | S/R | target channel name |
+| `id` | string | S/R | target channel id |
+| `name` | string? | S/R | target channel name |
 
 The `<sharp>` element is used to mention a channel.
 
@@ -28,9 +28,9 @@ The `<sharp>` element is used to mention a channel.
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| href | string | S/R | url of the link |
+| `href` | string | S/R | url of the link |
 
-The `<a>` element is used to display a link. If the platform does not support links, it is recommended to display it in the form of content (href).
+The `<a>` element is used to display a link. If the platform does not support links, it is recommended to display it in the form of `content (href)`.
 
 ## Resource Elements
 
@@ -38,10 +38,10 @@ Resource message elements represent resource files in the text. Different platfo
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| src | string | S/R | url of the resource |
-| title | string? | S/R | name of the resource file |
-| cache <badge type="warning">experimental</badge> | boolean? | S | whether to use cached files |
-| timeout <badge type="warning">experimental</badge> | number? | S | maximum time to download the file (in milliseconds) |
+| `src` | string | S/R | url of the resource |
+| `title` | string? | S/R | name of the resource file |
+| `cache` <badge type="warning">experimental</badge> | boolean? | S | whether to use cached files |
+| `timeout` <badge type="warning">experimental</badge> | number? | S | maximum time to download the file (in milliseconds) |
 
 ### Image (img) {#img}
 
@@ -49,8 +49,8 @@ In addition to the common attributes above, the following attributes are support
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| width | number? | R | image width (in pixels) |
-| height | number? | R | image width (in pixels) |
+| `width` | number? | R | image width (in pixels) |
+| `height` | number? | R | image width (in pixels) |
 
 The `<img>` element is used to represent an image.
 
@@ -60,8 +60,8 @@ In addition to the common attributes above, the following attributes are support
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| Attribute | number? | S/R | audio length (in seconds) |
-| poster | string? | S/R | url of the audio cover |
+| `duration` | number? | S/R | audio length (in seconds) |
+| `poster` | string? | S/R | url of the audio cover |
 
 The `<audio>` element is used to represent audio.
 
@@ -71,10 +71,10 @@ In addition to the common attributes above, the following attributes are support
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| width | number? | R | video width (in pixels) |
-| height | number? | R | video width (in pixels) |
-| Attribute | number? | S/R | video length (in seconds) |
-| poster | string? | S/R | url of the video cover |
+| `width` | number? | R | video width (in pixels) |
+| `height` | number? | R | video width (in pixels) |
+| `duration` | number? | S/R | video length (in seconds) |
+| `poster` | string? | S/R | url of the video cover |
 
 The `<video>` element is used to represent a video.
 
@@ -84,7 +84,7 @@ In addition to the common attributes above, the following attributes are support
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| poster | string? | S/R | url of the thumbnail |
+| `poster` | string? | S/R | url of the thumbnail |
 
 The `<file>` element is used to represent a file.
 
@@ -138,8 +138,8 @@ The `<p>` element represents a paragraph. When rendering, it ensures a line brea
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| id | string? | S | message id |
-| forward | boolean? | S | whether it is a forwarded messasge |
+| `id` | string? | S | message id |
+| `forward` | boolean? | S | whether it is a forwarded message |
 
 The basic usage of the `<message>` element is to represent a message. Its child elements correspond to the message's content. If it has no child elements, the message will not be sent.
 
@@ -195,9 +195,9 @@ The `<quote>` element is used to represent a message quote. Its child elements w
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| id | string? | S | user id |
-| name | string? | S | user name |
-| avatar | string? | S | avatar url |
+| `id` | string? | S | user id |
+| `name` | string? | S | user name |
+| `avatar` | string? | S | avatar url |
 
 The `<author>` element is used to represent the author of a message. Its child elements will be rendered as the author's name.
 
@@ -209,11 +209,11 @@ Interactive elements are used to display interactive content in messages. If the
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |
-| id | string? | S | button id |
-| type | string? | S | button type |
-| link | string? | S | button link |
-| text | string? | S | text to input |
-| theme | string? | S | button style |
+| `id` | string? | S | button id |
+| `type` | string? | S | button type |
+| `link` | string? | S | button link |
+| `text` | string? | S | text to input |
+| `theme` | string? | S | button style |
 
 The `<button>` element is used to represent a button. Its child elements will be rendered as the button's text.
 
@@ -225,10 +225,10 @@ Buttons currently support three different types:
 
 `theme` is recommended to use only the following values:
 
-- primary
-- secondary
-- success
-- warning
-- danger
-- info
+- `primary`
+- `secondary`
+- `success`
+- `warning`
+- `danger`
+- `info`
 

@@ -8,9 +8,9 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| message_id | string | message id |
-| emoji | string | reaction emoji |
+| `channel_id` | string | channel id |
+| `message_id` | string | message id |
+| `emoji` | string | reaction emoji |
 
 Add a reaction to a specific message.
 
@@ -20,10 +20,10 @@ Add a reaction to a specific message.
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| message_id | string | message id |
-| emoji | string | reaction emoji |
-| user_id | string? | user id |
+| `channel_id` | string | channel id |
+| `message_id` | string | message id |
+| `emoji` | string | reaction emoji |
+| `user_id` | string? | user id |
 
 Remove a specific reaction added by a user from a specific message. If no user id is provided, it removes the reaction added by the current user.
 
@@ -33,9 +33,9 @@ Remove a specific reaction added by a user from a specific message. If no user i
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| message_id | string | message id |
-| emoji | string? | reaction emoji |
+| `channel_id` | string | channel id |
+| `message_id` | string | message id |
+| `emoji` | string? | reaction emoji |
 
 Clear a specific reaction from a specific message. If no emoji is provided, it clears all reactions.
 
@@ -45,10 +45,10 @@ Clear a specific reaction from a specific message. If no emoji is provided, it c
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| channel_id | string | channel id |
-| message_id | string | message id |
-| emoji | string | reaction emoji |
-| next | string? | pagination token |
+| `channel_id` | string | channel id |
+| `message_id` | string | message id |
+| `emoji` | string | reaction emoji |
+| `next` | string? | pagination token |
 
 Get all the users who added a specific reaction to a specific message. Returns a [paginated list](../protocol/api.md#list) of [User](./user.md#def-user) objects.
 

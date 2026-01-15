@@ -6,9 +6,9 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| id | string | guild id |
-| name | string? | guild name |
-| avatar | string? | guild avatar |
+| `id` | string | guild id |
+| `name` | string? | guild name |
+| `avatar` | string? | guild avatar |
 
 ## API
 
@@ -18,7 +18,7 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| guild_id | string | guild id |
+| `guild_id` | string | guild id |
 
 Get a guild by id. Returns a [Guild](#def-guild) object.
 
@@ -28,7 +28,7 @@ Get a guild by id. Returns a [Guild](#def-guild) object.
 
 | FIELD | TYPE | DESCRIPTION |
 | ----- | ---- | ----------- |
-| next | string | pagination token |
+| `next` | string | pagination token |
 
 Get guilds where the current user is a member. Returns a [paginated list](../protocol/api.md#list) of partial [Guild](#def-guild) objects.
 
@@ -38,9 +38,9 @@ Get guilds where the current user is a member. Returns a [paginated list](../pro
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| message_id | string | request id |
-| approve | boolean | whether to approve the request |
-| comment | string? | comment |
+| `message_id` | string | request id |
+| `approve` | boolean | whether to approve the request |
+| `comment` | string? | comment |
 
 Handle an invitation from a guild.
 

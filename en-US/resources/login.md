@@ -6,12 +6,12 @@
 
 | FIELD | TYPE | DESCRIPTION |
 | --- | --- | --- |
-| sn | number | serial number<sup>[[1]](#login-sn)</sup> <badge type="warning">experimental</badge> |
-| platform | string?<sup>[[3]](#login-nullable)</sup> | platform name |
-| user | [User](./user.md)?<sup>[[3]](#login-nullable)</sup> | user object<sup>[[2]](#login-user)</sup> |
-| status | [LoginStatus](#def-login-status) | login status |
-| adapter | string | [adapter name](../advanced/internal.md#platform-vs-adapter) <badge type="warning">experimental</badge> |
-| features | string[]? | list of [platform features](../protocol/api.md#platform-features) <badge type="warning">experimental</badge> |
+| `sn` | number | serial number<sup>[[1]](#login-sn)</sup> <badge type="warning">experimental</badge> |
+| `platform` | string?<sup>[[3]](#login-nullable)</sup> | platform name |
+| `user` | [User](./user.md)?<sup>[[3]](#login-nullable)</sup> | user object<sup>[[2]](#login-user)</sup> |
+| `status` | [LoginStatus](#def-login-status) | login status |
+| `adapter` | string | [adapter name](../advanced/internal.md#platform-vs-adapter) <badge type="warning">experimental</badge> |
+| `features` | string[]? | list of [platform features](../protocol/api.md#platform-features) <badge type="warning">experimental</badge> |
 
 ::: tip
 [1] `login.sn` is only used to identify the Login object and is unrelated to platform logic (meaning no platform-related API calls require this `sn`). It is also not persisted (meaning the `sn` for the same login may differ across connections, and different logins may share the same `sn`). Please especially distinguish it from `login.user.id`. {#login-sn}
@@ -29,11 +29,11 @@
 
 | TYPE | VALUE | DESCRIPTION |
 | --- | --- | --- |
-| OFFLINE | 0 | offline |
-| ONLINE | 1 | online |
-| CONNECT | 2 | connecting |
-| DISCONNECT | 3 | disconnecting |
-| RECONNECT | 4 | reconnecting |
+| `OFFLINE` | 0 | offline |
+| `ONLINE` | 1 | online |
+| `CONNECT` | 2 | connecting |
+| `DISCONNECT` | 3 | disconnecting |
+| `RECONNECT` | 4 | reconnecting |
 
 ## API
 
