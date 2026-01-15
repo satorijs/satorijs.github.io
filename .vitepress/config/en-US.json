@@ -33,7 +33,8 @@
         "text": "Advanced",
         "items": [
           { "text": "Cross Platform", "link": "/advanced/internal.md" },
-          { "text": "Resource URLs", "link": "/advanced/resource.md" },
+          { "text": "Passive Requests", "link": "/advanced/passive.md" },
+          { "text": "Resource Links", "link": "/advanced/resource.md" },
           { "text": "Bridge", "link": "/advanced/bridge.md" },
           { "text": "Meta", "link": "/advanced/meta.md" }
         ]

@@ -74,7 +74,7 @@
 | `limit` | number? | 消息数量限制 |
 | `order` | [Order](../protocol/api.md#bidi-list)? | 对结果排序 |
 
-获取频道消息列表。返回一个 [`Message`](#def-message) 的 [双向分页列表](../protocol/api.md#bidi-list)。必需资源：[`user`](./user.md#def-user)。
+获取频道消息列表。返回一个 [`Message`](#def-message) 的[双向分页列表](../protocol/api.md#bidi-list)。必需资源：[`user`](./user.md#def-user)。
 
 - `next` 参数默认值为空，表示从最新消息开始查询。此时 `direction` 参数只能为 `before`。
 - `direction` 参数默认为 `before`。

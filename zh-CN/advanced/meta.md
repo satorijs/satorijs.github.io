@@ -4,7 +4,7 @@
 这是一个实验性功能，可能在未来的版本中发生变化。
 :::
 
-元信息对象包含了与 SDK 状态相关、与具体的账号无关的信息，例如 [代理路由](../advanced/resource.md#proxy-route) 等。
+元信息对象包含了与 SDK 状态相关、与具体的账号无关的信息，例如[代理路由](../advanced/resource.md#proxy-route)等。
 
 元信息通过以下方式获取和更新：
 
@@ -23,7 +23,7 @@
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | `logins` | [`Login[]`](../resources/login.md) | 登录信息 |
-| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route)列表 |
 
 ## API
 

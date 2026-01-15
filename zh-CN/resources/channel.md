@@ -41,7 +41,7 @@
 | `guild_id` | string | 群组 ID |
 | `next` | string? | 分页令牌 |
 
-获取群组中的全部频道。返回一个 [Channel](#def-channel) 的 [分页列表](../protocol/api.md#list)。
+获取群组中的全部频道。返回一个 [Channel](#def-channel) 的[分页列表](../protocol/api.md#list)。
 
 ### 创建群组频道 {#api-channel-create}
 

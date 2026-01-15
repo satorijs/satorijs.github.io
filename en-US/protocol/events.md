@@ -32,6 +32,7 @@ The Satori protocol defines two sets of event services, based on WebSocket and W
 | `operator` | [User](../resources/user.md#def-user)? | operator user object |
 | `role` | [GuildRole](../resources/role.md#def-guild-role)? | guild role object |
 | `user` | [User](../resources/user.md#def-user)? | user object |
+| `referrer` | object? | referrer for [passive requests](../advanced/passive.md) <badge type="warning">experimental</badge> |
 
 Events are divided into login events and non-login events. Login events specifically refer to events related to [Login](../resources/login.md) changes (e.g., [login-added](../resources/login.md#login-added)). All events use the above data structure, but there are some differences in details:
 

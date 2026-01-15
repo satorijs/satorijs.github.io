@@ -32,15 +32,16 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 | `operator` | [User](../resources/user.md#def-user)? | 事件的操作者 |
 | `role` | [GuildRole](../resources/role.md#def-guild-role)? | 事件的目标角色 |
 | `user` | [User](../resources/user.md#def-user)? | 事件的目标用户 |
+| `referrer` | object? | 用于[被动请求](../advanced/passive.md)的来源信息 <badge type="warning">实验性</badge> |
 
 事件分为登录事件与非登录事件，其中登录事件特指与 Login 变化相关的事件 (如 [login-added](../resources/login.md#login-added))。所有事件都采用上述数据结构，不过在细节上有所区别：
 
 - 非登录事件中的 `login` 资源只会带有 `sn`, `user` 和 `platform` 三个属性；
 - 非登录事件均确保 `login.status` 为 `ONLINE` (尽管不会传递这个字段)；
 - 登录事件会带有完整的 `login` 资源，但可能不存在 `user` 和 `platform`；
-- 登录事件不参与 [会话恢复](#session-recovery)。
+- 登录事件不参与[会话恢复](#session-recovery)。
 
-事件中的各属性遵循 [资源提升](./index.md) 规则。
+事件中的各属性遵循[资源提升](./index.md)规则。
 
 ## WebSocket
 
@@ -77,13 +78,13 @@ WebSocket 服务的地址为 `/{path}/{version}/events`。其中，`path` 为部
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
 | `logins` | [Login](../resources/login.md#def-login)[] | 登录信息 |
-| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route)列表 |
 
 `META` 信令的 `body` 数据结构如下：
 
 | 字段 | 类型 | 描述 |
 | --- | --- | --- |
-| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route) 列表 |
+| `proxy_urls` | string[] | [代理路由](../advanced/resource.md#proxy-route)列表 |
 
 `EVENT` 信令的 `body` 数据结构参见 [Event](#event)。
 
@@ -107,7 +108,7 @@ WebSocket 鉴权通过 `IDENTIFY` 信令的 `token` 字段来实现。其中涉�
 
 WebHook 服务是指，Satori SDK 在接收到平台事件时，向应用提供的 HTTP 地址推送事件。一个 SDK 应当可以配置多个 WebHook，并允许应用对发送者进行鉴权。这些 WebHook 的配置方式由 SDK 自身决定，本协议仅规范化了一组 [API](../advanced/meta.md#api)，不做强制要求。
 
-事件推送以 POST 的形式进行。请求头包含 `Satori-Opcode` 字段，对应本次推送的 [信令类型](#opcode)；请求体是一个 JSON 对象，对应本次推送的信令数据。例如，一次事件推送将会拥有 `Satori-Opcode: 0` 的请求头，以及一个符合 [Event](#event) 结构的请求体。
+事件推送以 POST 的形式进行。请求头包含 `Satori-Opcode` 字段，对应本次推送的[信令类型](#opcode)；请求体是一个 JSON 对象，对应本次推送的信令数据。例如，一次事件推送将会拥有 `Satori-Opcode: 0` 的请求头，以及一个符合 [Event](#event) 结构的请求体。
 
 WebHook 所涉及的信令仅包含 `EVENT`, `META` 两种。
 

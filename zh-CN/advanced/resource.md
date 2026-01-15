@@ -150,7 +150,7 @@ GET /v1/proxy/internal:discord/1234567890/_tmp/3j6emd92-image1.png
 
 对于适配器开发者，你需要：
 
-1. 平台符合内部链接的 [适用场景](#scenario)，调用 `REGISTER_INTERNAL_ROUTE` 方法注册内部路由：
+1. 平台符合内部链接的[适用场景](#scenario)，调用 `REGISTER_INTERNAL_ROUTE` 方法注册内部路由：
 2. 接收事件推送时：如果收到的资源链接符合内部链接的适用场景，将它们转化为内部链接；
 3. 发送消息时：根据平台行为和资源链接的形式，合理选择下载和发送资源的方式；
 4. 如果平台支持文件上传：实现 `/upload.create` API，覆盖 SDK 的默认实现。

@@ -75,4 +75,4 @@ Satori 中的消息使用 **消息元素 (Message Element)** 进行编码。
 
 ## 标准元素
 
-关于 Satori 内置的消息元素，请参考 [标准元素](./elements.md)。
+关于 Satori 内置的消息元素，请参考[标准元素](./elements.md)。

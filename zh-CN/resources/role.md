@@ -45,7 +45,7 @@
 | `user_id` | string | 用户 ID |
 | `next` | string? | 分页令牌 |
 
-获取群组内用户的角色列表。返回一个 [GuildRole](#def-guild-role) 的 [分页列表](../protocol/api.md#list)。 -->
+获取群组内用户的角色列表。返回一个 [GuildRole](#def-guild-role) 的[分页列表](../protocol/api.md#list)。 -->
 
 <!-- ### 获取群组角色 {#api-guild-role-get}
 
@@ -67,7 +67,7 @@
 | `guild_id` | string | 群组 ID |
 | `next` | string? | 分页令牌 |
 
-获取群组角色列表。返回一个 [GuildRole](#def-guild-role) 的 [分页列表](../protocol/api.md#list)。
+获取群组角色列表。返回一个 [GuildRole](#def-guild-role) 的[分页列表](../protocol/api.md#list)。
 
 ### 创建群组角色 {#api-guild-role-create}
 
