@@ -13,7 +13,7 @@ Before we begin, let’s familiarize ourselves with some core concepts related t
 
 **Platform** refers to chat platforms, such as Discord, Telegram, etc. Users within the same platform can send messages to each other, while users across different platforms cannot. For self-hosted chat platforms like Rocket Chat, each independent server is considered a different platform.
 
-**Message** is literally a message. It is usually in text or rich text format and may sometimes include media resources such as images or voice. In Koishi, messages are uniformly encoded using message elements.
+**Message** is literally a message. It is usually in text or rich text format and may sometimes include media resources such as images or voice. In Satori, messages are uniformly encoded using message elements.
 
 **Channel** is a collection of messages. A channel contains a series of messages with a temporal and logical order. Channels are divided into private channels and group channels. Private channels involve exactly two participants, while group channels can have any number of participants.
 

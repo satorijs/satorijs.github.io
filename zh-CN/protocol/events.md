@@ -36,7 +36,7 @@ Satori 协议规定了两套事件服务，分别基于 WebSocket 和 WebHook。
 事件分为登录事件与非登录事件，其中登录事件特指与 Login 变化相关的事件 (如 [login-added](../resources/login.md#login-added))。所有事件都采用上述数据结构，不过在细节上有所区别：
 
 - 非登录事件中的 `login` 资源只会带有 `sn`, `user` 和 `platform` 三个属性；
-- 非登录事件均确保 `login.status` 为 `ONLINE` (尽管不会传递这个字段）；
+- 非登录事件均确保 `login.status` 为 `ONLINE` (尽管不会传递这个字段)；
 - 登录事件会带有完整的 `login` 资源，但可能不存在 `user` 和 `platform`；
 - 登录事件不参与 [会话恢复](#session-recovery)。
 
