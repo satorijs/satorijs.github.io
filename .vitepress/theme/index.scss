@@ -23,6 +23,10 @@ blockquote.route {
     text-decoration: none;
   }
 
+  a {
+    text-underline-offset: 4px;
+  }
+
   table {
     .VPBadge {
       transform: none;
