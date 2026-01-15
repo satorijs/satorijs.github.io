@@ -1,6 +1,6 @@
 # Cross Platform
 
-As a cross-platform chat protocol, Satori provides the ability to access any platform's native interfaces. This means you can write generic code in most cases, and use native interfaces when needed to implement platform-specific functionality.
+As a cross-platform chat protocol, Satori provides the ability to access any platform’s native interfaces. This means you can write generic code in most cases, and use native interfaces when needed to implement platform-specific functionality.
 
 These native capabilities are collectively referred to as internal interfaces, covering APIs, events, message elements, routes, and more.
 
