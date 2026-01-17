@@ -1,4 +1,4 @@
-# Guild Role <badge type="warning">experimental</badge>
+# Guild Role <badge type="warning">Experimental</badge>
 
 ## Definitions
 

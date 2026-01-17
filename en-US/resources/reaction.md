@@ -1,4 +1,4 @@
-# Reaction <badge type="warning">experimental</badge>
+# Reaction <badge type="warning">Experimental</badge>
 
 ## API
 

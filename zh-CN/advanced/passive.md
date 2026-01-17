@@ -17,13 +17,13 @@
 
 在这种情况下，仅仅使用标准的发送消息接口就无法满足“被动请求”所需的参数要求。为此，Satori 提供了额外的 `referrer` 字段来解决问题。
 
-## referrer 字段
+## `referrer` 字段
 
 ::: tip
 注意：正确的拼写是 `referrer` 而不是 `referer`。
 :::
 
-当 SDK 推送事件时，可以额外携带一个 `event.referrer` 字段，用于承载平台进行被动请求所需的“来源信息” (例如原始事件 ID、回调 token、thread 信息等)。
+当 SDK 推送事件时，可以额外携带一个 `event.referrer` 字段，用于承载平台进行被动请求所需的“来源上下文” (例如原始事件 ID、回调 token、thread 信息等)。
 
 应用侧在实现被动操作时，需要将来源事件的 `referrer` 原样作为 API 参数传入。这样一来，SDK 就可以明确知道此次请求属于被动操作，并利用 `referrer` 中的信息完成平台 API 调用。
 
@@ -57,7 +57,7 @@
 }
 ```
 
-应用在回复该消息 (即被动操作) 时，应当将该 `referrer` 作为参数传入 `/message.create`：
+应用在回复该消息 (即被动操作) 时，应当将该 `referrer` 作为参数传入 [`/message.create`](../resources/message.md#api-message-create)：
 
 ```json{4-13}
 {

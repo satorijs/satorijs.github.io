@@ -205,7 +205,7 @@ The `<author>` element is used to represent the author of a message. Its child e
 
 Interactive elements are used to display interactive content in messages. If the platform does not support such elements and cannot provide a fallback, the entire element can be ignored. The implementation should return messages with or without interactivity based on platform features.
 
-### Button (button) <badge type="warning">experimental</badge> {#button}
+### Button (button) <badge type="warning">Experimental</badge> {#button}
 
 | ATTRIBUTE | TYPE | SCOPE | DESCRIPTION |
 | --- | --- | --- | --- |

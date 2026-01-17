@@ -100,7 +100,7 @@ When a connection is briefly interrupted, Satori applications can recover the se
 
 Login events will not be pushed during session recovery, as the latest login status is already included in the READY signal.
 
-## WebHook <badge>optional</badge> <badge type="warning">experimental</badge>
+## WebHook <badge>Optional</badge> <badge type="warning">Experimental</badge>
 
 ::: tip
 This is an optional feature.

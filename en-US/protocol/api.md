@@ -46,7 +46,7 @@ If the SDK is not configured for authentication, the application does not need t
 If a standard API is not supported by a platform, it should return 404 (NOT FOUND) instead of 501 (NOT IMPLEMENTED). Only when an API is supported by the platform but not implemented by the adapter should it return 501.
 :::
 
-### Platform Features <badge type="warning">experimental</badge> {#platform-features}
+### Platform Features <badge type="warning">Experimental</badge> {#platform-features}
 
 The `features` field in the [Login](../resources/login.md#def-login) object is an array of strings used to indicate platform features. These features can be used to determine whether a platform supports certain APIs. Valid platform features include:
 

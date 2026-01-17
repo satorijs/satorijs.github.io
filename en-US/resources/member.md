@@ -47,7 +47,7 @@ Get all the members in a guild. Returns a [paginated list](../protocol/api.md#li
 
 Kick a user from the guild.
 
-### Mute Guild Member <badge type="warning">experimental</badge> {#api-guild-member-mute}
+### Mute Guild Member <badge type="warning">Experimental</badge> {#api-guild-member-mute}
 
 > <badge>POST</badge> `/guild.member.mute` {.route}
 
